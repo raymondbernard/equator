@@ -33,7 +33,8 @@ if __name__ == "__main__":
     # The date used for naming directories and ensuring data consistency
     # If the folder structure does not match `date_now`, either rename the folder
     # or hardcode this value to ensure analytics align correctly.
-    date_now = datetime.now().strftime("%Y-%m-%d")
+    date_now = "2025-01-09"
+    # date_now = datetime.now().strftime("%Y-%m-%d")
 
     # List of steps to execute; comment/uncomment to toggle specific tasks
     execution_steps = [

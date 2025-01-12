@@ -19,12 +19,16 @@ Study paper:
 
 Youtube Videos:
 
-## Demo Video
+## Explainer Video
 
 [Short explainer video](https://www.youtube.com/watch?v=ryTRe18UHXE)
 
 [Deep Dive Podcast video](https://www.youtube.com/watch?v=FVVAPXlRvPg)
 
+
+## Demo Video 
+
+[EQUATOR installation and demo video](https://youtu.be/e-uU_PaVDMM)
 
 
 ## Key Features
