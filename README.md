@@ -279,15 +279,13 @@ Below is an updated “Evaluator vs. Student” matrix that includes **Groq → 
    deactivate
    ```
 
-
-1. **Install pip install our requirements.txt**
+5. **Install our requirements**
    ```bash
-   >pip install -r requirements.txt
+   pip install -r requirements.txt
    ```
- 4. **Open the main.py file.** 
+
+ 6. **Open the main.py file.** 
     1. Look at the comments in the file for directions on how to configure your test runs. It's straight forward.  
-
-
 
 
 ### Configuration
