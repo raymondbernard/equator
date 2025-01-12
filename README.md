@@ -59,19 +59,21 @@ Eluator LLMS evaluate the "student models " in the case the STOA models found on
 ---
 
 ## Evaluator vs. Student Matrix
-* Values are approximations
-Openrouater has 293 models from OpenAI etc. 
-Groq has 14
-Ollama 34925 = 148 family and 270 sizes
-| **Evaluator LLM**  | **Student LLM**| **Support Status**       |
-|--------------------|-------------------------------------------|-------------------------|
-| **Ollama (local)** | OpenRouter      | **Currently supported** |
-| **Ollama (local)** | Groq            | **Currently supported** |
-| **Ollama (local)** | Ollama (local)  | **Currently supported** |
-| **Groq**           | OpenRouter      | **Currently supported** |
-| **Groq**           | Ollama (local)  | **Currently supported** |
-| **Groq**           | Groq            | **Next        release** |
-| **OpenRouter**     | OpenRouter      | **Next        release** |
+
+* Values are approximations:
+  - OpenRouter has **293 models** from OpenAI, etc.
+  - Groq has **14 models**.
+  - Ollama has **34925 models** = **148 families** and **270 sizes**.
+
+| **Evaluator LLM**  | **Student LLM**        | **Support Status**       |
+|---------------------|------------------------|--------------------------|
+| **Ollama (local)**  | OpenRouter            | **Currently supported**  |
+| **Ollama (local)**  | Groq                  | **Currently supported**  |
+| **Ollama (local)**  | Ollama (local)        | **Currently supported**  |
+| **Groq**            | OpenRouter            | **Currently supported**  |
+| **Groq**            | Ollama (local)        | **Currently supported**  |
+| **Groq**            | Groq                  | **Next release**         |
+| **OpenRouter**      | OpenRouter            | **Next release**         |
 
 To determine the **possible amount of testing** from a combinatorial perspective based on your current support for Evaluator and Student LLMs, we'll break down the calculations step-by-step.
 
@@ -344,8 +346,8 @@ The repository includes two datasets to test the reasoning capabilities of LLMs:
 1. **Default Dataset**: 
    - The file `linguistic_benchmark.json` contains open-ended questions across various categories, such as puzzles, spatial reasoning, and logic. This smaller dataset is ideal for quick tests or debugging. You are welcome to add more questions to the dataset or customize them for your domain. 
 
-
-We have a QA dataset, linguistic_benchmark.json, with over 1,000 entries. However, we plan to create a website to publish our results using this dataset.---
+We do have a QA `linguistic_benchmark.json with over 1000+ .  However, we will create a website which will pusblish our resutls using this dataset. 
+---
 
 **Why We Keep Our Dataset Private**
 
