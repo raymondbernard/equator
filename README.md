@@ -234,9 +234,13 @@ Below is an updated “Evaluator vs. Student” matrix that includes **Groq → 
     git clone https://github.com/yourusername/equator-qa-benchmark.git
     cd equator-qa-benchmark
     ```
+2. **Download Ollama and resister at groq.com and openrouter.ai**
+   1.  -download  Ollama at ollama.com and install 
+   2. register and retrieve at Groq to get your api key  - https://console.groq.com/keys
+   3. register and retrieve your api key at openrouter https://openrouter.ai/
 
 
-2. **Set Up the Environment**
+3. **Set Up the Environment**
    - Rename `copy-to.env` to `.env` in your working directory.
    - Add the necessary API keys to the `.env` file.
    - Example:
@@ -245,7 +249,7 @@ Below is an updated “Evaluator vs. Student” matrix that includes **Groq → 
      GROQ_API_KEY="gsk_xxx"
      ```
 
-3. **Optional: Set Up a Virtual Environment**
+4. **Optional: Set Up a Virtual Environment**
    It is recommended to use a virtual environment to avoid conflicts with other Python packages.
 
    #### On **Windows**
