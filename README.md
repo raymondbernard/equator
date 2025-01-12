@@ -293,17 +293,60 @@ Below is an updated “Evaluator vs. Student” matrix that includes **Groq → 
 - **Execution Steps**: Define the steps to execute in the `execution_steps` list.  Please run the application with just do one execution_step at a time and comment out the other steps. In a future release we will enable a bit more automation.  
 * Note the steps will use different models as evaluators and students.  
    ie.   ollama_to_groq_evaluate = ollama is the evaluator and groq is the student. 
-    ```python
-  execution_steps = [
-        # "ollama_to_groq_evaluate",  # working
-        # "ollama_to_openrouter_evaluate", # working 
-        # "groq_to_ollama_evaluate",  # working
-        # "groq_to_openrouter_evaluate", # working
-        "generate_statistics",
-    ]
+   Here’s a clearer and easier-to-follow version of your instructions with improved formatting and structure:
 
-    ```
+---
 
+## **IMPORTANT INSTRUCTIONS**
+
+### **Step-by-Step Execution**
+
+To ensure everything runs smoothly, **please execute the program one step at a time!** Follow these guidelines:
+
+1. **Toggle Steps by Adding/Removing Comments**  
+   Modify the `execution_steps` list by uncommenting **one line at a time**.  
+   After running the program, re-comment the executed step if needed and proceed to the next.
+
+### **Example Execution Process**
+
+Here’s the structure of your `execution_steps` list:
+
+```python
+execution_steps = [
+    # "ollama_to_groq_evaluate",  # Uncomment one line at a time, then run the program.
+    # "ollama_to_openrouter_evaluate",  # Currently working.
+    # "groq_to_ollama_evaluate",  # Currently working.
+    # "groq_to_openrouter_evaluate",  # Currently working.
+    "generate_statistics",  # Always run last, after completing all evaluations.
+]
+```
+
+### **How to Execute**:
+1. Choose **one step** to execute by removing the `#` at the beginning of the corresponding line.
+2. Run the program.
+3. After the step completes, **comment the step again** by re-adding the `#` if you plan to run additional steps.
+4. Move to the next step and repeat.
+
+---
+
+### **Order of Execution**
+
+1. Uncomment `"ollama_to_groq_evaluate"` and run.
+2. Uncomment `"ollama_to_openrouter_evaluate"` and run.
+3. Uncomment `"groq_to_ollama_evaluate"` and run.
+4. Uncomment `"groq_to_openrouter_evaluate"` and run.
+5. Finally, ensure only `"generate_statistics"` is uncommented and run to compile results.
+
+---
+
+### **Tips for Success**
+- **One line at a time:** Never leave multiple steps uncommented.
+- **Save progress:** If something goes wrong, re-check the list and verify only one line is uncommented.
+- **Final step:** Always finish with `"generate_statistics"` to summarize your results.
+
+---
+
+This format highlights the importance of running one step at a time and makes the process easy to follow.
 - **Models**: Specify the models to benchmark in the respective lists.
     ```python
     student_openrouter_models = [
