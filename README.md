@@ -1,5 +1,5 @@
 
-# EQUATOR Evaluator
+# EQUATOR Evaluator Framework 
 
 ## Overview
 
@@ -15,6 +15,17 @@ Study paper:
 ![Equator Framework](EQUATOR-Framework.png "EQUATOR: A Deterministic Framework for Evaluating LLM Reasoning")
 
 ---
+
+
+Youtube Videos:
+
+## Demo Video
+
+[Short explainer video](https://www.youtube.com/watch?v=ryTRe18UHXE)
+
+[Deep Dive Podcast video](https://www.youtube.com/watch?v=FVVAPXlRvPg)
+
+
 
 ## Key Features
 
@@ -231,11 +242,11 @@ Below is an updated “Evaluator vs. Student” matrix that includes **Groq → 
 
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/yourusername/equator-qa-benchmark.git
-    cd equator-qa-benchmark
+    git clone https://github.com/raymondbernard/equator.git
+    cd equator
     ```
 2. **Download Ollama and resister at groq.com and openrouter.ai**
-   1.  -download  Ollama at ollama.com and install 
+   1. download  Ollama at https://ollama.com and install 
    2. register and retrieve at Groq to get your api key  - https://console.groq.com/keys
    3. register and retrieve your api key at openrouter https://openrouter.ai/
 
