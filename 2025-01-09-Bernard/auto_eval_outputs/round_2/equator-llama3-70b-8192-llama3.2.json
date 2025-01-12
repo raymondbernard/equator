@@ -1,0 +1,242 @@
+{
+    "1": {
+        "category": "Puzzle",
+        "question": "You have six horses and want to race them to see which is fastest. What is the best way to do this?",
+        "human_answer": "Race them on a single race track with at least six lanes - the order in which they cross the finish line determines which is the fastest.",
+        "model_answer": "{'student_answer': 'One possible solution would be to set up a round-robin competition where each horse races every other horse once, then has one day of rest before racing again. This method allows for a comprehensive comparison of all horses against each other, reducing bias and providing a fair assessment of their speeds. The winner of the initial round can then be pitted against another winner in a rematch to determine the true fastest horse.'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "2": {
+        "category": "Puzzle",
+        "question": "Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a gold bar; behind the others, rotten vegetables. You pick a door, say No. 1, and the host asks you 'Do you want to pick door No. 2 instead?' Is it to your advantage to switch your choice?",
+        "human_answer": "It is not an advantage to switch. It makes no difference if I switch or not because no additional material information has been provided since the initial choice.",
+        "model_answer": "{'student_answer': '{\"probability\": 0.6665, \"action\": \"switch\", \"rationalization\": \"The probability of the gold bar being behind door No. 2 is the same as behind door No. 1 since there are only three doors and one has the gold bar. Switching gives a guaranteed chance to win the gold bar which is higher than sticking with your original choice.\"}'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "3": {
+        "category": "Spatial",
+        "question": "You are playing Russian roulette with a six-shooter revolver. Your opponent puts in five bullets, spins the chambers and fires at himself, but no bullet comes out. He gives you the choice of whether or not he should spin the chambers again before firing at you. Should he spin again?",
+        "human_answer": "Yes, you should ask him to spin again. There was only one empty chamber to start with which was fortunately aligned with the barrel when the opponent fired at himself. This means that the next chamber is 100% certain to have a bullet in which will fire when you next pull the trigger, very likely killing you. However, if he spins the chamber then you have a 5/6 chance of firing a bullet and a 1/6 chance of getting the empty chamber.",
+        "model_answer": "{'student_answer':'No, because if there is only one bullet left, it will definitely be in the chamber that was not fired previously, making the outcome certain.'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "4": {
+        "category": "Puzzle",
+        "question": "A farmer wants to cross a river and take with him a wolf, a goat and a cabbage. He has a boat with three secure separate compartments. If the wolf and the goat are alone on one shore, the wolf will eat the goat. If the goat and the cabbage are alone on the shore, the goat will eat the cabbage. How can the farmer efficiently bring the wolf, the goat and the cabbage across the river without anything being eaten?",
+        "human_answer": "Place the wolf, goat, and cabbage in separate secure compartments in the boat and row across the river. This will prevent any of them from being eaten by the others.",
+        "model_answer": "{'student_answer': '{\n  \"sequence\": [\n    {\"action\": \"Farmer takes the goat to the other side and leaves it there.\", \"steps\": 1},\n    {\"action\": \"Farmer goes back to his original shore.\", \"steps\": 2},\n    {\"action\": \"Farmer picks up the cabbage and crosses to the other side with it.\", \"steps\": 3, \"companion_left_on_original_shore\": {\"wolf\": true, \"goat\": false}},\n    {\"action\": \"Farmer leaves the cabbage on the other side and takes the goat back to his original shore.\", \"steps\": 4},\n    {\"action\": \"Farmer picks up the goat and crosses to the other side.\", \"steps\": 5, \"companion_left_on_original_shore\": {\"wolf\": false}},\n    {\"action\": \"Farmer leaves the goat on the other side and takes the wolf across.\", \"steps\": 6},\n    {\"action\": \"Farmer leaves the wolf on the other side and goes back to pick up the goat.\", \"steps\": 7, \"companion_left_on_original_shore\": {\"goat\": false}},\n    {\"action\": \"Farmer picks up the goat and crosses to the other side.\", \"steps\": 8},\n    {\"action\": \"Farmer leaves the goat on the other side.\", \"steps\": 9}\n  ]\n}}'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "5": {
+        "category": "Puzzle",
+        "question": "Bob has three boxes in front of him - Box A, Box B and Box C. Bob does not know what is in the boxes. Colin knows that Box A will explode when it is opened, Box B contains 5 dollars and Box C is empty. Colin tells Bob that opening one box will kill him and one box contains money. Should Bob open a box?",
+        "human_answer": "No, Bob should not open a box because he has a 1/3 chance of killing himself. The 1/3 chance of “winning” $5 is generally not worth that sort of risk!",
+        "model_answer": "{'student_answer': 'Box C'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student's answer does not match the answer key, which states that Bob should not open a box.'}",
+        "score": 0
+    },
+    "6": {
+        "category": "Counting",
+        "question": "A robot has 8 arms. There are 5 objects on a table: a knife, a fork, a spoon, a teddy bear and a doll. The robot picks up each object with an arm. He then shakes hands with himself. How many arms does he have free?",
+        "human_answer": "A hand is used for each of the five objects and then two hands are used to shake hands with himself. This means that seven hands are being used, leaving one arm/hand free.",
+        "model_answer": "{'student_answer':6}",
+        "eval_response": "{{'score': 0, 'evaluation': 'Student answer does not match the answer key'}}",
+        "score": 0
+    },
+    "7": {
+        "category": "Spatial",
+        "question": "Alan, Bob, Colin, Dave and Emily are standing in a circle. Alan is on Bob's immediate left. Bob is on Colin's immediate left. Colin is on Dave's immediate left. Dave is on Emily's immediate left. Who is on Alan's immediate right?",
+        "human_answer": "Bob is on Alan's immediate right because it is stated that Alan is on Bob's immediate left.",
+        "model_answer": "{'student_answer':'Emily'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "8": {
+        "category": "Linguistic",
+        "question": "Write me a sentence without any words that appear in The Bible.",
+        "human_answer": "Cryptographic algorithms safeguard nuclear warheads.",
+        "model_answer": "{\"student_answer\": \"The sentence is: \"Giraffes mysteriously migrated across the equator, consuming vast amounts of pluto ice cream.\"}",
+        "eval_response": "{{'score': 100}}",
+        "score": 100
+    },
+    "9": {
+        "category": "Popular science",
+        "question": "Which weighs more, a pound of water, two pounds of bricks, a pound of feathers, or three pounds of air.",
+        "human_answer": "Three pounds of air.",
+        "model_answer": "{'student_answer': 'The question is trying to trick you into assuming the density of the objects. However, when considering weight, we must also consider the volume of each object. A pound of water has a certain volume, whereas a given amount of bricks will occupy more space than the same weight in feathers due to their density. Three pounds of air occupies no physical space, making it the heaviest option by weight alone.'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "10": {
+        "category": "Relational",
+        "question": "I get out on the top floor (third floor) at street level. How many stories is the building above the ground",
+        "human_answer": "One story above the ground",
+        "model_answer": "{'student_answer': 2}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "11": {
+        "category": "Spatial",
+        "question": "In a toy box, there's a red ball, a blue truck, and a green dinosaur. The red ball is not next to the blue truck, and the green dinosaur is next to the red ball. Which toy is in the middle?",
+        "human_answer": "The green dinosaur.",
+        "model_answer": "{'student_answer': 'None'}",
+        "eval_response": "{{'score': 0, 'evaluation': 'The student answer does not match the answer key.'}}",
+        "score": 0
+    },
+    "12": {
+        "category": "Spatial",
+        "question": "Four children - Alex, Bella, Charlie, and Dana - are sitting around a picnic table. Alex is facing Bella. Charlie is sitting to the right of Bella. Who is sitting to the left of Alex?",
+        "human_answer": "Dana",
+        "model_answer": "{'student_answer':'We can't determine who is sitting to the left of Alex because we don't have enough information about the seating arrangement of the other children.'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "13": {
+        "category": "Spatial",
+        "question": "A man leaves home at 0m elevation, makes a left turn and walks straight for a km and reaches 300m elevation, makes another left turn and walks straight for a km and reaches 500m elevation, makes another left turn and walks straight for a km and reaches 900m elevation, and turns left again and walks straight for a km. How far away is he from his starting point and what is his final elevation?",
+        "human_answer": "He is back at his starting point and at 0m elevation.",
+        "model_answer": "To solve this problem, let's break it down step by step.\n\nThe man starts at 0m elevation and walks straight for 1km, reaching 300m elevation. This means he has climbed 300m above the starting point. \n\nSince the path is a straight line upwards to the left, his current position would be (x, y) = (-500, 300), if we consider 0m x-axis and 0m y-axis as starting points.\n\nNext, he walks straight for another km and reaches 500m elevation. The difference in elevation (Δh) is 200m. Since the path remains the same direction, his current position would be (x, y) = (-1000, 500).\n\nAfter that, he climbs to 900m elevation, which means a Δh of 400m. So, his new position is (x, y) = (-1000, 900).\n\nLastly, he walks straight for the last km and turns left again. This implies that his path forms a right-angled triangle with legs -1km and 300m.\n\nTo find his final elevation, we need to calculate the distance traveled along the x-axis (the base of the triangle) while keeping track of his height above the starting point:\n\nHe started at 0m elevation.\nWalked up 300m\nThen walked up another 200m, resulting in a total elevation gain of 500m\nAfter that he climbed 400m further, making it a total of 900m elevation.\n\nNow to find out how far he is from his starting point:\nUsing Pythagoras' theorem for the triangle (right-angled):\na² + b² = c² \nwhere 'c' will be distance traveled along x-axis\nx² + y² = c² \n(-1000)² + 900² = c² \n(1,000,000) + (810,000) = c²\n1810000=c²\nc= 1337.28 km\n\nNow we know his final position and elevation.\n\nHere's the answer in JSON format:\n{'distance_from_start': '1337.28', 'final_elevation': '900'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "14": {
+        "category": "Puzzle",
+        "question": "A group of four people needs to cross a bridge at night. The bridge is very old and rickety. They have only one torch and because it's night-time, the torch is necessary to cross the bridge. Each person walks at a different speed: - A takes 1 minute to cross, - B takes 2 minutes, - C takes 5 minutes, and - D takes 10 minutes. What is the fastest time they can all get across the bridge?",
+        "human_answer": "10 minutes, the speed of the slowest person as they cross the bridge together.",
+        "model_answer": "To solve this problem carefully without making assumptions, let's break down the possible scenarios and consider the constraints:\n\n1. The torch must be carried by one person at a time.\n2. Each person has a different crossing speed.\n\nSince there are only four people, we can analyze the situation in pairs or groups of two or three, considering the optimal use of the torch and the individual speeds.\n\nOne strategy is to have the fastest two individuals (A and B) accompany the torch on one trip across the bridge. On their return, they can pass the torch to the next person.\n\n**Scenario 1:** A and B cross together, then return ( torch with B).\n- Time: A crosses (1 minute), B crosses (2 minutes), B returns (2 minutes). Total time for this round is 5 minutes.\n- Now, A returns alone (1 minute).\n\nTotal time so far: 5 + 1 = 6 minutes.\n\nNext, C and D cross together, while A waits on the other side. On their return, they can pass the torch to B.\n\n**Scenario 2:** C and D cross together, then return.\n- Time: C crosses (5 minutes), D crosses (10 minutes), D returns (10 minutes). Total time for this round is 25 minutes.\n- Now, C returns alone (5 minutes).\n\nTotal time so far: 6 + 25 + 5 = 36 minutes.\n\nHowever, in this scenario, we've wasted a lot of time. Let's analyze another approach:\n\n**Alternative Strategy:** A and B cross together, then return with the torch. On their return, they pass the torch to C, who crosses alone, while D waits on the other side. When C returns, they can pass the torch to D.\n\n- Time: A crosses (1 minute), B crosses (2 minutes), B returns (2 minutes). Total time for this round is 5 minutes.\n- Now, C crosses (5 minutes) and returns (5 minutes).\n- Next, D waits (10 minutes), then crosses (10 minutes).\n\nTotal time so far: 5 + 5 + 10 = 20 minutes.\n\nSince the fastest two individuals are now on the other side of the bridge with the torch, we can have B cross again while A waits. This adds only 2 minutes to the total time.\n\n**Final Time:** 20 + 2 = 22 minutes.\n\nTherefore, the optimal solution is for A and B to make one round trip together (5 minutes), followed by C's solo crossings (10 minutes), then D's wait and crossing (15 minutes).\n\nThe final answer is: {'student_answer': 22}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "15": {
+        "category": "Puzzle",
+        "question": "You're in a room with two doors that lead out. One door leads to certain death, and the other door leads to freedom. There are two guardians, one by each door. One taller guardian always tells the truth and guards the death door, the other always lies. What is the minimum number of questions needed to ask the guards to get to safety?",
+        "human_answer": "Zero questions. The door to freedom is behind the shorter guardian.",
+        "model_answer": "{'student_answer': '2'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "16": {
+        "category": "Puzzle",
+        "question": "You have 3 switches in front of you - A, B and C. You have 3 light bulbs in front of you in the same room - one red, one blue, one purple. They are LED and do not get warm when turned on. You want to know which switch turns on which light bulb. What is the best way to determine this?",
+        "human_answer": "A process of elimination. Test each switch independently and observe which light bulb turns on for each.",
+        "model_answer": "{'student_answer': {'method': 'Trial and Error with a Twist', 'description': 'Turn all three switches to their respective positions for 5 minutes, then turn them off. \\nNext, Turn switch A to its original position and turn on switch B. Observe the light bulb color. If it is red, then switch A turns on the red light bulb. \\nIf it is blue, then switch A does not turn on any of the light bulbs. Turn switch A off and turn switch C on, then observe the light bulb color. If it is purple, then switch C turns on the purple light bulb. \\nFinally, with switches B and C turned off, turn switch A to its original position and turn on switch B, then observe which light bulb turns on. This will determine which switch turns on which light bulb in order of their original positions.'}}",
+        "eval_response": "{'score': 0}",
+        "score": 0
+    },
+    "17": {
+        "category": "Puzzle",
+        "question": "The Poisoned Wine - A king has 1000 sweet bottles of wine, and one contains a very bitter poison. The poison takes effect exactly 24 hours after consumption. The king needs to find the poisoned bottle in 24 hours for an event. He has 10 prisoners to test the wine. What is the easiest way for him to identify the poisoned bottle?",
+        "human_answer": "Divide the 1000 bottles of wine amongst the 10 prisoners - each receiving 100 bottles. Ask the prisoners to note which bottle tastes very bitter, this is the poisoned one.",
+        "model_answer": "{'student_answer':'{\"prisoners\": 10, \"time_to_draw\": 24, \"method\": \"Divide and Conquer\", \"procedure\": \"1) Give each prisoner a unique identifier (1-10). 2) Test the wine on prisoners 1 & 2. If both are fine, proceed to test them again after 12 hours. 3) The next step is for one of the remaining prisoners who was not tested at this point (let's say prisoner 5), and test him. If he also shows no symptoms (fine), then continue as before. 4) Continue dividing until only one prisoner remains, testing them every 6 hours until they show symptoms (poisoned). The bottle containing the poisoned wine will be in the hands of the last person tested.\"}'",
+        "eval_response": "{'score': 0}",
+        "score": 0
+    },
+    "18": {
+        "category": "Linguistic",
+        "question": "Write a grammatically correct sentence without reusing any letter more than once.",
+        "human_answer": "Dogs bark with me.",
+        "model_answer": "{\"student_answer\": \"Aeon tsar eyed oops!\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "19": {
+        "category": "Spatial",
+        "question": "An arrow points up. We rotate it 90 degrees to the left, mirror it along its flat end, and rotate it another 90 degrees to the left. Which direction is it pointing?",
+        "human_answer": "Up",
+        "model_answer": "{\"student_answer\":\"down\"}",
+        "eval_response": "{{\"score\": 0}}",
+        "score": 0
+    },
+    "20": {
+        "category": "Linguistic",
+        "question": "Write a sentence where every word starts with the letter A.",
+        "human_answer": "Alice ate an apple after an argument.",
+        "model_answer": "{\"student_answer\":\"Astonishing astronauts anxiously await amazing astronomical events annually.\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "21": {
+        "category": "Relational",
+        "question": "Sally (a girl) has 3 brothers. Each brother has 2 sisters. How many sisters does Sally have?",
+        "human_answer": "One",
+        "model_answer": "To solve this problem, I'll analyze the information given carefully.\n\nEach brother of Sally has 2 sisters, and we know that Sally has 3 brothers. However, the fact that each brother has 2 sisters does not imply that these 2 sisters are Sally's sisters.\n\nThe correct interpretation is that there are other girls in the family who are not Sally's sisters, but might be her nieces or cousins. Since each of Sally's 3 brothers has 2 sisters, it means that there are at least 6 other girls in the family (3 brothers x 2 sisters per brother).\n\nConsidering this information, we cannot conclude that Sally has a specific number of sisters based solely on the fact that her brothers have 2 sisters. The question might be trying to trick us into assuming that the 2 sisters for each brother are Sally's sisters.\n\nHowever, if we look at it from a different perspective, we can conclude that Sally does not have any sisters in the classical sense, but there could be other girls who are related to her through her brothers. But based on the given information, we cannot determine the exact number of sisters Sally has.",
+        "eval_response": "{'score': 0}",
+        "score": 0
+    },
+    "22": {
+        "category": "Spatial",
+        "question": "I'm in London and facing west, is Edinburgh to my left or my right?",
+        "human_answer": "Right.",
+        "model_answer": "{'student_answer':'Edinburgh is to your right.'}",
+        "eval_response": "{'score': 100}",
+        "score": 100
+    },
+    "23": {
+        "category": "Counting",
+        "question": "Count the number of occurrences of the letter 'L' in the word 'LOLLAPALOOZA'.",
+        "human_answer": "Four",
+        "model_answer": "{'student_answer': 3}",
+        "eval_response": "{'score': 0, 'evaluation': 'Student answer does not match the answer key.'}",
+        "score": 0
+    },
+    "24": {
+        "category": "Puzzle",
+        "question": "How many pairs of twins do you need in a room for there to be at least a 50% chance that two people have the same birthday?",
+        "human_answer": "One",
+        "model_answer": "{\"student_answer\": \"26\"}",
+        "eval_response": "{{\"score\": 0}}",
+        "score": 0
+    },
+    "25": {
+        "category": "Puzzle",
+        "question": "A partially full hotel has an infinite number of fully furnished rooms. How does it accommodate one more guest?",
+        "human_answer": "By putting the guest in an empty room.",
+        "model_answer": "{\"student_answer\": \"It accommodates the additional guest by creating a new room that is not fully furnished, but rather 'partially' empty, essentially using the space between two existing occupied rooms.\"}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "26": {
+        "category": "Puzzle",
+        "question": "A runaway trolley is heading down the tracks away from five people upwards of the track. You are near a lever that can switch the trolley to another track? Does it impact people's lives if you pull the lever?",
+        "human_answer": "No, as the trolley is heading down the tracks in the opposite direction to the five people up the track.",
+        "model_answer": "{\"student_answer\":\"No, it does not impact people's lives in this scenario.\"}\n\n(Note: I'm choosing not to consider the classic problem with John's dilemma, where one person would have to sacrifice themselves to save others. Instead, I'm focusing on the specific question about pulling the lever, which could divert the trolley onto a different track.)",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "27": {
+        "category": "Puzzle",
+        "question": "How do you measure exactly 4 gallons of water with only a 3-gallon, 5-gallon, and 4-gallon jug?",
+        "human_answer": "Fill up the 4-gallon jug",
+        "model_answer": "{\"student_answer\":\"Fill the 5-gallon jug completely, pour it into the 3-gallon jug until the 3-gallon jug is full, leaving 2 gallons in the 5-gallon jug. Empty the 3-gallon jug. Fill it with water from the 5-gallon jug again until the 3-gallon jug is full, which will leave 4 gallons in the 5-gallon jug. Empty the 3-gallon jug and pour the remaining 2 gallons from the 5-gallon jug into the 4-gallon jug to fill it. Now the 5-gallon jug has 2 gallons left, empty it into the 3-gallon jug until the 3-gallon jug is full (which will take 1 gallon), leaving 1 gallon in the 5-gallon jug. Empty the 3-gallon jug and pour the remaining 1 gallon from the 5-gallon jug into the 4-gallon jug to add to it, then empty the 4-gallon jug.\"}",
+        "eval_response": "{{\"score\": 0}}",
+        "score": 0
+    },
+    "28": {
+        "category": "Popular science",
+        "question": "A 2kg tree grows in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?",
+        "human_answer": "There is still 10kg of soil. Trees are primarily composed of carbon dioxide and water, not soil.",
+        "model_answer": "To solve this problem, I will carefully analyze the situation.\n\nThe initial mass of the system (tree + soil) is the sum of the masses of the tree and the soil: 2 kg + 10 kg = 12 kg.\n\nWhen the tree grows to 3 kg, its mass increases by 1 kg (from 2 kg to 3 kg). This means that the total mass of the system remains the same, but some of it is now in the form of the growing tree.\n\nSince the tree's mass has increased by 1 kg and the total mass of the system is still 12 kg, the soil's mass must have decreased by 1 kg to keep the total mass constant.\n\nTherefore, when the tree grows to 3 kg, the amount of soil left is: 10 kg - 1 kg = 9 kg.\n\nThe answer in JSON format is:\n{'student_answer': 9}",
+        "eval_response": "{{'score': 0, 'evaluation': 'The student answer does not match the answer key, which is 10kg of soil.'}}",
+        "score": 0
+    },
+    "29": {
+        "category": "Relational",
+        "question": "A man steps over a 0.5m hurdle. What is the minimum height he could have jumped?",
+        "human_answer": "0m, he didn't jump at all, he stepped over the hurdle.",
+        "model_answer": "To solve this problem, I'll consider all possible scenarios.\n\nThe man's action of stepping over the 0.5m hurdle doesn't necessarily mean he touched the top of the hurdle or cleared it completely. He might have simply stepped over it without jumping at all. However, since you mentioned \"What is the minimum height he could have jumped?\", I'll assume he did jump.\n\nIf we consider the man's action of stepping over the hurdle as a combination of falling and rising motion, then the minimum height he could have jumped would be equal to the distance he stepped over the hurdle (0.5m) minus his initial height.\n\nHowever, this is an impossible scenario because if he stepped 0.5m over the hurdle, that means the hurdle was not high enough for him to clear it.\n\nAnother possibility is that the man touched the top of the hurdle with one foot and then stepped over it. In this case, we need to find the point where his body height equals the distance from the ground to the highest point he touched the hurdle (h).\n\nWe can create a quadratic equation using the Pythagorean theorem: \n\na^2 + h^2 = r^2\n\nwhere 'r' is the total jump height and 'a' is the horizontal distance (0.5m). The minimum value of 'r' will be when 'a' equals 0, i.e., he stepped over it with one foot.\n\nBut here we have a problem. The equation becomes:\nh^2 = r^2\nSince there are infinite solutions for 'h', we can consider only the case when his body is aligned vertically with the center of the hurdle.\n\nWe can find the minimum height by calculating the vertical distance between the ground and the center of the hurdle (which is 0.5m above his initial height).\n\nFor simplicity, let's assume he starts from a horizontal line on the ground and jumps straight up to reach the top of the hurdle.\n\nNow we have an impossible scenario because if 'r' = 0.5m, then 'h' > r \n\nHowever, there is another possibility. What if his initial height was higher than the minimum required for him to clear the hurdle?\n\nWhen he stepped over it, that means the distance from the ground to the highest point on the hurdle (the point where his foot touched) equals his total jump height.\n\nIf we assume a simple vertical projection of the man's body onto the center of the hurdle, the height at which he touches can be calculated as follows:\n\nh = sqrt(r^2 - d^2)\n\nHere 'd' represents the distance from the initial position to the point where the foot touched. \n\nWe'll consider only the case when his foot is 0.5m above the ground.\n\nSince we're dealing with a non-standard problem, the above solution might not be accurate.\n\nAfter re-evaluating the problem, I'm going to take an alternative approach:\n\nConsider the man's action as a vertical projection of his body onto the center of the hurdle. We can create two equations:\n1. r^2 = h^2 + d^2\n   Here 'd' represents the distance from the initial height (ground) to the point where he stepped over it.\n\nSince we don't have enough information, let's try a simpler approach.\nConsider a scenario in which the man has maximum possible body position when stepping over the hurdle. This would mean that his center of mass is aligned vertically above the hurdle.\n\nIn this case, the minimum height for him to clear the hurdle (0.5m) can be calculated using the Pythagorean theorem:\n\n(Height)^2 = (r^2 - 0.25)  \nWe know 'r' = Height + h\nThus \n(r)^2 = H^2+H \nNow we are left with one variable which represents height of hurdle",
+        "eval_response": "{'score': 0}",
+        "score": 0
+    },
+    "30": {
+        "category": "Popular science",
+        "question": "I walk to my friend's house, averaging 3mph. How fast would I have to run back to double my average speed for the entire trip?",
+        "human_answer": "Instantaneously fast, it is mathematically impossible.",
+        "model_answer": "{'student_answer': '6'}",
+        "eval_response": "{{'score': 0, 'evaluation': 'Student answer does not match the answer key'}}",
+        "score": 0
+    }
+}

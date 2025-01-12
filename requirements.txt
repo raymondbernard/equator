@@ -1,0 +1,12 @@
+requests
+pandas
+numpy
+seaborn
+matplotlib
+chromadb
+ollama 
+python-dotenv
+openai
+loguru
+groq
+equator-qa==0.0.4

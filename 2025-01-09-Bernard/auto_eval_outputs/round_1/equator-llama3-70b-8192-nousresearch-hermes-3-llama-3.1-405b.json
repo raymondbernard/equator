@@ -1,0 +1,242 @@
+{
+    "1": {
+        "category": "Puzzle",
+        "question": "You have six horses and want to race them to see which is fastest. What is the best way to do this?",
+        "human_answer": "Race them on a single race track with at least six lanes - the order in which they cross the finish line determines which is the fastest.",
+        "model_answer": "I have thought carefully about the question asked, making no assumptions about classic problems and ensuring I am not being tricked. Here is my final answer:\n\n{\"student_answer\": \"To determine the fastest horse, you should race all six horses against each other in a single race. The horse that finishes first is the fastest.\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "2": {
+        "category": "Puzzle",
+        "question": "Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a gold bar; behind the others, rotten vegetables. You pick a door, say No. 1, and the host asks you 'Do you want to pick door No. 2 instead?' Is it to your advantage to switch your choice?",
+        "human_answer": "It is not an advantage to switch. It makes no difference if I switch or not because no additional material information has been provided since the initial choice.",
+        "model_answer": "I have thought carefully about the question and will provide my final answer in the requested JSON format.\n\n{\"student_answer\": \"No, it is not to your advantage to switch your choice. In this scenario, you have no additional information about what is behind door No. 2 compared to your initial choice of door No. 1. With no extra information, switching doors does not increase your odds of winning the gold bar. Your chance of having selected the correct door initially remains 1/3, the same as if you switch to door No. 2.\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "3": {
+        "category": "Spatial",
+        "question": "You are playing Russian roulette with a six-shooter revolver. Your opponent puts in five bullets, spins the chambers and fires at himself, but no bullet comes out. He gives you the choice of whether or not he should spin the chambers again before firing at you. Should he spin again?",
+        "human_answer": "Yes, you should ask him to spin again. There was only one empty chamber to start with which was fortunately aligned with the barrel when the opponent fired at himself. This means that the next chamber is 100% certain to have a bullet in which will fire when you next pull the trigger, very likely killing you. However, if he spins the chamber then you have a 5/6 chance of firing a bullet and a 1/6 chance of getting the empty chamber.",
+        "model_answer": "I have thought carefully about the problem. Since the opponent has already fired the gun once without a bullet being discharged, there are now 5 chambers remaining - 1 empty and 4 filled with bullets. \n\nIf the opponent spins the chambers again, the probability of the gun firing a bullet will be 4/6, or 2/3, since there are 4 bullets and 6 chambers in total.\n\nHowever, if the opponent does not spin the chambers again, the next chamber in line to fire is definitely filled with a bullet, because we know the empty chamber was the one that was just fired. Therefore, the probability of the gun firing a bullet in this case is 1 (or 100%).\n\nGiven these probabilities, it is clear that the opponent spinning the chambers again before firing at you offers a lower chance of the gun firing a bullet (2/3) compared to not spinning (100%). \n\nTherefore, my final answer is:\n\n{'student_answer':'Yes, he should spin the chambers again before firing at me.'}",
+        "eval_response": "{{'score': 100}}",
+        "score": 100
+    },
+    "4": {
+        "category": "Puzzle",
+        "question": "A farmer wants to cross a river and take with him a wolf, a goat and a cabbage. He has a boat with three secure separate compartments. If the wolf and the goat are alone on one shore, the wolf will eat the goat. If the goat and the cabbage are alone on the shore, the goat will eat the cabbage. How can the farmer efficiently bring the wolf, the goat and the cabbage across the river without anything being eaten?",
+        "human_answer": "Place the wolf, goat, and cabbage in separate secure compartments in the boat and row across the river. This will prevent any of them from being eaten by the others.",
+        "model_answer": "Here is my reasoning and final answer:\n\nThe farmer has a boat with 3 separate compartments, so he can take all 3 items (wolf, goat, cabbage) in the boat at the same time without any issues. \n\nSince he can transport all 3 items at once, he simply needs to load them into the boat, cross the river, and unload them on the other side. There is no need for multiple trips back and forth.\n\nTherefore, the farmer only needs to make 1 trip across the river to efficiently transport the wolf, goat and cabbage while ensuring nothing gets eaten.\n\nFinal answer: {'student_answer':'The farmer can transport the wolf, goat and cabbage in a single trip by loading all 3 into the 3 compartments of his boat and crossing the river once.'}",
+        "eval_response": "{{'score': 100}}",
+        "score": 100
+    },
+    "5": {
+        "category": "Puzzle",
+        "question": "Bob has three boxes in front of him - Box A, Box B and Box C. Bob does not know what is in the boxes. Colin knows that Box A will explode when it is opened, Box B contains 5 dollars and Box C is empty. Colin tells Bob that opening one box will kill him and one box contains money. Should Bob open a box?",
+        "human_answer": "No, Bob should not open a box because he has a 1/3 chance of killing himself. The 1/3 chance of “winning” $5 is generally not worth that sort of risk!",
+        "model_answer": "{\"student_answer\":\"No\"}",
+        "eval_response": "{{'score': 100}}",
+        "score": 100
+    },
+    "6": {
+        "category": "Counting",
+        "question": "A robot has 8 arms. There are 5 objects on a table: a knife, a fork, a spoon, a teddy bear and a doll. The robot picks up each object with an arm. He then shakes hands with himself. How many arms does he have free?",
+        "human_answer": "A hand is used for each of the five objects and then two hands are used to shake hands with himself. This means that seven hands are being used, leaving one arm/hand free.",
+        "model_answer": "{'student_answer':'3'}",
+        "eval_response": "{'score': 0, 'evaluation': 'Student answer does not match the answer key.'}",
+        "score": 0
+    },
+    "7": {
+        "category": "Spatial",
+        "question": "Alan, Bob, Colin, Dave and Emily are standing in a circle. Alan is on Bob's immediate left. Bob is on Colin's immediate left. Colin is on Dave's immediate left. Dave is on Emily's immediate left. Who is on Alan's immediate right?",
+        "human_answer": "Bob is on Alan's immediate right because it is stated that Alan is on Bob's immediate left.",
+        "model_answer": "I will reason through this problem step-by-step:\n\nGiven:\n- Alan, Bob, Colin, Dave, and Emily are standing in a circle.\n- Alan is on Bob's immediate left.\n- Bob is on Colin's immediate left.\n- Colin is on Dave's immediate left.\n- Dave is on Emily's immediate left.\n\nStep 1: Determine the order of the people in the circle, starting with Alan.\n- Alan is on Bob's left, so the order is: Alan, Bob,...\n- Bob is on Colin's left, so the order is: Alan, Bob, Colin,...\n- Colin is on Dave's left, so the order is: Alan, Bob, Colin, Dave,...\n- Dave is on Emily's left, so the order is: Alan, Bob, Colin, Dave, Emily.\n\nStep 2: Identify who is on Alan's immediate right.\n- In the order determined in Step 1, Emily is to the right of Alan in the circle.\n\nTherefore, Emily is on Alan's immediate right.\n\n{\"student_answer\": \"Emily\"}",
+        "eval_response": "{{\"score\": 0}}",
+        "score": 0
+    },
+    "8": {
+        "category": "Linguistic",
+        "question": "Write me a sentence without any words that appear in The Bible.",
+        "human_answer": "Cryptographic algorithms safeguard nuclear warheads.",
+        "model_answer": "Here is my attempt at a sentence without any words that appear in the Bible:\n\n{'student_answer':'Zany igloos beeped, jazzing klutzy quartz Pakistani cyborgs.'}",
+        "eval_response": "{{'score': 100}}",
+        "score": 100
+    },
+    "9": {
+        "category": "Popular science",
+        "question": "Which weighs more, a pound of water, two pounds of bricks, a pound of feathers, or three pounds of air.",
+        "human_answer": "Three pounds of air.",
+        "model_answer": "I have thought carefully about the question and made no assumptions. Based on the information provided, my final answer is:\n\n{\"student_answer\": \"Three pounds of air\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "10": {
+        "category": "Relational",
+        "question": "I get out on the top floor (third floor) at street level. How many stories is the building above the ground",
+        "human_answer": "One story above the ground",
+        "model_answer": "You are on the third floor, which is at street level. Therefore, the building has 3 stories above the ground.\n\n{\"student_answer\":\"The building has 3 stories above the ground.\"}",
+        "eval_response": "{{\"score\": 0}}",
+        "score": 0
+    },
+    "11": {
+        "category": "Spatial",
+        "question": "In a toy box, there's a red ball, a blue truck, and a green dinosaur. The red ball is not next to the blue truck, and the green dinosaur is next to the red ball. Which toy is in the middle?",
+        "human_answer": "The green dinosaur.",
+        "model_answer": "{\"student_answer\":\"The green dinosaur is in the middle.\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "12": {
+        "category": "Spatial",
+        "question": "Four children - Alex, Bella, Charlie, and Dana - are sitting around a picnic table. Alex is facing Bella. Charlie is sitting to the right of Bella. Who is sitting to the left of Alex?",
+        "human_answer": "Dana",
+        "model_answer": "{\"student_answer\":\"Dana\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "13": {
+        "category": "Spatial",
+        "question": "A man leaves home at 0m elevation, makes a left turn and walks straight for a km and reaches 300m elevation, makes another left turn and walks straight for a km and reaches 500m elevation, makes another left turn and walks straight for a km and reaches 900m elevation, and turns left again and walks straight for a km. How far away is he from his starting point and what is his final elevation?",
+        "human_answer": "He is back at his starting point and at 0m elevation.",
+        "model_answer": "I will reason through this problem step by step, making no assumptions.\n\nGiven:\n- The man starts at 0m elevation.\n- He makes four left turns, each time walking 1 km.\n- After the first turn, he reaches 300m elevation.\n- After the second turn, he reaches 500m elevation.\n- After the third turn, he reaches 900m elevation.\n\nStep 1: Determine the elevation change with each turn.\n- 1st turn: 300m - 0m = 300m\n- 2nd turn: 500m - 300m = 200m\n- 3rd turn: 900m - 500m = 400m\n\nStep 2: Predict the elevation change after the 4th turn.\nThe elevation changes are increasing by 100m each time (300m, 200m, 400m). So, the next change should be 600m.\n\nStep 3: Calculate the final elevation after the 4th turn.\nFinal elevation = 900m + 600m = 1500m\n\nStep 4: Determine the distance from the starting point.\nSince the man made four left turns, he has completed a full circle and returned to his starting point. The total distance walked is 4 km.\n\nFinal answer: The man is 0 km away from his starting point, and his final elevation is 1500m.\n\n{'student_answer':'The man is 0 km away from his starting point, and his final elevation is 1500m.'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "14": {
+        "category": "Puzzle",
+        "question": "A group of four people needs to cross a bridge at night. The bridge is very old and rickety. They have only one torch and because it's night-time, the torch is necessary to cross the bridge. Each person walks at a different speed: - A takes 1 minute to cross, - B takes 2 minutes, - C takes 5 minutes, and - D takes 10 minutes. What is the fastest time they can all get across the bridge?",
+        "human_answer": "10 minutes, the speed of the slowest person as they cross the bridge together.",
+        "model_answer": "I will reason through the problem:\n\nSince this is not the classic problem, I will make no assumptions. The main goal is to get all four people across the bridge as quickly as possible. The key constraint is that they only have one torch, which is necessary to cross the bridge at night.\n\nHere's the optimal strategy:\n1. A and B cross the bridge together with the torch, taking 2 minutes (the slower person's pace determines the crossing time).\n2. A returns with the torch, taking 1 minute.\n3. C and D cross the bridge together with the torch, taking 10 minutes.\n4. B returns with the torch, taking 2 minutes.\n5. A and B cross the bridge together again with the torch, taking 2 minutes.\n\nTotal time taken: 2 + 1 + 10 + 2 + 2 = 17 minutes.\n\nTherefore, the fastest time they can all get across the bridge is 17 minutes.\n\nFinal answer: {'student_answer':'17'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "15": {
+        "category": "Puzzle",
+        "question": "You're in a room with two doors that lead out. One door leads to certain death, and the other door leads to freedom. There are two guardians, one by each door. One taller guardian always tells the truth and guards the death door, the other always lies. What is the minimum number of questions needed to ask the guards to get to safety?",
+        "human_answer": "Zero questions. The door to freedom is behind the shorter guardian.",
+        "model_answer": "{'student_answer':'1'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "16": {
+        "category": "Puzzle",
+        "question": "You have 3 switches in front of you - A, B and C. You have 3 light bulbs in front of you in the same room - one red, one blue, one purple. They are LED and do not get warm when turned on. You want to know which switch turns on which light bulb. What is the best way to determine this?",
+        "human_answer": "A process of elimination. Test each switch independently and observe which light bulb turns on for each.",
+        "model_answer": "{\"student_answer\": \"Label the switches 1, 2, and 3. Turn on switch 1 and leave it on for a few minutes. Turn off switch 1 and immediately turn on switch 2. The light bulb that is on is controlled by switch 2. The light bulb that is off but warm to the touch is controlled by switch 1. The remaining light bulb is controlled by switch 3.\"}",
+        "eval_response": "{{\"score\": 0}}",
+        "score": 0
+    },
+    "17": {
+        "category": "Puzzle",
+        "question": "The Poisoned Wine - A king has 1000 sweet bottles of wine, and one contains a very bitter poison. The poison takes effect exactly 24 hours after consumption. The king needs to find the poisoned bottle in 24 hours for an event. He has 10 prisoners to test the wine. What is the easiest way for him to identify the poisoned bottle?",
+        "human_answer": "Divide the 1000 bottles of wine amongst the 10 prisoners - each receiving 100 bottles. Ask the prisoners to note which bottle tastes very bitter, this is the poisoned one.",
+        "model_answer": "{\"student_answer\":\"The king can use a binary testing approach. He can number the bottles from 1 to 1000 and represent each bottle number in binary. This will give him 10 binary digits (bits) for each bottle since 2^10 = 1024, which is greater than 1000. Each prisoner will represent a binary digit (bit) position. The king will make 10 tests, one for each binary digit position. In each test, the bottles that have a 1 in that binary digit position will be mixed and given to that prisoner to drink. After 24 hours, the king will observe which prisoners died. Each dead prisoner will represent a 1 in the poisoned bottle's binary number, and each living prisoner will represent a 0. By putting the 1s and 0s together in order, the king will identify the binary number of the poisoned bottle, and can then convert that to the decimal number of the bottle.\"}",
+        "eval_response": "{'score': 100}",
+        "score": 100
+    },
+    "18": {
+        "category": "Linguistic",
+        "question": "Write a grammatically correct sentence without reusing any letter more than once.",
+        "human_answer": "Dogs bark with me.",
+        "model_answer": "{\"student_answer\":\"Foxy mud jihads symbolize turpentine quality.\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "19": {
+        "category": "Spatial",
+        "question": "An arrow points up. We rotate it 90 degrees to the left, mirror it along its flat end, and rotate it another 90 degrees to the left. Which direction is it pointing?",
+        "human_answer": "Up",
+        "model_answer": "Okay, let's reason through this step-by-step:\n\n1. We start with an arrow pointing up: ↑\n\n2. We rotate it 90 degrees to the left, so now it's pointing to the left: ←\n\n3. We mirror it along its flat end. Mirroring a left-pointing arrow along its flat end will make it point to the right: →\n\n4. Finally, we rotate it another 90 degrees to the left. Rotating a right-pointing arrow 90 degrees to the left will make it point down: ↓\n\nSo the final direction the arrow is pointing is down.\n\n{'student_answer':'down'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "20": {
+        "category": "Linguistic",
+        "question": "Write a sentence where every word starts with the letter A.",
+        "human_answer": "Alice ate an apple after an argument.",
+        "model_answer": "I will write a sentence with every word starting with the letter A as instructed, without assuming this is the classic \"write a sentence with words in alphabetical order\" problem.\n\n{'student_answer':'Astute aardvarks avidly ambled, appreciating aromatic apples.'}",
+        "eval_response": "{{'score': 100}}",
+        "score": 100
+    },
+    "21": {
+        "category": "Relational",
+        "question": "Sally (a girl) has 3 brothers. Each brother has 2 sisters. How many sisters does Sally have?",
+        "human_answer": "One",
+        "model_answer": "{\"student_answer\":\"Sally has 1 sister.\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "22": {
+        "category": "Spatial",
+        "question": "I'm in London and facing west, is Edinburgh to my left or my right?",
+        "human_answer": "Right.",
+        "model_answer": "You think carefully about the question. London is in southern England, and Edinburgh is in Scotland, which is to the north of England. If you are in London and facing west, north would be on your right. Therefore, Edinburgh is to your right.\n\nYou return your final answer in a JSON object:\n\n{'student_answer': 'Edinburgh is to my right'}",
+        "eval_response": "{{'score': 100}}",
+        "score": 100
+    },
+    "23": {
+        "category": "Counting",
+        "question": "Count the number of occurrences of the letter 'L' in the word 'LOLLAPALOOZA'.",
+        "human_answer": "Four",
+        "model_answer": "{\"student_answer\":\"3\"}",
+        "eval_response": "{{\"score\": 0}}",
+        "score": 0
+    },
+    "24": {
+        "category": "Puzzle",
+        "question": "How many pairs of twins do you need in a room for there to be at least a 50% chance that two people have the same birthday?",
+        "human_answer": "One",
+        "model_answer": "I will reason through this problem step by step to determine the number of pairs of twins needed for at least a 50% chance of two people sharing the same birthday.\n\nGiven:\n- This is not the classic birthday problem.\n- We are dealing with pairs of twins.\n\nStep 1: Determine the probability of two people not sharing the same birthday.\n- In the classic problem, with 365 days in a year, the probability of two people not having the same birthday is 364/365.\n- However, with twins, the probability of not sharing a birthday is different.\n\nStep 2: Calculate the probability of not sharing a birthday with twins.\n- If there are n pairs of twins in the room, there are 2n people.\n- The first person can have any birthday, so the probability of not sharing a birthday is 1.\n- The second person is a twin, so they have the same birthday as the first person. The probability of not sharing a birthday with the first person is 0.\n- The third person (first person of the second twin pair) can have any of the remaining 364 days, so the probability of not sharing a birthday with the first two people is 364/365.\n- The fourth person (second person of the second twin pair) has the same birthday as the third person, so the probability of not sharing a birthday with the first three people is 1 - 1/365 = 364/365.\n\nStep 3: Generalize the probability for n pairs of twins.\n- For each additional pair of twins, the probability of not sharing a birthday decreases by 1/365.\n- After k pairs of twins, the probability of not sharing a birthday is (364/365)^k.\n\nStep 4: Find the number of pairs of twins needed for at least a 50% chance of sharing a birthday.\n- We want to find the smallest integer k such that 1 - (364/365)^k ≥ 0.5\n- (364/365)^k ≤ 0.5\n- k ≥ log(0.5) / log(364/365)\n- k ≈ 252.65\n\nTherefore, you need 253 pairs of twins in a room for there to be at least a 50% chance that two people have the same birthday.\n\nFinal answer: {'student_answer':'253'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "25": {
+        "category": "Puzzle",
+        "question": "A partially full hotel has an infinite number of fully furnished rooms. How does it accommodate one more guest?",
+        "human_answer": "By putting the guest in an empty room.",
+        "model_answer": "{'student_answer':'The hotel can accommodate one more guest by assigning them to an empty room, since the hotel is only partially full and has an infinite number of fully furnished rooms available.'}",
+        "eval_response": "{{'score': 100}}",
+        "score": 100
+    },
+    "26": {
+        "category": "Puzzle",
+        "question": "A runaway trolley is heading down the tracks away from five people upwards of the track. You are near a lever that can switch the trolley to another track? Does it impact people's lives if you pull the lever?",
+        "human_answer": "No, as the trolley is heading down the tracks in the opposite direction to the five people up the track.",
+        "model_answer": "I have analyzed the question carefully and reached my conclusion.\n\n{\"student_answer\": \"No, pulling the lever does not impact people's lives in this scenario, as the trolley is moving away from the five people and there is no mention of anyone being on the other track.\"}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "27": {
+        "category": "Puzzle",
+        "question": "How do you measure exactly 4 gallons of water with only a 3-gallon, 5-gallon, and 4-gallon jug?",
+        "human_answer": "Fill up the 4-gallon jug",
+        "model_answer": "I have thought carefully about the problem and its constraints. Here is my final answer:\n\n{'student_answer':'Fill the 4-gallon jug to the top. This will give you exactly 4 gallons of water.'}",
+        "eval_response": "{{'score': 100}}",
+        "score": 100
+    },
+    "28": {
+        "category": "Popular science",
+        "question": "A 2kg tree grows in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?",
+        "human_answer": "There is still 10kg of soil. Trees are primarily composed of carbon dioxide and water, not soil.",
+        "model_answer": "I will reason through this problem step-by-step:\n\n1. We start with a 2kg tree in a pot with 10kg of soil. The total initial weight is 12kg.\n\n2. The tree grows to 3kg. This means the tree gained 1kg of mass.\n\n3. The problem states that this is NOT the classic problem. In the classic problem, the soil would be converted into the tree's mass. However, since this is not the case, we must assume that the tree gained the 1kg of mass from external sources (e.g., water, nutrients in the air).\n\n4. Since the tree's mass increase did not come from the soil, the soil's mass remains unchanged.\n\n5. Therefore, the final weight of the soil is still 10kg.\n\n{\n    \"student_answer\": \"10kg\"\n}",
+        "eval_response": "{{\"score\": 100}}",
+        "score": 100
+    },
+    "29": {
+        "category": "Relational",
+        "question": "A man steps over a 0.5m hurdle. What is the minimum height he could have jumped?",
+        "human_answer": "0m, he didn't jump at all, he stepped over the hurdle.",
+        "model_answer": "I will reason through this problem step by step, making no assumptions:\n\n1. The problem states that a man steps over a 0.5m hurdle.\n2. To step over the hurdle, the man's center of mass must rise above the height of the hurdle.\n3. However, the question asks for the minimum height he could have jumped, not the height his center of mass reached.\n4. To minimize the jump height, we need to consider the man's body position and the point at which his feet leave the ground.\n5. If the man lifts his feet just high enough to clear the hurdle, without raising his center of mass unnecessarily, that would be the minimum jump height.\n6. The minimum height is determined by the point at which his feet leave the ground, which is at the height of the hurdle, 0.5m.\n\nTherefore, the minimum height the man could have jumped is equal to the height of the hurdle.\n\nFinal answer: {'student_answer':'0.5m'}",
+        "eval_response": "{{'score': 0}}",
+        "score": 0
+    },
+    "30": {
+        "category": "Popular science",
+        "question": "I walk to my friend's house, averaging 3mph. How fast would I have to run back to double my average speed for the entire trip?",
+        "human_answer": "Instantaneously fast, it is mathematically impossible.",
+        "model_answer": "Okay, let's think through this step-by-step:\n\n1. The key here is that we want to double the average speed for the entire trip, not just the return trip.\n\n2. Let's say the distance to my friend's house is d miles. \n\n3. Walking to my friend's house at 3 mph, the time it takes is t1 = d/3 hours.\n\n4. Let's call the speed I need to run back v mph. Then the time for the return trip is t2 = d/v hours.\n\n5. The average speed for the entire trip is the total distance (2d) divided by the total time (t1 + t2).\n\n   Average speed = 2d / (t1 + t2)\n\n6. We want this average speed to be double the walking speed, so we set it equal to 2 * 3 mph = 6 mph.\n\n   6 = 2d / (t1 + t2)\n\n7. Substituting the expressions for t1 and t2:\n\n   6 = 2d / (d/3 + d/v)\n\n8. Solving for v:\n\n   6 = 2d / (d/3 + d/v)\n   6 = 2d / ((3d + dv) / 3v)\n   6 = (6dv) / (3d + dv)\n   18d + 6dv = 6dv\n   18d = 6dv - 6dv\n   v = 18/6 = 3 \n\nTherefore, I would have to run back at 3 mph to double my average speed for the entire trip.\n\nFinal Answer: {'student_answer':'3 mph'}",
+        "eval_response": "{{'score': 0, 'evaluation': 'The student\\'s final answer does not match the answer key, which is \"Instantaneously fast, it is mathematically impossible\".'}}",
+        "score": 0
+    }
+}

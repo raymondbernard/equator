@@ -1,0 +1,242 @@
+{
+    "1": {
+        "category": "Puzzle",
+        "question": "You have six horses and want to race them to see which is fastest. What is the best way to do this?",
+        "human_answer": "Race them on a single race track with at least six lanes - the order in which they cross the finish line determines which is the fastest.",
+        "model_answer": "{'student_answer':'Race three horses at a time, twice. This will give you the top two horses, and then you can race those two horses to determine the fastest.'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer does not match the answer key as it suggests racing multiple sets of horses to determine the fastest, rather than racing all six horses simultaneously.'}",
+        "score": 0
+    },
+    "2": {
+        "category": "Puzzle",
+        "question": "Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a gold bar; behind the others, rotten vegetables. You pick a door, say No. 1, and the host asks you 'Do you want to pick door No. 2 instead?' Is it to your advantage to switch your choice?",
+        "human_answer": "It is not an advantage to switch. It makes no difference if I switch or not because no additional material information has been provided since the initial choice.",
+        "model_answer": "{'student_answer':'Yes'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student answered \"Yes\", which contradicts the correct answer that it is not an advantage to switch, as no additional material information has been provided.'}",
+        "score": 0
+    },
+    "3": {
+        "category": "Spatial",
+        "question": "You are playing Russian roulette with a six-shooter revolver. Your opponent puts in five bullets, spins the chambers and fires at himself, but no bullet comes out. He gives you the choice of whether or not he should spin the chambers again before firing at you. Should he spin again?",
+        "human_answer": "Yes, you should ask him to spin again. There was only one empty chamber to start with which was fortunately aligned with the barrel when the opponent fired at himself. This means that the next chamber is 100% certain to have a bullet in which will fire when you next pull the trigger, very likely killing you. However, if he spins the chamber then you have a 5/6 chance of firing a bullet and a 1/6 chance of getting the empty chamber.",
+        "model_answer": "{'student_answer':'No, he should not spin again.'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer does not match the answer key. They believe that the opponent should not spin again, which contradicts the correct reasoning that spinning again would increase the chance of firing a bullet.'}",
+        "score": 0
+    },
+    "4": {
+        "category": "Puzzle",
+        "question": "A farmer wants to cross a river and take with him a wolf, a goat and a cabbage. He has a boat with three secure separate compartments. If the wolf and the goat are alone on one shore, the wolf will eat the goat. If the goat and the cabbage are alone on the shore, the goat will eat the cabbage. How can the farmer efficiently bring the wolf, the goat and the cabbage across the river without anything being eaten?",
+        "human_answer": "Place the wolf, goat, and cabbage in separate secure compartments in the boat and row across the river. This will prevent any of them from being eaten by the others.",
+        "model_answer": "{'student_answer':'The farmer can make five trips across the river. Trip 1: Take the goat across the river first and leave it on the other side. Trip 2: Take the cabbage across the river and leave it with the goat. Trip 3: Take the goat back to the original side. Trip 4: Take the wolf across the river and leave it with the cabbage. Trip 5: Take the goat across the river again and leave it with the wolf and the cabbage.'}",
+        "eval_response": "{'score': 100, 'evaluation': 'The student answer matches the answer key exactly, correctly describing the five-trip solution to transport the wolf, goat, and cabbage safely.'}",
+        "score": 100
+    },
+    "5": {
+        "category": "Puzzle",
+        "question": "Bob has three boxes in front of him - Box A, Box B and Box C. Bob does not know what is in the boxes. Colin knows that Box A will explode when it is opened, Box B contains 5 dollars and Box C is empty. Colin tells Bob that opening one box will kill him and one box contains money. Should Bob open a box?",
+        "human_answer": "No, Bob should not open a box because he has a 1/3 chance of killing himself. The 1/3 chance of “winning” $5 is generally not worth that sort of risk!",
+        "model_answer": "{'student_answer':'Yes'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer does not match the answer key as it suggests opening a box despite knowing the risks.'}",
+        "score": 0
+    },
+    "6": {
+        "category": "Counting",
+        "question": "A robot has 8 arms. There are 5 objects on a table: a knife, a fork, a spoon, a teddy bear and a doll. The robot picks up each object with an arm. He then shakes hands with himself. How many arms does he have free?",
+        "human_answer": "A hand is used for each of the five objects and then two hands are used to shake hands with himself. This means that seven hands are being used, leaving one arm/hand free.",
+        "model_answer": "{'student_answer': 2}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer does not match the answer key.'}",
+        "score": 0
+    },
+    "7": {
+        "category": "Spatial",
+        "question": "Alan, Bob, Colin, Dave and Emily are standing in a circle. Alan is on Bob's immediate left. Bob is on Colin's immediate left. Colin is on Dave's immediate left. Dave is on Emily's immediate left. Who is on Alan's immediate right?",
+        "human_answer": "Bob is on Alan's immediate right because it is stated that Alan is on Bob's immediate left.",
+        "model_answer": "{'student_answer':'Emily'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer does not match the answer key. The correct answer is Bob.'}",
+        "score": 0
+    },
+    "8": {
+        "category": "Linguistic",
+        "question": "Write me a sentence without any words that appear in The Bible.",
+        "human_answer": "Cryptographic algorithms safeguard nuclear warheads.",
+        "model_answer": "{'student_answer': 'The quokka smiled brightly on the spaceship.'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer does not match the answer key because it contains words that appear in The Bible, specifically \"the\" and none other.'}",
+        "score": 0
+    },
+    "9": {
+        "category": "Popular science",
+        "question": "Which weighs more, a pound of water, two pounds of bricks, a pound of feathers, or three pounds of air.",
+        "human_answer": "Three pounds of air.",
+        "model_answer": "{'student_answer':'A pound of water and a pound of feathers weigh the same, two pounds of bricks weigh more, and three pounds of air weighs more than the first two options.'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student''s answer incorrectly stated that a pound of water and a pound of feathers weigh the same, and that two pounds of bricks weigh more, when in fact the answer key states that three pounds of air weighs more than all options.'}",
+        "score": 0
+    },
+    "10": {
+        "category": "Relational",
+        "question": "I get out on the top floor (third floor) at street level. How many stories is the building above the ground",
+        "human_answer": "One story above the ground",
+        "model_answer": "{'student_answer':'3'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student answered 3 instead of 1, as stated in the answer key.'}",
+        "score": 0
+    },
+    "11": {
+        "category": "Spatial",
+        "question": "In a toy box, there's a red ball, a blue truck, and a green dinosaur. The red ball is not next to the blue truck, and the green dinosaur is next to the red ball. Which toy is in the middle?",
+        "human_answer": "The green dinosaur.",
+        "model_answer": "{'student_answer':'the red ball'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student answered that the red ball is in the middle, but the correct answer is the green dinosaur.'}",
+        "score": 0
+    },
+    "12": {
+        "category": "Spatial",
+        "question": "Four children - Alex, Bella, Charlie, and Dana - are sitting around a picnic table. Alex is facing Bella. Charlie is sitting to the right of Bella. Who is sitting to the left of Alex?",
+        "human_answer": "Dana",
+        "model_answer": "{'student_answer':'Dana'}",
+        "eval_response": "{'score': 100, 'evaluation': 'The student\\'s answer matches the answer key.'}",
+        "score": 100
+    },
+    "13": {
+        "category": "Spatial",
+        "question": "A man leaves home at 0m elevation, makes a left turn and walks straight for a km and reaches 300m elevation, makes another left turn and walks straight for a km and reaches 500m elevation, makes another left turn and walks straight for a km and reaches 900m elevation, and turns left again and walks straight for a km. How far away is he from his starting point and what is his final elevation?",
+        "human_answer": "He is back at his starting point and at 0m elevation.",
+        "model_answer": "{'student_answer':'He is 1 km away from his starting point and his final elevation is 300m.'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer does not match the answer key because they incorrectly stated their distance from the starting point and elevation.'}",
+        "score": 0
+    },
+    "14": {
+        "category": "Puzzle",
+        "question": "A group of four people needs to cross a bridge at night. The bridge is very old and rickety. They have only one torch and because it's night-time, the torch is necessary to cross the bridge. Each person walks at a different speed: - A takes 1 minute to cross, - B takes 2 minutes, - C takes 5 minutes, and - D takes 10 minutes. What is the fastest time they can all get across the bridge?",
+        "human_answer": "10 minutes, the speed of the slowest person as they cross the bridge together.",
+        "model_answer": "{'student_answer': '17 minutes'}",
+        "eval_response": "{'score': 0}\n{\"evaluation\": \"The student's answer does not match the answer key, which states the correct time is 10 minutes.\"}",
+        "score": 0
+    },
+    "15": {
+        "category": "Puzzle",
+        "question": "You're in a room with two doors that lead out. One door leads to certain death, and the other door leads to freedom. There are two guardians, one by each door. One taller guardian always tells the truth and guards the death door, the other always lies. What is the minimum number of questions needed to ask the guards to get to safety?",
+        "human_answer": "Zero questions. The door to freedom is behind the shorter guardian.",
+        "model_answer": "{'student_answer': 1}",
+        "eval_response": "{'score': 0}\n{\"evaluation\": \"The student's answer does not match the correct answer key, which states that zero questions are needed to determine safety.\"}",
+        "score": 0
+    },
+    "16": {
+        "category": "Puzzle",
+        "question": "You have 3 switches in front of you - A, B and C. You have 3 light bulbs in front of you in the same room - one red, one blue, one purple. They are LED and do not get warm when turned on. You want to know which switch turns on which light bulb. What is the best way to determine this?",
+        "human_answer": "A process of elimination. Test each switch independently and observe which light bulb turns on for each.",
+        "model_answer": "{'student_answer':'Turn switch A to the \"on\" position for 5 minutes. Then, turn switch A to the \"off\" position and turn switch B to the \"on\" position. Go into the room with the light bulbs and observe them. The light bulb that is on is controlled by switch B. The light bulb that is off, but warm, is controlled by switch A. The remaining light bulb is controlled by switch C.'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer incorrectly applies the process of elimination to determine which switch controls which light bulb.'}",
+        "score": 0
+    },
+    "17": {
+        "category": "Puzzle",
+        "question": "The Poisoned Wine - A king has 1000 sweet bottles of wine, and one contains a very bitter poison. The poison takes effect exactly 24 hours after consumption. The king needs to find the poisoned bottle in 24 hours for an event. He has 10 prisoners to test the wine. What is the easiest way for him to identify the poisoned bottle?",
+        "human_answer": "Divide the 1000 bottles of wine amongst the 10 prisoners - each receiving 100 bottles. Ask the prisoners to note which bottle tastes very bitter, this is the poisoned one.",
+        "model_answer": "{'student_answer':'The king can identify the poisoned bottle by using a binary search approach. He can divide the 1000 bottles into two groups of 500 each and have one prisoner drink from each group. After 24 hours, if one prisoner dies, the poisoned bottle is in that group. If both prisoners live, the poisoned bottle is in the other group. Then, he can repeat the process with the identified group, dividing it into two subgroups of 250 each, and so on. With 10 prisoners, the king can identify the poisoned bottle in 10 iterations, which is less than the 24 hours he has.'}",
+        "eval_response": "{\"score\": 100}\n{\"evaluation\": \"The student's answer correctly identifies a method for the king to find the poisoned bottle within the given time frame.\"}",
+        "score": 100
+    },
+    "18": {
+        "category": "Linguistic",
+        "question": "Write a grammatically correct sentence without reusing any letter more than once.",
+        "human_answer": "Dogs bark with me.",
+        "model_answer": "{'student_answer': 'The quick brown fox jumps over the dog.'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer does not match the answer key because it contains reused letters (e.g., \"o\", \"d\", \"g\").'}",
+        "score": 0
+    },
+    "19": {
+        "category": "Spatial",
+        "question": "An arrow points up. We rotate it 90 degrees to the left, mirror it along its flat end, and rotate it another 90 degrees to the left. Which direction is it pointing?",
+        "human_answer": "Up",
+        "model_answer": "{'student_answer':'Up'}",
+        "eval_response": "{'score': 100, 'evaluation': 'The student\\'s answer matches the answer key exactly.'}",
+        "score": 100
+    },
+    "20": {
+        "category": "Linguistic",
+        "question": "Write a sentence where every word starts with the letter A.",
+        "human_answer": "Alice ate an apple after an argument.",
+        "model_answer": "{'student_answer': 'Astonishing aardvarks awkwardly acquire abundant aromatic apricots.'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student''s answer does not match the answer key. No partial credit allowed!'}",
+        "score": 0
+    },
+    "21": {
+        "category": "Relational",
+        "question": "Sally (a girl) has 3 brothers. Each brother has 2 sisters. How many sisters does Sally have?",
+        "human_answer": "One",
+        "model_answer": "{'student_answer':'1'}",
+        "eval_response": "{'score': 100, 'evaluation': 'The student answered correctly, 1 sister as per the given answer key.'}",
+        "score": 100
+    },
+    "22": {
+        "category": "Spatial",
+        "question": "I'm in London and facing west, is Edinburgh to my left or my right?",
+        "human_answer": "Right.",
+        "model_answer": "{'student_answer': 'To my right'}",
+        "eval_response": "{'score': 100, 'evaluation': 'The student\\'s final answer matches the answer key exactly.'}",
+        "score": 100
+    },
+    "23": {
+        "category": "Counting",
+        "question": "Count the number of occurrences of the letter 'L' in the word 'LOLLAPALOOZA'.",
+        "human_answer": "Four",
+        "model_answer": "{'student_answer': 3}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s final answer does not match the answer key. The correct count is four, but the student answered three.'}",
+        "score": 0
+    },
+    "24": {
+        "category": "Puzzle",
+        "question": "How many pairs of twins do you need in a room for there to be at least a 50% chance that two people have the same birthday?",
+        "human_answer": "One",
+        "model_answer": "{'student_answer': 23}",
+        "eval_response": "{\"score\": 0, \"evaluation\": \"The student's answer does not match the answer key.\"}",
+        "score": 0
+    },
+    "25": {
+        "category": "Puzzle",
+        "question": "A partially full hotel has an infinite number of fully furnished rooms. How does it accommodate one more guest?",
+        "human_answer": "By putting the guest in an empty room.",
+        "model_answer": "{'student_answer':'The hotel accommodates one more guest by moving the guest currently in room 1 to room 2, the guest in room 2 to room 3, and so on, moving each guest to the next room. This frees up room 1, which can then be occupied by the new guest.'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student answer does not match the answer key as it proposes a movement of guests instead of placing the new guest in an empty room.'}",
+        "score": 0
+    },
+    "26": {
+        "category": "Puzzle",
+        "question": "A runaway trolley is heading down the tracks away from five people upwards of the track. You are near a lever that can switch the trolley to another track? Does it impact people's lives if you pull the lever?",
+        "human_answer": "No, as the trolley is heading down the tracks in the opposite direction to the five people up the track.",
+        "model_answer": "{'student_answer':'No'}",
+        "eval_response": "{'score': 100, 'evaluation': 'The student\\'s answer matches the answer key, with no logical explanation provided.'}",
+        "score": 100
+    },
+    "27": {
+        "category": "Puzzle",
+        "question": "How do you measure exactly 4 gallons of water with only a 3-gallon, 5-gallon, and 4-gallon jug?",
+        "human_answer": "Fill up the 4-gallon jug",
+        "model_answer": "{'student_answer':'Use the 4-gallon jug.'}",
+        "eval_response": "{'score': 100, 'evaluation': 'The student\\'s final answer matches the answer key exactly, demonstrating a clear understanding of the solution.'}",
+        "score": 100
+    },
+    "28": {
+        "category": "Popular science",
+        "question": "A 2kg tree grows in a planted pot with 10kg of soil. When the tree grows to 3kg, how much soil is left?",
+        "human_answer": "There is still 10kg of soil. Trees are primarily composed of carbon dioxide and water, not soil.",
+        "model_answer": "{'student_answer':'10kg'}",
+        "eval_response": "{'score': 100, 'evaluation': 'The student answer matches the answer key exactly, with no variation in units or content.'}",
+        "score": 100
+    },
+    "29": {
+        "category": "Relational",
+        "question": "A man steps over a 0.5m hurdle. What is the minimum height he could have jumped?",
+        "human_answer": "0m, he didn't jump at all, he stepped over the hurdle.",
+        "model_answer": "{'student_answer':'0.5m'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student answer does not match the answer key as it is the height of the hurdle, not the minimum height the man could have jumped.'}",
+        "score": 0
+    },
+    "30": {
+        "category": "Popular science",
+        "question": "I walk to my friend's house, averaging 3mph. How fast would I have to run back to double my average speed for the entire trip?",
+        "human_answer": "Instantaneously fast, it is mathematically impossible.",
+        "model_answer": "{'student_answer':'6mph'}",
+        "eval_response": "{'score': 0, 'evaluation': 'The student\\'s answer of 6mph does not match the correct answer that it is mathematically impossible to double one\\'s average speed for the entire trip by running back.'}",
+        "score": 0
+    }
+}
