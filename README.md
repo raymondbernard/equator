@@ -313,11 +313,11 @@ Here’s the structure of your `execution_steps` list:
 
 ```python
 execution_steps = [
-    # "ollama_to_groq_evaluate",  # Uncomment one line at a time, then run the program.
+    "ollama_to_groq_evaluate",  # Uncomment one line at a time, then run the program.
     # "ollama_to_openrouter_evaluate",  # Currently working.
     # "groq_to_ollama_evaluate",  # Currently working.
     # "groq_to_openrouter_evaluate",  # Currently working.
-    "generate_statistics",  # Always run last, after completing all evaluations.
+    # "generate_statistics",  # Always run last, after completing all evaluations.
 ]
 ```
 
