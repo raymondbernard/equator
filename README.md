@@ -330,6 +330,7 @@ execution_steps = [
 ---
 
 ### **Order of Execution**
+Note: you don't have to use all the steps!   You can stick to a local evaluator(ollama) and run through multiple models!! 
 
 1. Uncomment `"ollama_to_groq_evaluate"` and run.
 2. Uncomment `"ollama_to_openrouter_evaluate"` and run.
