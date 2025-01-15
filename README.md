@@ -317,10 +317,6 @@ If you want everything to run fully on your local machine, use the `ollama_to_ol
 **Install Docker**
 Adjust the commands below for your environment.
 
-Without an NVIDIA GPU 
-'''
-docker run -d -v -v ollama:/root/.ollama -p 11435:11434 --name ollama ollama/ollama
-'''
 
 With an NVIDIA GPU *Note" you will need to install the latest drivers from NVIDIA and make sure your system recognizes your GPU. 
 
@@ -331,8 +327,15 @@ https://github.com/NVIDIA/nvidia-container-toolkit
 ```
 docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 ```
-https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image
 
+Without an NVIDIA GPU 
+'''
+docker run -d -v -v ollama:/root/.ollama -p 11435:11434 --name ollama ollama/ollama
+'''
+**Get the Ollama docker image**
+```
+https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image
+```
 
 ### **How to Execute**:
 1. Choose **one step** to execute by removing the `#` at the beginning of the corresponding line.
