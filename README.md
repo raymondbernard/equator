@@ -74,110 +74,95 @@ Eluator LLMS evaluate the "student models " in the case the STOA models found on
 ---
 
 ## Evaluator vs. Student Matrix
-
-* Values are approximations:
-  - OpenRouter has **293 models** from OpenAI, etc.
-  - Groq has **14 models**.
-  - Ollama has **34925 models** = **148 families** and **270 sizes**.
-
-| **Evaluator LLM**  | **Student LLM**        | **Support Status**       |
-|---------------------|------------------------|--------------------------|
-| **Ollama (local)**  | OpenRouter            | **Currently supported**  |
-| **Ollama (local)**  | Groq                  | **Currently supported**  |
-| **Ollama (local)**  | Ollama (local)        | **Currently supported**  |
-| **Groq**            | OpenRouter            | **Currently supported**  |
-| **Groq**            | Ollama (local)        | **Currently supported**  |
-| **Groq**            | Groq                  | **Next release**         |
-| **OpenRouter**      | OpenRouter            | **Next release**         |
-
-To determine the **possible amount of testing** from a combinatorial perspective based on your current support for Evaluator and Student LLMs, we'll break down the calculations step-by-step.
+Below is a **simplified, Markdown-friendly** version of the calculations, using concise bullet points and inline code for all arithmetic.
 
 ---
 
-## **1. Understanding the Components**
+## A. **Current Support**
 
-### **Evaluator LLMs:**
-- **Ollama (Local):** 34,925 models
-- **Groq:** 14 models
+### 1. Ollama Evaluator Combinations
 
-### **Student LLMs:**
-- **OpenRouter:** 293 models
-- **Groq:** 14 models
-- **Ollama (Local):** 34,925 models
+- **Ollama → OpenRouter Students:**  
+  `34,925 × 293 = 10,232,275`
 
-**Total Evaluator Models:** 34,925 (Ollama) + 14 (Groq) = **34,939 Evaluators**
+- **Ollama → Groq Students:**  
+  `34,925 × 14 = 488,950`
 
-**Total Student Models:** 293 (OpenRouter) + 14 (Groq) + 34,925 (Ollama) = **35,232 Students**
+- **Ollama → Ollama Students:**  
+  `34,925 × 34,925 = 1,219,755,625`
 
----
-
-## **2. Supported Evaluator-Student Combinations**
-
-**currently supported** combinations are:
-
-1. **Ollama (Evaluator) → OpenRouter (Student)**
-2. **Ollama (Evaluator) → Groq (Student)**
-3. **Ollama (Evaluator) → Ollama (Student)**
-4. **Groq (Evaluator) → OpenRouter (Student)**
-5. **Groq (Evaluator) → Ollama (Student)**
-
-### **Unsupported (Next Release):**
-6. **Groq (Evaluator) → Groq (Student)**
-7. **OpenRouter (Evaluator) → OpenRouter (Student)**
+**Subtotal (Ollama Evaluators):**  
+```
+10,232,275 + 488,950 + 1,219,755,625
+= 1,230,476,850
+```
 
 ---
 
-## Calculating the Number of Combinations**
+### 2. Groq Evaluator Combinations
 
-### * Current Support**
+- **Groq → OpenRouter Students:**  
+  `14 × 293 = 4,102`
 
-1. **Ollama Evaluator Combinations:**
-   - **With OpenRouter Students:**  
-     34,925 Evaluators × 293 Students = **10,232,275 combinations**
-   
-   - **With Groq Students:**  
-     34,925 Evaluators × 14 Students = **488,950 combinations**
-   
-   - **With Ollama Students:**  
-     34,925 Evaluators × 34,925 Students = **1,219,755,625 combinations**
-   
-   **Subtotal for Ollama Evaluators:**  
-   10,232,275 + 488,950 + 1,219,755,625 = **1,230,476,850 combinations**
+- **Groq → Ollama Students:**  
+  `14 × 34,925 = 488,950`
 
-2. **Groq Evaluator Combinations:**
-   - **With OpenRouter Students:**  
-     14 Evaluators × 293 Students = **4,102 combinations**
-   
-   - **With Ollama Students:**  
-     14 Evaluators × 34,925 Students = **488,950 combinations**
-   
-   **Subtotal for Groq Evaluators:**  
-   4,102 + 488,950 = **493,052 combinations**
+**Subtotal (Groq Evaluators):**  
+```
+4,102 + 488,950
+= 493,052
+```
 
-**Total Current Combinations:**  
-1,230,476,850 (Ollama) + 493,052 (Groq) = **1,230,969,902 combinations**
+---
 
-### **B. Future Support (Next Release)**
+### 3. Total *Current* Combinations
 
-1. **Groq Evaluator → Groq Student:**  
-   14 Evaluators × 14 Students = **196 combinations**
+```
+1,230,476,850 (Ollama)
++ 493,052 (Groq)
+= 1,230,969,902
+≈ 1,230,970,000
+```
 
-2. **OpenRouter Evaluator → OpenRouter Student:**  
-   293 Evaluators × 293 Students = **85,849 combinations**
+---
+
+## B. **Future Support (Next Release)**
+
+- **Groq → Groq Students:**  
+  `14 × 14 = 196`
+
+- **OpenRouter → OpenRouter Students:**  
+  `293 × 293 = 85,849`
 
 **Total Future Combinations:**  
-196 + 85,849 = **86,045 combinations**
+```
+196 + 85,849
+= 86,045
+```
 
 ---
 
-## **4. Grand Total of Possible Evaluator-Student Combinations**
+## 4. **Grand Total of Possible Evaluator-Student Combinations**
 
-- **Currently Supported:** ~**1,230,970,000 combinations**
-- **With Next Release:** ~**1,231,056,000 combinations**
+1. **Currently Supported:**  
+   ```
+   1,230,969,902
+   ≈ 1,230,970,000
+   ```
 
-*Note:* These figures are **approximate** due to rounding in intermediate steps.
+2. **With Next Release:**  
+   ```
+   1,230,969,902 + 86,045
+   = 1,231,055,947
+   ≈ 1,231,056,000
+   ```
 
 ---
+
+### **Final Figures**
+
+- **Currently Supported:** **1,230,970,000** (rounded)  
+- **With Next Release:** **1,231,056,000** (rounded)
 
 ## **5. Summary**
 
@@ -317,13 +302,37 @@ Here’s the structure of your `execution_steps` list:
 
 ```python
 execution_steps = [
-    "ollama_to_groq_evaluate",  # Uncomment one line at a time, then run the program.
-    # "ollama_to_openrouter_evaluate",  # Currently working.
-    # "groq_to_ollama_evaluate",  # Currently working.
-    # "groq_to_openrouter_evaluate",  # Currently working.
-    # "generate_statistics",  # Always run last, after completing all evaluations.
+   "ollama_to_ollama_evaluate",
+   # "ollama_to_groq_evaluate",  # Uncomment one line at a time, then run the program.
+   # "ollama_to_openrouter_evaluate",  # Currently working.
+   # "groq_to_ollama_evaluate",  # Currently working.
+   # "groq_to_openrouter_evaluate",  # Currently working.
+   # "generate_statistics",  # Always run last, after completing all evaluations.
 ]
 ```
+** IMPORTANT NOTEL:**
+
+If you want everything to run fully on your local machine, use the `ollama_to_ollama_evaluate` execution step. You’ll also need Docker installed, and your student model must run on Ollama inside a Docker container.  You also must do an 'ollama pull <student model>' within your container.  
+
+**Install Docker**
+Adjust the commands below for your environment.
+
+Without an NVIDIA GPU 
+'''
+docker run -d -v -v ollama:/root/.ollama -p 11435:11434 --name ollama ollama/ollama
+'''
+
+With an NVIDIA GPU *Note" you will need to install the latest drivers from NVIDIA and make sure your system recognizes your GPU. 
+
+```
+https://github.com/NVIDIA/nvidia-container-toolkit
+```
+
+```
+docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
+https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image
+
 
 ### **How to Execute**:
 1. Choose **one step** to execute by removing the `#` at the beginning of the corresponding line.
@@ -336,11 +345,12 @@ execution_steps = [
 ### **Order of Execution**
 Note: you don't have to use all the steps!   You can stick to a local evaluator(ollama) and run through multiple models!! 
 
-1. Uncomment `"ollama_to_groq_evaluate"` and run.
-2. Uncomment `"ollama_to_openrouter_evaluate"` and run.
-3. Uncomment `"groq_to_ollama_evaluate"` and run.
-4. Uncomment `"groq_to_openrouter_evaluate"` and run.
-5. Finally, ensure only `"generate_statistics"` is uncommented and run to compile results.
+1. Uncomment `"ollama_to_ollama_evaluate"` and run.
+2. Uncomment `"ollama_to_groq_evaluate"` and run.
+3. Uncomment `"ollama_to_openrouter_evaluate"` and run.
+4. Uncomment `"groq_to_ollama_evaluate"` and run.
+5. Uncomment `"groq_to_openrouter_evaluate"` and run.
+6. Finally, ensure only `"generate_statistics"` is uncommented and run to compile results.
 
 ---
 
@@ -352,18 +362,19 @@ Note: you don't have to use all the steps!   You can stick to a local evaluator(
 ---
 
 This format highlights the importance of running one step at a time and makes the process easy to follow.
+
 - **Models**: Specify the models to benchmark in the respective lists.
     ```python
     student_openrouter_models = [
-        "nousresearch/hermes-3-llama-3.1-405b",
+      "nousresearch/hermes-3-llama-3.1-405b",
     ]
     
     student_groq_models = [
-        "llama3-70b-8192",
+      "llama3-70b-8192",
     ]
 
     student_ollama_models = [
-        "llama3.2",
+      "llama3.2",
     ]
     ```
 
@@ -387,7 +398,7 @@ Logs are saved to `vectordb.log` with INFO level by default.
 1. **In your Python Environment**
 2. 
    ```bash
-   >py -m main   
+   py -m main   
    ```
 
 ### Viewing Results

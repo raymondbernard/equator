@@ -38,11 +38,11 @@ if __name__ == "__main__":
 
     # List of steps to execute; comment/uncomment to toggle specific tasks
     execution_steps = [
-        # "ollama_to_groq_evaluate",  # Evaluate Ollama models against GROQ models
+        "ollama_to_ollama_evaluate",  # Evaluate Ollama models against Ollama models. Must use dockers for the student Ollama 
         # "ollama_to_openrouter_evaluate",  # Evaluate Ollama models against OpenRouter models
         # "groq_to_ollama_evaluate",  # Evaluate GROQ models against Ollama models
         # "groq_to_openrouter_evaluate",  # Evaluate GROQ models against OpenRouter models
-        "generate_statistics",  # Generate and visualize statistical analysis
+        # "generate_statistics",  # Generate and visualize statistical analysis
     ]
 
     # List of OpenRouter models to be used as students in the benchmark
@@ -61,11 +61,14 @@ if __name__ == "__main__":
         # "llama-3.3-70b-versatile",
         "llama3-70b-8192",  # Active model
     ]
-
+    # Please note , since both evaluator and student modles are local , you will need to make sure you system can 
+    # handle both loads, otherwise use a local and remote model for better performance. 
     # List of Ollama models to be used as students in the benchmark
     # Avoid using semicolons in model names (e.g., "llama3.2:latest")
     student_ollama_models = [
-        "llama3.2",  # Active model
+        # "llama3.2",  # Active model
+        "phi3"
+        # "llama3.2",  # Active model
     ]
 
     # If "generate_statistics" is not in execution_steps, begin benchmarking
