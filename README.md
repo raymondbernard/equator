@@ -276,7 +276,11 @@ Below is an updated “Evaluator vs. Student” matrix that includes **Groq → 
  6. **Open the main.py file.** 
     1. Look at the comments in the file for directions on how to configure your test runs. It's straight forward.  
 
-
+7. **Utilize Ollama embeddings**
+   We utilize ollama's embedddings to upload to our chromadb https://ollama.com/library/all-minilm
+   ```
+   ollama pull all-minilm
+   ```
 ### Configuration
 
 - **Execution Steps**: Define the steps to execute in the `execution_steps` list.  Please run the application with just do one execution_step at a time and comment out the other steps. In a future release we will enable a bit more automation.  
@@ -431,7 +435,7 @@ We do have a QA `linguistic_benchmark.json with over 1000+ .  However, we will c
   
    Although our primary focus is maintaining a statistically significant and unbiased dataset for testing AI performance in QA reasoning and logic, we understand that different industries—such as law, medicine, or finance—have unique needs. Our linguistic_benchmark.json file can be extended to include domain-specific prompts and example responses. This approach allows you to evaluate how well AI models perform in your specialized context without compromising the integrity of our core benchmarking methodology. By adding your own questions, you can preserve our standardized evaluation framework while tailoring the tests to your field’s specific challenges.  We aim to maintain a current benchmark results for our EQUATOR at equator.github.io 
 
-   
+**test Equator**
 
 ## Contributions
 

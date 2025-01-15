@@ -10,3 +10,5 @@ openai
 loguru
 groq
 equator-qa==0.0.4
+pytest 
+pytest-mock
