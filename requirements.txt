@@ -9,6 +9,6 @@ python-dotenv
 openai
 loguru
 groq
-equator-qa==0.0.5
+equator-qa
 pytest 
 pytest-mock

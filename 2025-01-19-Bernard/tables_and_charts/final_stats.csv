@@ -1,0 +1,2 @@
+model,mean_score,std_dev_score,z_interval_error,ci_lower,ci_upper,output_count
+equator-llama3-70b-8192-stu-phi3,26.666666666666668,44.59484908564835,11.284053711909474,16.666666666666668,38.333333333333336,60.0

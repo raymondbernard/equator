@@ -69,7 +69,8 @@ A smaller LLM (e.g., LLaMA 3.2B) acts as the evaluator, ensuring strict adherenc
 ## Details of features
 
 We classify LLMS as evaluators and students 
-Eluator LLMS evaluate the "student models " in the case the STOA models found on OpenRouter (276Below is an updated “Evaluator vs. Student” matrix that includes **Groq → Ollama** support as well.
+Eluator LLMS evaluate the "student models " in the case the STOA models found on OpenRouter (276)
+Below is an updated “Evaluator vs. Student” matrix that includes **Groq → Ollama** support as well.
 
 ---
 

@@ -1,5 +1,3 @@
-# main.py
-
 # Importing necessary libraries and modules
 from loguru import logger  # Loguru is used for enhanced logging capabilities
 from dotenv import load_dotenv  # Loads environment variables from a .env file
@@ -36,11 +34,11 @@ def main(execution_steps=None):
     # If no specific execution steps are provided, use the default set of steps
     if execution_steps is None:
         execution_steps = [
-            "ollama_to_ollama_evaluate",  # Step to evaluate Ollama models against each other
+            # "ollama_to_ollama_evaluate",  # Step to evaluate Ollama models against each other
             # "ollama_to_openrouter_evaluate",  # Uncomment to evaluate Ollama against OpenRouter models
             # "groq_to_ollama_evaluate",  # Uncomment to evaluate GROQ models against Ollama models
             # "groq_to_openrouter_evaluate",  # Uncomment to evaluate GROQ models against OpenRouter models
-            # "generate_statistics",  # Uncomment to generate and visualize statistical analysis
+            "generate_statistics",  # Uncomment to generate and visualize statistical analysis
         ]
 
     # List of OpenRouter models to be used as participants in the benchmark
@@ -73,7 +71,7 @@ def main(execution_steps=None):
 
     # Iterate over each step provided in execution_steps to perform corresponding actions
     for step in execution_steps:
-        if step == "ollama_to_ollama_evaluate":
+        if "generate_statistics" not in step :
             # Log the start of the benchmarking process
             logger.info("Program started successfully.")
 
