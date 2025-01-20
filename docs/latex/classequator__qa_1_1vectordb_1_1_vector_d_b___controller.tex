@@ -1,0 +1,526 @@
+\doxysection{equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller Class Reference}
+\hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller}{}\label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+
+
+Inheritance diagram for equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_af35a9b8787385887df6392f18f836c45}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a445fe5029b1ab0bf0e7c31921ea5f7f1}{keep\+Vector\+DB}})
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a20c0cb4766eadf468b69b730095c2053}{generate\+\_\+embeddings}} (self, model, input\+\_\+text, truncate=True)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a5e99eb967400dffb2292f302e2ee9d10}{retrieve\+\_\+embedding}} (self, prompt, n\+\_\+results=1)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_aa3ddbbca85c7664bb56567221fe5805f}{add\+\_\+to\+\_\+vector\+\_\+db}} (self, vector\+\_\+db, entry\+\_\+id, serialized\+\_\+conversations, metadata)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a9ecebea5cbed0c54a33acb42a1999d27}{create\+\_\+vector\+\_\+db}} (self, conversations)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a862a0f5f808ef8718cbd4e067a263beb}{convert\+\_\+metadata\+\_\+value}} (self, value)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a39e48d77a583ccef6a9842de2b038c4e}{flatten\+\_\+embedding}} (self, embedding)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_aa3ddbbca85c7664bb56567221fe5805f}{add\+\_\+to\+\_\+vector\+\_\+db}} (self, vector\+\_\+db, entry\+\_\+id, serialized\+\_\+conversations, metadata)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_abd453000e0c3c3079b7b6b7e50a5d711}{base\+\_\+url}} = "{}http\+://localhost\+:11434"{}
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a3bb137ff4503408f32c64ee39dfbfd16}{chroma\+\_\+client}} = chromadb.\+Persistent\+Client(path="{}."{})
+\item 
+\mbox{\hyperlink{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a445fe5029b1ab0bf0e7c31921ea5f7f1}{keep\+Vector\+DB}} = keep\+Vector\+DB
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_af35a9b8787385887df6392f18f836c45}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_af35a9b8787385887df6392f18f836c45} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{keep\+Vector\+DB}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the VectorDB_Controller class.
+
+Parameters:
+keepVectorDB (bool): A flag indicating whether to keep the VectorDB or not.
+
+Attributes:
+base_url (str): The base URL for the VectorDB service.
+chroma_client (chromadb.PersistentClient): The Chroma client for interacting with the VectorDB.
+keepVectorDB (bool): A flag indicating whether to keep the VectorDB or not.
+
+If keepVectorDB is False, the function will open the "linguistic_benchmark.json" file,
+parse the data, and create a VectorDB using the parsed conversations.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_aa3ddbbca85c7664bb56567221fe5805f}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!add\_to\_vector\_db@{add\_to\_vector\_db}}
+\index{add\_to\_vector\_db@{add\_to\_vector\_db}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{add\_to\_vector\_db()}{add\_to\_vector\_db()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_aa3ddbbca85c7664bb56567221fe5805f} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+add\+\_\+to\+\_\+vector\+\_\+db (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{vector\+\_\+db}{, }\item[{}]{entry\+\_\+id}{, }\item[{}]{serialized\+\_\+conversations}{, }\item[{}]{metadata}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a conversation entry to the specified vector database with its corresponding embeddings and metadata.
+
+This method performs the following steps:
+1. Generates embeddings for the provided serialized conversations using the "all-minilm" model.
+2. Flattens the embeddings if they are nested.
+3. Converts metadata values to appropriate formats.
+4. Adds the entry, including its ID, embeddings, serialized conversations, and metadata, to the vector database.
+
+If embedding generation fails or the entry cannot be added to the vector database, the method logs an error message.
+
+Args:
+    vector_db (VectorDatabase):
+        An instance of the vector database where the entry will be stored. 
+        This database should support the `add` method with parameters `ids`, `embeddings`, `documents`, and `metadatas`.
+    
+    entry_id (Union[str, int]):
+        A unique identifier for the entry being added to the vector database. 
+        This ID is used to reference the entry in future operations.
+    
+    serialized_conversations (str):
+        The serialized conversation data to be embedded and stored. 
+        This should be a string representation of the conversation, suitable for embedding generation.
+    
+    metadata (Dict[str, Any]):
+        A dictionary containing metadata associated with the conversation. 
+        Metadata values will be converted to appropriate formats before being stored.
+
+Returns:
+    None
+
+Raises:
+    None. All exceptions are handled internally and logged as error messages.
+
+Example:
+    ```python
+    vector_db = VectorDatabase(...)
+    entry_id = 12345
+    serialized_conversations = "User: Hello\nBot: Hi there!"
+    metadata = {
+        "user_id": 67890,
+        "timestamp": "2025-01-19T12:34:56Z",
+        "conversation_length": 2
+    }
+    instance.add_to_vector_db(vector_db, entry_id, serialized_conversations, metadata)
+    ```
+
+Notes:
+    - The embedding generation uses the "all-minilm" model. Ensure that this model is supported and properly configured.
+    - The `flatten_embedding` method is used to handle nested embeddings, ensuring they are in a suitable format for the vector database.
+    - Metadata conversion is handled by the `convert_metadata_value` method, which should appropriately transform each metadata value.
+    - Errors during embedding generation or database insertion do not raise exceptions but are logged for debugging purposes.
+    - Ensure that the `vector_db` instance is properly initialized and connected before calling this method.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_aa3ddbbca85c7664bb56567221fe5805f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_aa3ddbbca85c7664bb56567221fe5805f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_aa3ddbbca85c7664bb56567221fe5805f}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!add\_to\_vector\_db@{add\_to\_vector\_db}}
+\index{add\_to\_vector\_db@{add\_to\_vector\_db}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{add\_to\_vector\_db()}{add\_to\_vector\_db()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_aa3ddbbca85c7664bb56567221fe5805f} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+add\+\_\+to\+\_\+vector\+\_\+db (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{vector\+\_\+db}{, }\item[{}]{entry\+\_\+id}{, }\item[{}]{serialized\+\_\+conversations}{, }\item[{}]{metadata}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds a conversation entry to the specified vector database with its corresponding embeddings and metadata.
+
+This method performs the following steps:
+1. Generates embeddings for the provided serialized conversations using the "all-minilm" model.
+2. Validates the response to ensure embeddings are retrieved successfully.
+3. Flattens the embeddings if they are nested to ensure compatibility with the vector database.
+4. Converts metadata values to appropriate formats suitable for storage.
+5. Adds the entry, including its ID, embeddings, serialized conversations, and metadata, to the vector database.
+
+If embedding generation fails or the entry cannot be added to the vector database, the method logs an error message.
+
+Args:
+    vector_db (VectorDatabase):
+        An instance of the vector database where the entry will be stored. 
+        This database should support the `add` method with parameters `ids`, `embeddings`, `documents`, and `metadatas`.
+    
+    entry_id (Union[str, int]):
+        A unique identifier for the entry being added to the vector database. 
+        This ID is used to reference the entry in future operations.
+    
+    serialized_conversations (str):
+        The serialized conversation data to be embedded and stored. 
+        This should be a string representation of the conversation, suitable for embedding generation.
+    
+    metadata (Dict[str, Any]):
+        A dictionary containing metadata associated with the conversation. 
+        Metadata values will be converted to appropriate formats before being stored.
+
+Returns:
+    None
+
+Raises:
+    None. All exceptions are handled internally and logged as error messages.
+
+Example:
+    ```python
+    # Assuming `instance` is an instance of the class containing this method
+    vector_db = VectorDatabase(...)
+    entry_id = 12345
+    serialized_conversations = "User: Hello\nBot: Hi there!"
+    metadata = {
+        "user_id": 67890,
+        "timestamp": "2025-01-19T12:34:56Z",
+        "conversation_length": 2
+    }
+    instance.add_to_vector_db(vector_db, entry_id, serialized_conversations, metadata)
+    ```
+
+Notes:
+    - **Embedding Generation**: The method uses the "all-minilm" model for generating embeddings. Ensure that this model is supported, properly configured, and that the necessary dependencies are installed.
+    - **Flattening Embeddings**: The `flatten_embedding` method is used to handle nested embeddings, ensuring they are in a suitable format for the vector database. It's crucial that the embeddings are correctly flattened to maintain their integrity and usefulness.
+    - **Metadata Conversion**: Metadata conversion is handled by the `convert_metadata_value` method, which transforms each metadata value into a JSON-serializable format if necessary. Ensure that this method is correctly implemented to handle various data types.
+    - **Error Handling**: 
+        - If embedding generation fails (e.g., due to an unsupported model or invalid input), an error is logged, and the method exits without adding the entry to the database.
+        - If adding the entry to the vector database fails (e.g., due to connectivity issues or invalid data), an error is logged with details of the exception.
+    - **Vector Database Requirements**: The `vector_db` instance must be properly initialized, connected, and configured to accept entries with the specified parameters (`ids`, `embeddings`, `documents`, `metadatas`). Ensure that the vector database schema aligns with the data being inserted.
+    - **Data Integrity**: 
+        - The `entry_id` should be unique to prevent collisions or overwrites in the vector database.
+        - The `serialized_conversations` should accurately represent the conversation to ensure meaningful embeddings and retrieval.
+    - **Logging**: The method relies on a configured `logger` to record error messages. Ensure that the logging system is set up appropriately to capture and store these logs for debugging and monitoring purposes.
+    - **Performance Considerations**: 
+        - Batch processing of multiple entries might improve performance if supported by the vector database.
+        - Consider implementing retry mechanisms for transient failures during embedding generation or database insertion.
+    - **Security**: 
+        - Ensure that sensitive information within `serialized_conversations` or `metadata` is handled securely, adhering to data protection regulations and best practices.
+        - Validate and sanitize inputs to prevent potential injection attacks or data corruption.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_aa3ddbbca85c7664bb56567221fe5805f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a862a0f5f808ef8718cbd4e067a263beb}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!convert\_metadata\_value@{convert\_metadata\_value}}
+\index{convert\_metadata\_value@{convert\_metadata\_value}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{convert\_metadata\_value()}{convert\_metadata\_value()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a862a0f5f808ef8718cbd4e067a263beb} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+convert\+\_\+metadata\+\_\+value (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{value}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Converts a metadata value to a JSON-serializable format suitable for storage.
+
+This method processes the input `value` to ensure it is in a format that can be
+stored within the vector database's metadata. The conversion rules are as follows:
+- If the value is `None`, it returns an empty string.
+- If the value is a list or dictionary, it serializes it to a JSON string.
+- For all other data types, it returns the value unchanged.
+
+Args:
+    value (Any):
+        The metadata value to be converted. This can be of any data type, including
+        `None`, list, dictionary, string, integer, float, etc.
+
+Returns:
+    Union[str, Any]:
+        - Returns an empty string if the input `value` is `None`.
+        - Returns a JSON string if the input `value` is a list or dictionary.
+        - Returns the original `value` unchanged for all other data types.
+
+Raises:
+    TypeError:
+        If the input `value` is a type that cannot be serialized to JSON (when it's a list or dictionary).
+
+Example:
+    ```python
+    # Example usage of convert_metadata_value
+
+    # Case 1: Value is None
+    converted = instance.convert_metadata_value(None)
+    print(converted)  # Output: ""
+
+    # Case 2: Value is a list
+    converted = instance.convert_metadata_value([1, 2, 3])
+    print(converted)  # Output: "[1, 2, 3]"
+
+    # Case 3: Value is a dictionary
+    converted = instance.convert_metadata_value({"key": "value"})
+    print(converted)  # Output: "{"key": "value"}"
+
+    # Case 4: Value is a string
+    converted = instance.convert_metadata_value("sample text")
+    print(converted)  # Output: "sample text"
+
+    # Case 5: Value is an integer
+    converted = instance.convert_metadata_value(42)
+    print(converted)  # Output: 42
+    ```
+
+Notes:
+    - This method is primarily used to ensure that metadata values are in a consistent and
+    JSON-compatible format before being stored in the vector database.
+    - When serializing lists or dictionaries, ensure that all nested elements are also JSON-serializable.
+    - If the input `value` is a complex object that cannot be serialized to JSON, a `TypeError` will be raised.
+    - It is advisable to handle or validate input values before passing them to this method to prevent unexpected errors.
+    - The method does not modify the original input; it returns a new converted value based on the input.
+\end{DoxyVerb}
+ Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a862a0f5f808ef8718cbd4e067a263beb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a9ecebea5cbed0c54a33acb42a1999d27}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!create\_vector\_db@{create\_vector\_db}}
+\index{create\_vector\_db@{create\_vector\_db}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{create\_vector\_db()}{create\_vector\_db()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a9ecebea5cbed0c54a33acb42a1999d27} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+create\+\_\+vector\+\_\+db (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{conversations}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates and initializes a vector database collection with the provided conversations.
+
+This method performs the following steps:
+1. Attempts to delete an existing collection named "conversations" to ensure a fresh start.
+If the collection does not exist, it gracefully handles the `ValueError`.
+2. Creates a new collection named "conversations" using the Chroma client.
+3. Iterates through each conversation in the provided list, serializes it to JSON,
+and adds it to the newly created vector database using the `add_to_vector_db` method.
+
+Args:
+    conversations (List[Dict[str, Any]]):
+        A list of conversation dictionaries to be stored in the vector database.
+        Each conversation dictionary should contain at least an "id" key and other relevant metadata.
+
+Returns:
+    None
+
+Raises:
+    None. All exceptions related to deleting the existing collection are handled internally.
+    Any exceptions raised during the addition of entries to the vector database are handled
+    by the `add_to_vector_db` method, which logs the errors.
+
+Example:
+    ```python
+    conversations = [
+        {
+            "id": 1,
+            "user_id": 101,
+            "timestamp": "2025-01-19T12:00:00Z",
+            "messages": [
+                {"sender": "user", "text": "Hello"},
+                {"sender": "bot", "text": "Hi there!"}
+            ]
+        },
+        {
+            "id": 2,
+            "user_id": 102,
+            "timestamp": "2025-01-19T12:05:00Z",
+            "messages": [
+                {"sender": "user", "text": "How are you?"},
+                {"sender": "bot", "text": "I'm a bot, so I don't have feelings, but thanks for asking!"}
+            ]
+        }
+    ]
+    instance.create_vector_db(conversations)
+    ```
+
+Notes:
+    - The method uses the `chroma_client` to interact with the Chroma vector database.
+    Ensure that `chroma_client` is properly initialized and authenticated before calling this method.
+    - The collection name is hardcoded as "conversations". If multiple collections are needed,
+    consider modifying the method to accept the collection name as a parameter.
+    - The `add_to_vector_db` method is responsible for generating embeddings and handling
+    the addition of each conversation to the vector database. Ensure that this method
+    is correctly implemented and accessible within the class.
+    - Conversations are serialized to JSON strings before being added to the vector database.
+    Ensure that all conversation dictionaries are JSON-serializable.
+    - Deleting the existing "conversations" collection ensures that the vector database starts
+    fresh each time `create_vector_db` is called. If persistent storage of previous data is needed,
+    consider removing or modifying the deletion step.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a9ecebea5cbed0c54a33acb42a1999d27_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a39e48d77a583ccef6a9842de2b038c4e}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!flatten\_embedding@{flatten\_embedding}}
+\index{flatten\_embedding@{flatten\_embedding}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{flatten\_embedding()}{flatten\_embedding()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a39e48d77a583ccef6a9842de2b038c4e} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+flatten\+\_\+embedding (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{embedding}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Flattens a nested embedding list into a single-level list if necessary.
+
+This method checks whether the first element of the `embedding` is a list. If it is, the method
+assumes that the entire `embedding` is a nested list and proceeds to flatten it into a single-level
+list. If the `embedding` is already a single-level list, it is returned unchanged.
+
+Args:
+    embedding (List[Any]):
+        A list representing the embedding. This can be either a single-level list of numerical
+        values or a nested list (i.e., a list of lists) that needs to be flattened.
+
+Returns:
+    List[Any]:
+        A single-level list containing all elements of the original `embedding`. If the input was
+        already a single-level list, it is returned as-is. If it was a nested list, it is flattened
+        into a single-level list.
+
+Raises:
+    IndexError:
+        If the `embedding` list is empty, accessing `embedding[0]` will raise an `IndexError`.
+        Ensure that the `embedding` is a non-empty list before calling this method.
+    TypeError:
+        If the elements within the `embedding` are not lists when the method expects a nested list,
+        a `TypeError` may be raised during the flattening process.
+
+Example:
+    ```python
+    # Example usage of flatten_embedding
+
+    # Case 1: Nested embedding
+    nested_embedding = [[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]]
+    flattened = instance.flatten_embedding(nested_embedding)
+    print(flattened)  # Output: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
+
+    # Case 2: Already flat embedding
+    flat_embedding = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
+    flattened = instance.flatten_embedding(flat_embedding)
+    print(flattened)  # Output: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
+    ```
+
+Notes:
+    - The method assumes that if the first element of `embedding` is a list, then all elements are lists.
+    Ensure that the `embedding` follows this structure to avoid inconsistent flattening.
+    - Flattening is performed using a list comprehension that iterates through each sublist and each item
+    within those sublists. This approach ensures that the order of elements is preserved.
+    - If the `embedding` contains elements that are not lists (when the first element is a list), a
+    `TypeError` may occur during the flattening process. It is recommended to validate the structure
+    of `embedding` before invoking this method.
+    - The method does not modify the original `embedding` but returns a new flattened list if necessary.
+    - To handle empty embeddings gracefully, consider adding a check for emptiness before attempting
+    to access `embedding[0]`.
+\end{DoxyVerb}
+ Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a39e48d77a583ccef6a9842de2b038c4e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a20c0cb4766eadf468b69b730095c2053}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!generate\_embeddings@{generate\_embeddings}}
+\index{generate\_embeddings@{generate\_embeddings}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{generate\_embeddings()}{generate\_embeddings()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a20c0cb4766eadf468b69b730095c2053} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+generate\+\_\+embeddings (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{model}{, }\item[{}]{input\+\_\+text}{, }\item[{}]{truncate}{ = {\ttfamily True}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate embeddings for the given input text using the specified model.
+
+This function sends a POST request to the embedding API endpoint to generate
+embeddings for the provided input text.
+
+Parameters:
+model (str): The name of the model to use for generating embeddings.
+input_text (str): The text for which embeddings are to be generated.
+truncate (bool, optional): Whether to truncate the input text. Defaults to True.
+
+Returns:
+dict or None: A dictionary containing the generated embeddings if successful,
+              or None if there was an error or no embeddings were found in the response.
+
+Raises:
+requests.RequestException: If there's an error in making the API request.
+\end{DoxyVerb}
+ Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a20c0cb4766eadf468b69b730095c2053_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a5e99eb967400dffb2292f302e2ee9d10}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!retrieve\_embedding@{retrieve\_embedding}}
+\index{retrieve\_embedding@{retrieve\_embedding}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{retrieve\_embedding()}{retrieve\_embedding()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a5e99eb967400dffb2292f302e2ee9d10} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+retrieve\+\_\+embedding (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{prompt}{, }\item[{}]{n\+\_\+results}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieve embeddings for a given prompt and query the vector database.
+
+This function generates embeddings for the input prompt, flattens them,
+and then queries the vector database to find similar entries.
+
+Parameters:
+prompt (str): The input text for which to retrieve similar embeddings.
+n_results (int, optional): The number of results to return from the query. Defaults to 1.
+
+Returns:
+dict or None: A dictionary containing the query results if successful,
+              or None if there was an error in embedding generation or database querying.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a5e99eb967400dffb2292f302e2ee9d10_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_abd453000e0c3c3079b7b6b7e50a5d711}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!base\_url@{base\_url}}
+\index{base\_url@{base\_url}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{base\_url}{base\_url}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_abd453000e0c3c3079b7b6b7e50a5d711} 
+str equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+base\+\_\+url = "{}http\+://localhost\+:11434"{}}
+
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a3bb137ff4503408f32c64ee39dfbfd16}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!chroma\_client@{chroma\_client}}
+\index{chroma\_client@{chroma\_client}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{chroma\_client}{chroma\_client}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a3bb137ff4503408f32c64ee39dfbfd16} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+chroma\+\_\+client = chromadb.\+Persistent\+Client(path="{}."{})}
+
+\Hypertarget{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a445fe5029b1ab0bf0e7c31921ea5f7f1}\index{equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}!keepVectorDB@{keepVectorDB}}
+\index{keepVectorDB@{keepVectorDB}!equator\_qa.vectordb.VectorDB\_Controller@{equator\_qa.vectordb.VectorDB\_Controller}}
+\doxysubsubsection{\texorpdfstring{keepVectorDB}{keepVectorDB}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1vectordb_1_1_vector_d_b___controller_a445fe5029b1ab0bf0e7c31921ea5f7f1} 
+equator\+\_\+qa.\+vectordb.\+Vector\+DB\+\_\+\+Controller.\+keep\+Vector\+DB = keep\+Vector\+DB}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+.\+venv/\+Lib/site-\/packages/equator\+\_\+qa/\mbox{\hyperlink{vectordb_8py}{vectordb.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,342 @@
+\doxysection{equator\+\_\+qa.\+utils Namespace Reference}
+\hypertarget{namespaceequator__qa_1_1utils}{}\label{namespaceequator__qa_1_1utils}\index{equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classequator__qa_1_1utils_1_1_e_q_u_a_t_o_r___client}{EQUATOR\+\_\+\+Client}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_aedf6dcf0bd156954df0d28b3a17c8d4e}{begin\+\_\+benchmark}} (execution\+\_\+steps, student\+\_\+ollama\+\_\+models, student\+\_\+groq\+\_\+models, student\+\_\+openrouter\+\_\+models, OLLAMA\+\_\+\+EVALUATOR\+\_\+\+MODEL, GROQ\+\_\+\+EVALUATOR\+\_\+\+MODEL, vectordb\+\_\+instance, benchmark\+\_\+name, date\+\_\+now, answer\+\_\+rounds)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_aeaca5569804de3c237256d8f0dfeb19b}{extract\+\_\+model\+\_\+parts}} (model\+\_\+string)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a2c97ebf29c601df97e6bd2bb26989138}{sanitize\+\_\+string}} (value)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_abd1af851654d6dd568a1777763365dc6}{create\+\_\+template\+\_\+json}} (student\+\_\+model, output\+\_\+path, question\+\_\+id, category, human\+\_\+answer, question, student\+\_\+answer, evaluator\+\_\+response, score)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a09191ec474501b05dd217214d27c4c15}{extract\+\_\+score\+\_\+from\+\_\+string}} (response\+\_\+string)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a3cf64b4d24c740841895e2c9b9675c82}{is\+\_\+valid\+\_\+uuid4}} (uuid\+\_\+string)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a328387a62374d99c963d55b1db6c036b}{cleanup\+\_\+chromadb}} (db\+\_\+filename="{}chroma.\+sqlite3"{}, root\+\_\+dir="{}."{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a1bfb2c3ec0d8ba6b8d190c4fea758454}{format}}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a64007f7ba3cff56298335dce3641414b}{level}}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a0f454df2070553cba6bd5b6de201b4cb}{rotation}}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_aaef6e792a7f4dd1b8f4553c7067312b0}{retention}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceequator__qa_1_1utils_aedf6dcf0bd156954df0d28b3a17c8d4e}\index{equator\_qa.utils@{equator\_qa.utils}!begin\_benchmark@{begin\_benchmark}}
+\index{begin\_benchmark@{begin\_benchmark}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{begin\_benchmark()}{begin\_benchmark()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_aedf6dcf0bd156954df0d28b3a17c8d4e} 
+equator\+\_\+qa.\+utils.\+begin\+\_\+benchmark (\begin{DoxyParamCaption}\item[{}]{execution\+\_\+steps}{, }\item[{}]{student\+\_\+ollama\+\_\+models}{, }\item[{}]{student\+\_\+groq\+\_\+models}{, }\item[{}]{student\+\_\+openrouter\+\_\+models}{, }\item[{}]{OLLAMA\+\_\+\+EVALUATOR\+\_\+\+MODEL}{, }\item[{}]{GROQ\+\_\+\+EVALUATOR\+\_\+\+MODEL}{, }\item[{}]{vectordb\+\_\+instance}{, }\item[{}]{benchmark\+\_\+name}{, }\item[{}]{date\+\_\+now}{, }\item[{}]{answer\+\_\+rounds}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initiates and manages the benchmarking process based on specified execution steps.
+
+Depending on the `execution_steps`, this function evaluates student models against evaluator models
+using the EQUATOR_Client. It supports various evaluation workflows, including:
+- Ollama to GROQ
+- GROQ to Ollama
+- Ollama to OpenRouter
+- Ollama to Ollama
+- GROQ to OpenRouter
+
+Args:
+    execution_steps (str):
+        Specifies the benchmarking workflow to execute (e.g., "ollama_to_groq_evaluate").
+    
+    student_ollama_models (List[str]):
+        List of student models using the Ollama platform.
+    
+    student_groq_models (List[str]):
+        List of student models using the GROQ platform.
+    
+    student_openrouter_models (List[str]):
+        List of student models using the OpenRouter platform.
+    
+    OLLAMA_EVALUATOR_MODEL (str):
+        The evaluator model identifier for Ollama evaluations.
+    
+    GROQ_EVALUATOR_MODEL (str):
+        The evaluator model identifier for GROQ evaluations.
+    
+    vectordb_instance:
+        Instance of the vector database used for storing and retrieving embeddings.
+    
+    benchmark_name (str):
+        Name of the benchmark being executed.
+    
+    date_now (str):
+        Current date in a suitable string format for folder naming.
+    
+    answer_rounds (int):
+        Number of evaluation rounds to perform.
+
+Returns:
+    None
+
+Example:
+    ```python
+    begin_benchmark(
+        execution_steps="ollama_to_groq_evaluate",
+        student_ollama_models=["ollama-model-1", "ollama-model-2"],
+        student_groq_models=["groq-model-1"],
+        student_openrouter_models=["openrouter-model-1"],
+        OLLAMA_EVALUATOR_MODEL="ollama-eval-model",
+        GROQ_EVALUATOR_MODEL="groq-eval-model",
+        vectordb_instance=vector_db,
+        benchmark_name="midterm_benchmark",
+        date_now="2025-01-19",
+        answer_rounds=5,
+    )
+    ```
+
+Notes:
+    - Ensure that the `EQUATOR_Client` is correctly implemented and imported.
+    - The `extract_model_parts` function should be defined to parse model identifiers.
+    - Logging should be properly configured to capture informational and debug messages.
+    - Directory paths for saving outputs should have the necessary write permissions.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{namespaceequator__qa_1_1utils_aedf6dcf0bd156954df0d28b3a17c8d4e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceequator__qa_1_1utils_a328387a62374d99c963d55b1db6c036b}\index{equator\_qa.utils@{equator\_qa.utils}!cleanup\_chromadb@{cleanup\_chromadb}}
+\index{cleanup\_chromadb@{cleanup\_chromadb}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{cleanup\_chromadb()}{cleanup\_chromadb()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a328387a62374d99c963d55b1db6c036b} 
+equator\+\_\+qa.\+utils.\+cleanup\+\_\+chromadb (\begin{DoxyParamCaption}\item[{}]{db\+\_\+filename}{ = {\ttfamily "{}chroma.sqlite3"{}}, }\item[{}]{root\+\_\+dir}{ = {\ttfamily "{}."{}}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Clean up the ChromaDB by removing the specified SQLite file and any directories
+in the root directory that have names matching UUIDv4.
+
+Args:
+    db_filename (str): The name of the SQLite database file to remove.
+    root_dir (str): The root directory to search for UUIDv4-named directories.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{namespaceequator__qa_1_1utils_a328387a62374d99c963d55b1db6c036b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceequator__qa_1_1utils_abd1af851654d6dd568a1777763365dc6}\index{equator\_qa.utils@{equator\_qa.utils}!create\_template\_json@{create\_template\_json}}
+\index{create\_template\_json@{create\_template\_json}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{create\_template\_json()}{create\_template\_json()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_abd1af851654d6dd568a1777763365dc6} 
+equator\+\_\+qa.\+utils.\+create\+\_\+template\+\_\+json (\begin{DoxyParamCaption}\item[{}]{student\+\_\+model}{, }\item[{}]{output\+\_\+path}{, }\item[{}]{question\+\_\+id}{, }\item[{}]{category}{, }\item[{}]{human\+\_\+answer}{, }\item[{}]{question}{, }\item[{}]{student\+\_\+answer}{, }\item[{}]{evaluator\+\_\+response}{, }\item[{}]{score}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates or updates a JSON file with evaluation results for a student's answer.
+
+This function ensures the output directory exists, loads existing data if available,
+updates the JSON structure with the new evaluation data, and saves it back to the file.
+
+Args:
+    student_model (str):
+        The identifier of the student model that generated the answer.
+    output_path (str):
+        The file path where the JSON data will be saved or updated.
+    question_id (str):
+        The unique identifier for the question being evaluated.
+    category (str):
+        The category or topic of the question.
+    human_answer (str):
+        The correct or reference answer provided by a human.
+    question (str):
+        The text of the question being evaluated.
+    student_answer (str):
+        The answer generated by the student model.
+    evaluator_response (str):
+        The feedback or evaluation provided by the evaluator.
+    score (float):
+        The numerical score assigned based on the evaluation.
+
+Returns:
+    None
+
+Example:
+    ```python
+    create_template_json(
+        student_model="gpt-4",
+        output_path="./results/evaluation.json",
+        question_id="Q123",
+        category="Biology",
+        human_answer="Photosynthesis is the process by which green plants...",
+        question="Explain photosynthesis.",
+        student_answer="Photosynthesis allows plants to convert sunlight into energy.",
+        evaluator_response="The answer is correct but lacks detail on the chemical process.",
+        score=85.0,
+    )
+    ```
+
+Notes:
+    - Ensure that the `jn` module is correctly imported as `json`.
+    - The function will overwrite existing entries with the same `question_id`.
+    - Handle sensitive data appropriately when writing to JSON files.
+\end{DoxyVerb}
+ Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceequator__qa_1_1utils_abd1af851654d6dd568a1777763365dc6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceequator__qa_1_1utils_aeaca5569804de3c237256d8f0dfeb19b}\index{equator\_qa.utils@{equator\_qa.utils}!extract\_model\_parts@{extract\_model\_parts}}
+\index{extract\_model\_parts@{extract\_model\_parts}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{extract\_model\_parts()}{extract\_model\_parts()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_aeaca5569804de3c237256d8f0dfeb19b} 
+equator\+\_\+qa.\+utils.\+extract\+\_\+model\+\_\+parts (\begin{DoxyParamCaption}\item[{}]{model\+\_\+string}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Splits a model string into its constituent parts based on a predefined pattern.
+
+This function uses a regular expression to extract two parts from the `model_string`,
+separated by a forward slash (`/`). If the string matches the pattern, it returns a tuple
+containing both parts. Otherwise, it returns `(None, None)`.
+
+Args:
+    model_string (str):
+        The model identifier string to be split. Expected format is "part1/part2",
+        where neither part contains a forward slash (`/`) or colon (`:`).
+
+Returns:
+    Tuple[Optional[str], Optional[str]]:
+        A tuple containing the two extracted parts of the model string. Returns `(None, None)`
+        if the input does not match the expected pattern.
+
+Example:
+    ```python
+    part1, part2 = extract_model_parts("category/model")
+    print(part1)  # Output: "category"
+    print(part2)  # Output: "model"
+    
+    part1, part2 = extract_model_parts("invalidmodelstring")
+    print(part1)  # Output: None
+    print(part2)  # Output: None
+    ```
+
+Notes:
+    - Ensure that the `model_string` follows the "part1/part2" format to successfully extract both parts.
+    - This function does not handle cases where there are multiple slashes or colons in the `model_string`.
+\end{DoxyVerb}
+ Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{namespaceequator__qa_1_1utils_aeaca5569804de3c237256d8f0dfeb19b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceequator__qa_1_1utils_a09191ec474501b05dd217214d27c4c15}\index{equator\_qa.utils@{equator\_qa.utils}!extract\_score\_from\_string@{extract\_score\_from\_string}}
+\index{extract\_score\_from\_string@{extract\_score\_from\_string}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{extract\_score\_from\_string()}{extract\_score\_from\_string()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a09191ec474501b05dd217214d27c4c15} 
+equator\+\_\+qa.\+utils.\+extract\+\_\+score\+\_\+from\+\_\+string (\begin{DoxyParamCaption}\item[{}]{response\+\_\+string}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extracts a numerical score from a response string using predefined patterns.
+
+This function searches the input `response_string` for various patterns that indicate a score.
+It uses regular expressions to match different formats and returns the first found score as an integer.
+If no score pattern is matched, it returns `None`.
+
+Args:
+    response_string (str):
+        The string containing the evaluator's response from which to extract the score.
+
+Returns:
+    Optional[int]:
+        The extracted score as an integer if a pattern is matched; otherwise, `None`.
+
+Example:
+    ```python
+    response = "The score assigned is 85%."
+    score = extract_score_from_string(response)
+    print(score)  # Output: 85
+    ```
+
+Notes:
+    - The function is case-insensitive and handles multiple score formats.
+    - Ensure that the response strings follow one of the predefined patterns for accurate extraction.
+\end{DoxyVerb}
+ Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceequator__qa_1_1utils_a09191ec474501b05dd217214d27c4c15_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceequator__qa_1_1utils_a3cf64b4d24c740841895e2c9b9675c82}\index{equator\_qa.utils@{equator\_qa.utils}!is\_valid\_uuid4@{is\_valid\_uuid4}}
+\index{is\_valid\_uuid4@{is\_valid\_uuid4}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_uuid4()}{is\_valid\_uuid4()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a3cf64b4d24c740841895e2c9b9675c82} 
+equator\+\_\+qa.\+utils.\+is\+\_\+valid\+\_\+uuid4 (\begin{DoxyParamCaption}\item[{}]{uuid\+\_\+string}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Validate that a string is a valid UUID4.
+
+Args:
+    uuid_string (str): The string to validate.
+
+Returns:
+    bool: True if valid UUID4, False otherwise.
+\end{DoxyVerb}
+ Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{namespaceequator__qa_1_1utils_a3cf64b4d24c740841895e2c9b9675c82_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceequator__qa_1_1utils_a2c97ebf29c601df97e6bd2bb26989138}\index{equator\_qa.utils@{equator\_qa.utils}!sanitize\_string@{sanitize\_string}}
+\index{sanitize\_string@{sanitize\_string}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{sanitize\_string()}{sanitize\_string()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a2c97ebf29c601df97e6bd2bb26989138} 
+equator\+\_\+qa.\+utils.\+sanitize\+\_\+string (\begin{DoxyParamCaption}\item[{}]{value}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Escapes curly braces in strings to prevent issues with format specifiers in logging.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceequator__qa_1_1utils_a1bfb2c3ec0d8ba6b8d190c4fea758454}\index{equator\_qa.utils@{equator\_qa.utils}!format@{format}}
+\index{format@{format}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a1bfb2c3ec0d8ba6b8d190c4fea758454} 
+equator\+\_\+qa.\+utils.\+format}
+
+\Hypertarget{namespaceequator__qa_1_1utils_a64007f7ba3cff56298335dce3641414b}\index{equator\_qa.utils@{equator\_qa.utils}!level@{level}}
+\index{level@{level}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a64007f7ba3cff56298335dce3641414b} 
+equator\+\_\+qa.\+utils.\+level}
+
+\Hypertarget{namespaceequator__qa_1_1utils_aaef6e792a7f4dd1b8f4553c7067312b0}\index{equator\_qa.utils@{equator\_qa.utils}!retention@{retention}}
+\index{retention@{retention}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{retention}{retention}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_aaef6e792a7f4dd1b8f4553c7067312b0} 
+equator\+\_\+qa.\+utils.\+retention}
+
+\Hypertarget{namespaceequator__qa_1_1utils_a0f454df2070553cba6bd5b6de201b4cb}\index{equator\_qa.utils@{equator\_qa.utils}!rotation@{rotation}}
+\index{rotation@{rotation}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a0f454df2070553cba6bd5b6de201b4cb} 
+equator\+\_\+qa.\+utils.\+rotation}
+

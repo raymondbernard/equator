@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['a_20prioritization_20strategies_3a_20strong_0',['&lt;strong&gt;A. Prioritization Strategies:&lt;/strong&gt;',['../F:/pythonprograms/equator-qa-git/.venv/Lib/site-packages/equator_qa/README.md#autotoc_md33',1,'']]],
+  ['a_20qa_20linguistic_5fbenchmark_20json_20with_20over_201000_20however_20we_20will_20create_20a_20website_20which_20will_20pusblish_20our_20resutls_20using_20this_20dataset_1',['We do have a QA `linguistic_benchmark.json with over 1000+ .  However, we will create a website which will pusblish our resutls using this dataset.',['../F:/pythonprograms/equator-qa-git/.venv/Lib/site-packages/equator_qa/README.md#autotoc_md61',1,'']]],
+  ['a_20strong_20current_20support_20strong_2',['A. &lt;strong&gt;Current Support&lt;/strong&gt;',['../F:/pythonprograms/equator-qa-git/.venv/Lib/site-packages/equator_qa/README.md#autotoc_md18',1,'']]],
+  ['a_20website_20which_20will_20pusblish_20our_20resutls_20using_20this_20dataset_3',['We do have a QA `linguistic_benchmark.json with over 1000+ .  However, we will create a website which will pusblish our resutls using this dataset.',['../F:/pythonprograms/equator-qa-git/.venv/Lib/site-packages/equator_qa/README.md#autotoc_md61',1,'']]],
+  ['add_5fto_5fvector_5fdb_4',['add_to_vector_db',['../classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#aa3ddbbca85c7664bb56567221fe5805f',1,'equator_qa.vectordb.VectorDB_Controller.add_to_vector_db(self, vector_db, entry_id, serialized_conversations, metadata)'],['../classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#aa3ddbbca85c7664bb56567221fe5805f',1,'equator_qa.vectordb.VectorDB_Controller.add_to_vector_db(self, vector_db, entry_id, serialized_conversations, metadata)']]],
+  ['and_20parallelization_3a_20strong_5',['&lt;strong&gt;B. Automation and Parallelization:&lt;/strong&gt;',['../F:/pythonprograms/equator-qa-git/.venv/Lib/site-packages/equator_qa/README.md#autotoc_md34',1,'']]],
+  ['authors_6',['Authors',['../F:/pythonprograms/equator-qa-git/.venv/Lib/site-packages/equator_qa/README.md#autotoc_md63',1,'']]],
+  ['automation_20and_20parallelization_3a_20strong_7',['&lt;strong&gt;B. Automation and Parallelization:&lt;/strong&gt;',['../F:/pythonprograms/equator-qa-git/.venv/Lib/site-packages/equator_qa/README.md#autotoc_md34',1,'']]]
+];

@@ -1,0 +1,11 @@
+<map id="equator_qa.vectordb.VectorDB_Controller.create_vector_db" name="equator_qa.vectordb.VectorDB_Controller.create_vector_db">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,72,209,115"/>
+<area shape="rect" id="Node000002" href="$classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#aa3ddbbca85c7664bb56567221fe5805f" title=" " alt="" coords="257,72,463,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,91,241,91,241,96,209,96"/>
+<area shape="rect" id="Node000003" href="$classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#a862a0f5f808ef8718cbd4e067a263beb" title=" " alt="" coords="511,5,754,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,69,527,50,528,55,451,74"/>
+<area shape="rect" id="Node000004" href="$classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#a39e48d77a583ccef6a9842de2b038c4e" title=" " alt="" coords="528,72,738,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="463,91,512,91,512,96,463,96"/>
+<area shape="rect" id="Node000005" href="$classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#a20c0cb4766eadf468b69b730095c2053" title=" " alt="" coords="543,139,722,197"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="441,113,529,137,527,142,440,118"/>
+</map>

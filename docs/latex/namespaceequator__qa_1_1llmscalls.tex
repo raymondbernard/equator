@@ -1,0 +1,237 @@
+\doxysection{equator\+\_\+qa.\+llmscalls Namespace Reference}
+\hypertarget{namespaceequator__qa_1_1llmscalls}{}\label{namespaceequator__qa_1_1llmscalls}\index{equator\_qa.llmscalls@{equator\_qa.llmscalls}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1llmscalls_afe37453eb1a7f204e26222f95fd4f8d5}{call\+\_\+groq\+\_\+evaluator\+\_\+api}} (evaluator\+\_\+model, student\+\_\+answer, evaluator\+\_\+system\+\_\+prompt)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1llmscalls_a15b91f9944b5e9dba4b866644c5d9fb0}{call\+\_\+ollama\+\_\+evaluator\+\_\+api}} (evaluator\+\_\+model, student\+\_\+answer, evaluator\+\_\+system\+\_\+prompt)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1llmscalls_a233ecbe3f9d159e3eb61fa75a12b7f72}{call\+\_\+openrouter\+\_\+student\+\_\+api}} (full\+\_\+prompt\+\_\+student, model\+\_\+path)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1llmscalls_a5ecc9394ea2223f298ba44526694ae5d}{call\+\_\+ollama\+\_\+student\+\_\+api}} (full\+\_\+prompt\+\_\+student, student\+\_\+model)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1llmscalls_aa14e9dd539da6d71a02a2c72dc114746}{call\+\_\+ollama\+\_\+student\+\_\+docker}} (full\+\_\+prompt\+\_\+student, student\+\_\+model)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1llmscalls_a5f89f6cf3fcb635f789568a638e8301a}{call\+\_\+groq\+\_\+student\+\_\+api}} (full\+\_\+prompt\+\_\+student, groq\+\_\+student\+\_\+model)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceequator__qa_1_1llmscalls_afe37453eb1a7f204e26222f95fd4f8d5}\index{equator\_qa.llmscalls@{equator\_qa.llmscalls}!call\_groq\_evaluator\_api@{call\_groq\_evaluator\_api}}
+\index{call\_groq\_evaluator\_api@{call\_groq\_evaluator\_api}!equator\_qa.llmscalls@{equator\_qa.llmscalls}}
+\doxysubsubsection{\texorpdfstring{call\_groq\_evaluator\_api()}{call\_groq\_evaluator\_api()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1llmscalls_afe37453eb1a7f204e26222f95fd4f8d5} 
+equator\+\_\+qa.\+llmscalls.\+call\+\_\+groq\+\_\+evaluator\+\_\+api (\begin{DoxyParamCaption}\item[{}]{evaluator\+\_\+model}{, }\item[{}]{student\+\_\+answer}{, }\item[{}]{evaluator\+\_\+system\+\_\+prompt}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Evaluates a student's answer using the Groq Evaluator API.
+
+This function sends the student's answer along with a system prompt to the Groq Evaluator API
+and retrieves the evaluation response.
+
+Args:
+    evaluator_model (str):
+        The identifier of the evaluator model to use.
+    
+    student_answer (str):
+        The student's answer to be evaluated.
+    
+    evaluator_system_prompt (List[Dict[str, str]]):
+        A list of messages defining the system prompt for the evaluator.
+
+Returns:
+    Optional[Tuple[str, str]]:
+        A tuple containing the `student_answer` and the evaluator's feedback if successful.
+        Returns `None` if the evaluation fails.
+
+Example:
+    ```python
+    evaluator_model = "groq-eval-model-v1"
+    student_answer = "The capital of France is Paris."
+    evaluator_system_prompt = [
+        {"role": "system", "content": "You are an evaluator for geography questions."},
+        {"role": "user", "content": "Evaluate the following student answer for correctness and completeness."}
+    ]
+
+    result = call_groq_evaluator_api(evaluator_model, student_answer, evaluator_system_prompt)
+    if result:
+        answer, feedback = result
+        print(f"Answer: {answer}\nFeedback: {feedback}")
+    else:
+        print("Evaluation failed.")
+    ```
+
+Notes:
+    - Ensure that the `GROQ_API_KEY` environment variable is set.
+    - The `Groq` client library must be installed and imported.
+    - Handle sensitive data securely.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1llmscalls_a5f89f6cf3fcb635f789568a638e8301a}\index{equator\_qa.llmscalls@{equator\_qa.llmscalls}!call\_groq\_student\_api@{call\_groq\_student\_api}}
+\index{call\_groq\_student\_api@{call\_groq\_student\_api}!equator\_qa.llmscalls@{equator\_qa.llmscalls}}
+\doxysubsubsection{\texorpdfstring{call\_groq\_student\_api()}{call\_groq\_student\_api()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1llmscalls_a5f89f6cf3fcb635f789568a638e8301a} 
+equator\+\_\+qa.\+llmscalls.\+call\+\_\+groq\+\_\+student\+\_\+api (\begin{DoxyParamCaption}\item[{}]{full\+\_\+prompt\+\_\+student}{, }\item[{}]{groq\+\_\+student\+\_\+model}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sends a student's prompt to the Groq API and retrieves the response.
+
+Args:
+    full_prompt_student (str):
+        The student's prompt to be processed.
+    groq_student_model (str):
+        The model identifier to use for generating the response.
+
+Returns:
+    Optional[str]:
+        The response from the Groq API if successful, otherwise `None`.
+
+Example:
+    ```python
+    response = call_groq_student_api("Explain photosynthesis.", "groq-model-v1")
+    if response:
+        print(response)
+    else:
+        print("Evaluation failed.")
+    ```
+
+Notes:
+    - Ensure the `GROQ_API_KEY` environment variable is set with a valid API key.
+    - The `Groq` client library must be installed and imported.
+    - The `get_student_prompt` function should be defined to format the messages correctly.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1llmscalls_a15b91f9944b5e9dba4b866644c5d9fb0}\index{equator\_qa.llmscalls@{equator\_qa.llmscalls}!call\_ollama\_evaluator\_api@{call\_ollama\_evaluator\_api}}
+\index{call\_ollama\_evaluator\_api@{call\_ollama\_evaluator\_api}!equator\_qa.llmscalls@{equator\_qa.llmscalls}}
+\doxysubsubsection{\texorpdfstring{call\_ollama\_evaluator\_api()}{call\_ollama\_evaluator\_api()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1llmscalls_a15b91f9944b5e9dba4b866644c5d9fb0} 
+equator\+\_\+qa.\+llmscalls.\+call\+\_\+ollama\+\_\+evaluator\+\_\+api (\begin{DoxyParamCaption}\item[{}]{evaluator\+\_\+model}{, }\item[{}]{student\+\_\+answer}{, }\item[{}]{evaluator\+\_\+system\+\_\+prompt}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Evaluates a student's answer using the Ollama Evaluator API.
+
+Sends the student's answer and a system prompt to the Ollama API and retrieves the evaluation response.
+
+Args:
+    evaluator_model (str):
+        The evaluator model to use.
+    
+    student_answer (str):
+        The student's answer to be evaluated.
+    
+    evaluator_system_prompt (List[Dict[str, str]]):
+        A list of messages defining the system prompt for the evaluator.
+
+Returns:
+    Tuple[str, str]:
+        A tuple containing the `student_answer` and the evaluator's feedback.
+
+Example:
+    ```python
+    evaluator_model = "ollama-model-v1"
+    student_answer = "The capital of France is Paris."
+    evaluator_system_prompt = [
+        {"role": "system", "content": "You are an evaluator for geography questions."},
+        {"role": "user", "content": "Evaluate the following student answer for correctness and completeness."}
+    ]
+
+    result = call_ollama_evaluator_api(evaluator_model, student_answer, evaluator_system_prompt)
+    if result:
+        answer, feedback = result
+        print(f"Answer: {answer}\nFeedback: {feedback}")
+    else:
+        print("Evaluation failed.")
+    ```
+
+Notes:
+    - Ensure the Ollama API is running and accessible at the specified URL.
+    - Handle sensitive data securely.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1llmscalls_a5ecc9394ea2223f298ba44526694ae5d}\index{equator\_qa.llmscalls@{equator\_qa.llmscalls}!call\_ollama\_student\_api@{call\_ollama\_student\_api}}
+\index{call\_ollama\_student\_api@{call\_ollama\_student\_api}!equator\_qa.llmscalls@{equator\_qa.llmscalls}}
+\doxysubsubsection{\texorpdfstring{call\_ollama\_student\_api()}{call\_ollama\_student\_api()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1llmscalls_a5ecc9394ea2223f298ba44526694ae5d} 
+equator\+\_\+qa.\+llmscalls.\+call\+\_\+ollama\+\_\+student\+\_\+api (\begin{DoxyParamCaption}\item[{}]{full\+\_\+prompt\+\_\+student}{, }\item[{}]{student\+\_\+model}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sends a student's prompt to the Ollama API and retrieves the response.
+
+Args:
+    full_prompt_student (str):
+        The student's prompt to be processed.
+    
+    student_model (str):
+        The model to use for generating the response.
+
+Returns:
+    str:
+        The response from the Ollama API.
+
+Example:
+    ```python
+    response = call_ollama_student_api("Explain photosynthesis.", "ollama-model-v1")
+    print(response)
+    ```
+
+Notes:
+    - Ensure the Ollama API is running and accessible at the specified URL.
+    - The `get_student_prompt` function should be defined to format the messages correctly.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1llmscalls_aa14e9dd539da6d71a02a2c72dc114746}\index{equator\_qa.llmscalls@{equator\_qa.llmscalls}!call\_ollama\_student\_docker@{call\_ollama\_student\_docker}}
+\index{call\_ollama\_student\_docker@{call\_ollama\_student\_docker}!equator\_qa.llmscalls@{equator\_qa.llmscalls}}
+\doxysubsubsection{\texorpdfstring{call\_ollama\_student\_docker()}{call\_ollama\_student\_docker()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1llmscalls_aa14e9dd539da6d71a02a2c72dc114746} 
+equator\+\_\+qa.\+llmscalls.\+call\+\_\+ollama\+\_\+student\+\_\+docker (\begin{DoxyParamCaption}\item[{}]{full\+\_\+prompt\+\_\+student}{, }\item[{}]{student\+\_\+model}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sends a student's prompt to the Ollama Docker API and retrieves the response.
+
+Args:
+    full_prompt_student (str): The student's prompt to be processed.
+    student_model (str): The model to use for generating the response.
+
+Returns:
+    Optional[str]:
+        The response from the Ollama API if successful, otherwise `None`.
+
+Example:
+    ```python
+    response = call_ollama_student_docker("Explain photosynthesis.", "ollama-model-v1")
+    if response:
+        print(response)
+    else:
+        print("Evaluation failed.")
+    ```
+
+Notes:
+    - Ensure the Ollama API is running and accessible at the specified URL.
+    - The `get_student_prompt` function should be defined to format the messages correctly.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1llmscalls_a233ecbe3f9d159e3eb61fa75a12b7f72}\index{equator\_qa.llmscalls@{equator\_qa.llmscalls}!call\_openrouter\_student\_api@{call\_openrouter\_student\_api}}
+\index{call\_openrouter\_student\_api@{call\_openrouter\_student\_api}!equator\_qa.llmscalls@{equator\_qa.llmscalls}}
+\doxysubsubsection{\texorpdfstring{call\_openrouter\_student\_api()}{call\_openrouter\_student\_api()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1llmscalls_a233ecbe3f9d159e3eb61fa75a12b7f72} 
+equator\+\_\+qa.\+llmscalls.\+call\+\_\+openrouter\+\_\+student\+\_\+api (\begin{DoxyParamCaption}\item[{}]{full\+\_\+prompt\+\_\+student}{, }\item[{}]{model\+\_\+path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sends a student's prompt to the OpenRouter API and retrieves the response.
+
+Args:
+    full_prompt_student (str):
+        The complete prompt from the student that needs to be processed.
+    
+    model_path (str):
+        The path or identifier of the model to be used for generating the response.
+
+Returns:
+    str:
+        The response generated by the OpenRouter API based on the provided prompts.
+
+Example:
+    ```python
+    full_prompt_student = "Explain the theory of relativity."
+    model_path = "gpt-4"
+
+    response = call_openrouter_student_api(full_prompt_student, model_path)
+    print(response)
+    ```
+
+Notes:
+    - Ensure the `OPENROUTER_KEY` environment variable is set with a valid API key.
+    - The `OpenAI` client should be properly installed and imported.
+    - The function assumes that `get_student_prompt` is defined and returns the appropriate message format.
+\end{DoxyVerb}
+ 

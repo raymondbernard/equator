@@ -1,0 +1,473 @@
+\doxysection{.venv/\+Lib/site-\/packages/equator\+\_\+qa Directory Reference}
+\hypertarget{dir_5b39e5cdaf35d8b3701707508402182a}{}\label{dir_5b39e5cdaf35d8b3701707508402182a}\index{.venv/Lib/site-\/packages/equator\_qa Directory Reference@{.venv/Lib/site-\/packages/equator\_qa Directory Reference}}
+Directory dependency graph for equator\+\_\+qa\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{dir_5b39e5cdaf35d8b3701707508402182a_dep}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Directories}
+\begin{DoxyCompactItemize}
+\item 
+directory \mbox{\hyperlink{dir_d919aa58bc7635d41d5d873c46c3f7d8}{tests}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{____init_____8py}{\+\_\+\+\_\+init\+\_\+\+\_\+.\+py}}
+\item 
+file \mbox{\hyperlink{charting_8py}{charting.\+py}}
+\item 
+file \mbox{\hyperlink{llmscalls_8py}{llmscalls.\+py}}
+\item 
+file \mbox{\hyperlink{stats_8py}{stats.\+py}}
+\item 
+file \mbox{\hyperlink{utils_8py}{utils.\+py}}
+\item 
+file \mbox{\hyperlink{vectordb_8py}{vectordb.\+py}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{README.md_autotoc_md1}{}\doxysubsection{\texorpdfstring{Overview}{Overview}}\label{README.md_autotoc_md1}
+The {\bfseries{EQUATOR Evaluator}} is a robust framework designed to systematically evaluate the factual accuracy and reasoning capabilities of large language models (LLMs). Unlike traditional evaluation methods, which often prioritize fluency over accuracy, this tool employs a {\bfseries{deterministic scoring system}} that ensures precise and unbiased assessment of LLM-\/generated responses.
+
+This repository implements the methodology described in the research paper "{}\+EQUATOR\+: A Deterministic Framework for \+Evaluating LLM Reasoning with Open-\/\+Ended\+Questions. \# v1.\+0.\+0-\/beta"{}(Bernard et al., 2024). By leveraging vector databases and smaller, locally hosted LLMs, the LLM Evaluator bridges the gap between scalability and accuracy in automated assessments.
+
+Study paper\+: \href{https://arxiv.org/abs/2501.00257}{\texttt{ Ar\+Vix Study}}
+
+
+
+\DoxyHorRuler{0}
+
+
+Youtube Videos\+:\hypertarget{README.md_autotoc_md3}{}\doxysubsection{\texorpdfstring{Explainer Video}{Explainer Video}}\label{README.md_autotoc_md3}
+\href{https://www.youtube.com/watch?v=ryTRe18UHXE}{\texttt{ Short explainer video}}
+
+\href{https://www.youtube.com/watch?v=FVVAPXlRvPg}{\texttt{ Deep Dive Podcast video}}\hypertarget{README.md_autotoc_md4}{}\doxysubsection{\texorpdfstring{Demo Video}{Demo Video}}\label{README.md_autotoc_md4}
+\href{https://youtu.be/e-uU_PaVDMM}{\texttt{ EQUATOR installation and demo video}}\hypertarget{README.md_autotoc_md5}{}\doxysubsection{\texorpdfstring{Key Features}{Key Features}}\label{README.md_autotoc_md5}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Deterministic Scoring}}\+: Assigns binary scores (100\% or 0\%) based solely on factual correctness.
+\item {\bfseries{Vector Database Integration}}\+: Embeds open-\/ended questions and human-\/evaluated answers for semantic matching.
+\item {\bfseries{Automated Evaluation}}\+: Uses smaller LLMs to provide scalable and efficient assessments.
+\item {\bfseries{Bias Mitigation}}\+: Eliminates scoring biases related to linguistic fluency or persuasion.
+\item {\bfseries{Cost Efficiency}}\+: Optimizes token usage, significantly reducing operational costs for evaluation.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md7}{}\doxysubsection{\texorpdfstring{Why LLM Evaluator?}{Why LLM Evaluator?}}\label{README.md_autotoc_md7}
+Traditional methods, like multiple-\/choice or human evaluation, fail to capture the nuanced reasoning and factual accuracy required in high-\/stakes domains such as medicine or law. The LLM Evaluator\+:
+
+
+\begin{DoxyItemize}
+\item Focuses on {\bfseries{factual correctness}} over linguistic style.
+\item Reduces reliance on human evaluators by automating the grading process.
+\item Provides insights into where LLMs fall short, enabling targeted improvements in model training.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md9}{}\doxysubsection{\texorpdfstring{Methodology}{Methodology}}\label{README.md_autotoc_md9}
+\hypertarget{README.md_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{1. Deterministic Scoring Framework}{1. Deterministic Scoring Framework}}\label{README.md_autotoc_md10}
+The scoring framework evaluates LLM-\/generated answers against a vector database of human-\/evaluated responses. It follows these steps\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Embed Inputs}}\+: Convert questions and answers into vector embeddings using models like {\ttfamily all-\/minilm}.
+\item {\bfseries{Retrieve Closest Match}}\+: Identify the most semantically similar answer key using cosine similarity.
+\item {\bfseries{Binary Scoring}}\+: Assign 100\% if the student’s answer matches the answer key; otherwise, 0\%.
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{2. Vector Database}{2. Vector Database}}\label{README.md_autotoc_md11}
+The vector database, implemented with Chroma\+DB, stores embeddings of open-\/ended questions and their corresponding answer keys. This database serves as the single source of truth for evaluations.\hypertarget{README.md_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{3. Evaluator LLM}{3. Evaluator LLM}}\label{README.md_autotoc_md12}
+A smaller LLM (e.\+g., LLa\+MA 3.\+2B) acts as the evaluator, ensuring strict adherence to the scoring criteria while reducing computational overhead.
+
+\DoxyHorRuler{0}
+ \hypertarget{README.md_autotoc_md14}{}\doxysubsection{\texorpdfstring{Details of features}{Details of features}}\label{README.md_autotoc_md14}
+We classify LLMS as evaluators and students Eluator LLMS evaluate the "{}student models "{} in the case the STOA models found on Open\+Router (276Below is an updated “\+Evaluator vs. Student” matrix that includes {\bfseries{Groq → Ollama}} support as well.
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md16}{}\doxysubsection{\texorpdfstring{Evaluator vs. Student Matrix}{Evaluator vs. Student Matrix}}\label{README.md_autotoc_md16}
+Below is a {\bfseries{simplified, Markdown-\/friendly}} version of the calculations, using concise bullet points and inline code for all arithmetic.
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md18}{}\doxysubsection{\texorpdfstring{A. {\bfseries{Current Support}}}{A. {\bfseries{Current Support}}}}\label{README.md_autotoc_md18}
+\hypertarget{README.md_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{1. Ollama Evaluator Combinations}{1. Ollama Evaluator Combinations}}\label{README.md_autotoc_md19}
+
+\begin{DoxyItemize}
+\item {\bfseries{Ollama → Open\+Router Students\+:}} ~\newline
+ {\ttfamily 34,925 × 293 = 10,232,275}
+\item {\bfseries{Ollama → Groq Students\+:}} ~\newline
+ {\ttfamily 34,925 × 14 = 488,950}
+\item {\bfseries{Ollama → Ollama Students\+:}} ~\newline
+ {\ttfamily 34,925 × 34,925 = 1,219,755,625}
+\end{DoxyItemize}
+
+{\bfseries{Subtotal (Ollama Evaluators)\+:}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10,232,275\ +\ 488,950\ +\ 1,219,755,625}
+\DoxyCodeLine{=\ 1,230,476,850}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md21}{}\doxysubsubsection{\texorpdfstring{2. Groq Evaluator Combinations}{2. Groq Evaluator Combinations}}\label{README.md_autotoc_md21}
+
+\begin{DoxyItemize}
+\item {\bfseries{Groq → Open\+Router Students\+:}} ~\newline
+ {\ttfamily 14 × 293 = 4,102}
+\item {\bfseries{Groq → Ollama Students\+:}} ~\newline
+ {\ttfamily 14 × 34,925 = 488,950}
+\end{DoxyItemize}
+
+{\bfseries{Subtotal (Groq Evaluators)\+:}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4,102\ +\ 488,950}
+\DoxyCodeLine{=\ 493,052}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{3. Total {\itshape Current} Combinations}{3. Total {\itshape Current} Combinations}}\label{README.md_autotoc_md23}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1,230,476,850\ (Ollama)}
+\DoxyCodeLine{+\ 493,052\ (Groq)}
+\DoxyCodeLine{=\ 1,230,969,902}
+\DoxyCodeLine{≈\ 1,230,970,000}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md25}{}\doxysubsection{\texorpdfstring{B. {\bfseries{Future Support (Next Release)}}}{B. {\bfseries{Future Support (Next Release)}}}}\label{README.md_autotoc_md25}
+
+\begin{DoxyItemize}
+\item {\bfseries{Groq → Groq Students\+:}} ~\newline
+ {\ttfamily 14 × 14 = 196}
+\item {\bfseries{Open\+Router → Open\+Router Students\+:}} ~\newline
+ {\ttfamily 293 × 293 = 85,849}
+\end{DoxyItemize}
+
+{\bfseries{Total Future Combinations\+:}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{196\ +\ 85,849}
+\DoxyCodeLine{=\ 86,045}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md27}{}\doxysubsection{\texorpdfstring{4. {\bfseries{Grand Total of Possible Evaluator-\/\+Student Combinations}}}{4. {\bfseries{Grand Total of Possible Evaluator-\/\+Student Combinations}}}}\label{README.md_autotoc_md27}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Currently Supported\+:}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1,230,969,902}
+\DoxyCodeLine{≈\ 1,230,970,000}
+
+\end{DoxyCode}
+
+\item {\bfseries{With Next Release\+:}} ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1,230,969,902\ +\ 86,045}
+\DoxyCodeLine{=\ 1,231,055,947}
+\DoxyCodeLine{≈\ 1,231,056,000}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md29}{}\doxysubsubsection{\texorpdfstring{{\bfseries{Final Figures}}}{{\bfseries{Final Figures}}}}\label{README.md_autotoc_md29}
+
+\begin{DoxyItemize}
+\item {\bfseries{Currently Supported\+:}} {\bfseries{1,230,970,000}} (rounded) ~\newline
+
+\item {\bfseries{With Next Release\+:}} {\bfseries{1,231,056,000}} (rounded)
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md30}{}\doxysubsection{\texorpdfstring{{\bfseries{5. Summary}}}{{\bfseries{5. Summary}}}}\label{README.md_autotoc_md30}
+
+\begin{DoxyItemize}
+\item {\bfseries{Total Supported Combinations (Current)\+:}} ~\newline
+ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\sim$}{\string~}1.23 Billion Evaluator-\/\+Student Pairs\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\item {\bfseries{Additional Combinations (Next Release)\+:}} ~\newline
+ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\sim$}{\string~}86,045 Evaluator-\/\+Student Pairs\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md32}{}\doxysubsection{\texorpdfstring{{\bfseries{6. Implications for Testing}}}{{\bfseries{6. Implications for Testing}}}}\label{README.md_autotoc_md32}
+With {\bfseries{over 1.\+23 billion}} possible Evaluator-\/\+Student pairs currently supported, comprehensive testing would involve an extensive and potentially resource-\/intensive process. Here\textquotesingle{}s how you might approach it\+:\hypertarget{README.md_autotoc_md33}{}\doxysubsubsection{\texorpdfstring{{\bfseries{A. Prioritization Strategies\+:}}}{{\bfseries{A. Prioritization Strategies\+:}}}}\label{README.md_autotoc_md33}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Model Importance\+:}} Focus on evaluating high-\/impact or frequently used models first.
+\item {\bfseries{Diversity\+:}} Ensure a diverse range of model families and sizes are tested to cover different capabilities and use cases.
+\item {\bfseries{Incremental Testing\+:}} Start with a subset of combinations and gradually expand.
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md34}{}\doxysubsubsection{\texorpdfstring{{\bfseries{B. Automation and Parallelization\+:}}}{{\bfseries{B. Automation and Parallelization\+:}}}}\label{README.md_autotoc_md34}
+
+\begin{DoxyItemize}
+\item Utilize automated testing frameworks to handle large-\/scale evaluations.
+\item Leverage parallel processing to distribute the workload across multiple machines or instances.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md35}{}\doxysubsubsection{\texorpdfstring{{\bfseries{C. Sampling Techniques\+:}}}{{\bfseries{C. Sampling Techniques\+:}}}}\label{README.md_autotoc_md35}
+
+\begin{DoxyItemize}
+\item Instead of exhaustively testing all combinations, use statistical sampling methods to select representative pairs for evaluation.
+\end{DoxyItemize}\hypertarget{README.md_autotoc_md36}{}\doxysubsubsection{\texorpdfstring{{\bfseries{D. Continuous Integration\+:}}}{{\bfseries{D. Continuous Integration\+:}}}}\label{README.md_autotoc_md36}
+
+\begin{DoxyItemize}
+\item Implement continuous testing pipelines that automatically evaluate new combinations as models are added or updated.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md38}{}\doxysubsection{\texorpdfstring{{\bfseries{7. Recommendations}}}{{\bfseries{7. Recommendations}}}}\label{README.md_autotoc_md38}
+Given the sheer volume of possible combinations, it\textquotesingle{}s crucial to implement a {\bfseries{strategic testing plan}}\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Define Testing Objectives\+:}} Clearly outline what you aim to achieve with each test (e.\+g., performance benchmarks, compatibility checks).
+\item {\bfseries{Allocate Resources\+:}} Ensure you have the necessary computational resources to handle large-\/scale testing.
+\item {\bfseries{Monitor and Iterate\+:}} Continuously monitor testing outcomes and refine your strategies based on findings and evolving requirements.
+\end{DoxyEnumerate}
+
+By adopting a structured and prioritized approach, you can effectively manage the extensive testing landscape and ensure robust evaluation of your LLM combinations.\hypertarget{README.md_autotoc_md39}{}\doxysubsubsection{\texorpdfstring{Key Points}{Key Points}}\label{README.md_autotoc_md39}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Evaluator LLMs (the “grader”)}} ~\newline
+
+\begin{DoxyItemize}
+\item {\bfseries{Ollama}} (local). ~\newline
+
+\item {\bfseries{Groq}}. ~\newline
+
+\item {\itshape More evaluators planned for future releases.}
+\end{DoxyItemize}
+\item {\bfseries{Student LLMs (the “respondent”)}} ~\newline
+
+\begin{DoxyItemize}
+\item {\bfseries{Open\+Router}} (276+ models\+: Open\+AI, Anthropic, etc.). ~\newline
+
+\item {\bfseries{Groq}}. ~\newline
+
+\item {\bfseries{Ollama}} (local). ~\newline
+
+\item {\itshape More students planned for future releases.}
+\end{DoxyItemize}
+\item {\bfseries{Current Highlights}} ~\newline
+
+\begin{DoxyItemize}
+\item {\bfseries{Ollama}} can evaluate answers from Open\+Router, Groq, or Ollama itself. ~\newline
+
+\item {\bfseries{Groq}} can evaluate answers from Open\+Router, Groq, {\bfseries{or Ollama}}. ~\newline
+
+\item Ongoing development will expand these capabilities even further. ~\newline
+
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Use this chart as a quick reference for which LLM can serve as the {\bfseries{evaluator}} versus which can serve as the {\bfseries{student}}. We will be testing an Open\+Router to Open\+Router impelmation in our next release. ~\newline
+ Below is an updated “\+Evaluator vs. Student” matrix that includes {\bfseries{Groq → Ollama}} support as well.
+
+\DoxyHorRuler{0}
+ \hypertarget{README.md_autotoc_md41}{}\doxysubsection{\texorpdfstring{{\bfseries{Installation}}}{{\bfseries{Installation}}}}\label{README.md_autotoc_md41}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Clone the repository}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/raymondbernard/equator.git}
+\DoxyCodeLine{cd\ equator}
+
+\end{DoxyCode}
+
+\item {\bfseries{Download Ollama and resister at groq.\+com and openrouter.\+ai}}
+\begin{DoxyEnumerate}
+\item download Ollama at \href{https://ollama.com}{\texttt{ https\+://ollama.\+com}} and install
+\item register and retrieve at Groq to get your api key -\/ \href{https://console.groq.com/keys}{\texttt{ https\+://console.\+groq.\+com/keys}}
+\item register and retrieve your api key at openrouter \href{https://openrouter.ai/}{\texttt{ https\+://openrouter.\+ai/}}
+\end{DoxyEnumerate}
+\item {\bfseries{Set Up the Environment}}
+\begin{DoxyItemize}
+\item Rename {\ttfamily copy-\/to.\+env} to {\ttfamily .env} in your working directory.
+\item Add the necessary API keys to the {\ttfamily .env} file.
+\item Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{OPENROUTER\_KEY="{}sk-\/xxx"{}}
+\DoxyCodeLine{GROQ\_API\_KEY="{}gsk\_xxx"{}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item {\bfseries{Optional\+: Set Up a Virtual Environment}} It is recommended to use a virtual environment to avoid conflicts with other Python packages.
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md42}{}\doxysubsubsubsection{\texorpdfstring{On {\bfseries{Windows}}}{On {\bfseries{Windows}}}}\label{README.md_autotoc_md42}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python\ -\/m\ venv\ .venv}
+\DoxyCodeLine{.venv\(\backslash\)Scripts\(\backslash\)activate}
+\DoxyCodeLine{pip\ install\ equator}
+\DoxyCodeLine{deactivate}
+
+\end{DoxyCode}
+\hypertarget{README.md_autotoc_md43}{}\doxysubsubsubsection{\texorpdfstring{On {\bfseries{Linux/\+Mac\+OS}}}{On {\bfseries{Linux/\+Mac\+OS}}}}\label{README.md_autotoc_md43}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{python3\ -\/m\ venv\ .venv}
+\DoxyCodeLine{source\ .venv/bin/activate}
+\DoxyCodeLine{pip\ install\ equator}
+\DoxyCodeLine{deactivate}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Install our requirements}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip\ install\ -\/r\ requirements.txt}
+
+\end{DoxyCode}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Open the main.\+py file.}}
+\begin{DoxyEnumerate}
+\item Look at the comments in the file for directions on how to configure your test runs. It\textquotesingle{}s straight forward. ~\newline
+
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md44}{}\doxysubsubsection{\texorpdfstring{Configuration}{Configuration}}\label{README.md_autotoc_md44}
+
+\begin{DoxyItemize}
+\item {\bfseries{Execution Steps}}\+: Define the steps to execute in the {\ttfamily execution\+\_\+steps} list. Please run the application with just do one execution\+\_\+step at a time and comment out the other steps. In a future release we will enable a bit more automation. ~\newline
+
+\item Note the steps will use different models as evaluators and students. ~\newline
+ ie. ollama\+\_\+to\+\_\+groq\+\_\+evaluate = ollama is the evaluator and groq is the student. Here’s a clearer and easier-\/to-\/follow version of your instructions with improved formatting and structure\+:
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md46}{}\doxysubsection{\texorpdfstring{{\bfseries{IMPORTANT INSTRUCTIONS}}}{{\bfseries{IMPORTANT INSTRUCTIONS}}}}\label{README.md_autotoc_md46}
+\hypertarget{README.md_autotoc_md47}{}\doxysubsubsection{\texorpdfstring{{\bfseries{Step-\/by-\/\+Step Execution}}}{{\bfseries{Step-\/by-\/\+Step Execution}}}}\label{README.md_autotoc_md47}
+To ensure everything runs smoothly, {\bfseries{please execute the program one step at a time!}} Follow these guidelines\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Toggle Steps by Adding/\+Removing Comments}} ~\newline
+ Modify the {\ttfamily execution\+\_\+steps} list by uncommenting {\bfseries{one line at a time}}. ~\newline
+ After running the program, re-\/comment the executed step if needed and proceed to the next.
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md48}{}\doxysubsubsection{\texorpdfstring{{\bfseries{Example Execution Process}}}{{\bfseries{Example Execution Process}}}}\label{README.md_autotoc_md48}
+Here’s the structure of your {\ttfamily execution\+\_\+steps} list\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{execution\_steps\ =\ [}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}ollama\_to\_ollama\_evaluate"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{\#\ "{}ollama\_to\_groq\_evaluate"{},\ \ \#\ Uncomment\ one\ line\ at\ a\ time,\ then\ run\ the\ program.}}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{\#\ "{}ollama\_to\_openrouter\_evaluate"{},\ \ \#\ Currently\ working.}}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{\#\ "{}groq\_to\_ollama\_evaluate"{},\ \ \#\ Currently\ working.}}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{\#\ "{}groq\_to\_openrouter\_evaluate"{},\ \ \#\ Currently\ working.}}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{\#\ "{}generate\_statistics"{},\ \ \#\ Always\ run\ last,\ after\ completing\ all\ evaluations.}}
+\DoxyCodeLine{]}
+
+\end{DoxyCode}
+ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} IMPORTANT NOTEL\+:\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+If you want everything to run fully on your local machine, use the {\ttfamily ollama\+\_\+to\+\_\+ollama\+\_\+evaluate} execution step. You’ll also need Docker installed, and your student model must run on Ollama inside a Docker container. You also must do an \textquotesingle{}ollama pull $<$student model$>$\textquotesingle{} within your container. ~\newline
+
+
+{\bfseries{Install Docker}} Adjust the commands below for your environment.
+
+With an NVIDIA GPU \texorpdfstring{$\ast$}{*}\+Note"{} you will need to install the latest drivers from NVIDIA and make sure your system recognizes your GPU.   @icode  https\+://github.\+com/\+NVIDIA/nvidia-\/container-\/toolkit @endicode   @icode  docker run -\/d -\/-\/gpus=all -\/v ollama\+:/root/.\+ollama -\/p 11434\+:11434 -\/-\/name ollama ollama/ollama @endicode   \+Without an NVIDIA GPU  \textquotesingle{}\textquotesingle{}\textquotesingle{} docker run -\/d -\/v -\/v ollama\+:/root/.\+ollama -\/p 11435\+:11434 --name ollama ollama/ollama \textquotesingle{}\textquotesingle{}\textquotesingle{} $<$strong$>$\+Get the Ollama docker image$<$/strong$>$ @icode  https\+://ollama.\+com/blog/ollama-\/is-\/now-\/available-\/as-\/an-\/official-\/docker-\/image @endicode   @subsection autotoc\+\_\+md49 $<$strong$>$\+How to Execute$<$/strong$>$\+: 1. Choose $<$strong$>$one step$<$/strong$>$ to execute by removing the $<$tt$>$\textbackslash{}\#$<$/tt$>$ at the beginning of the corresponding line. 2. Run the program. 3. After the step completes, $<$strong$>$comment the step again$<$/strong$>$ by re-\/adding the $<$tt$>$\textbackslash{}\#$<$/tt$>$ if you plan to run additional steps. 4. Move to the next step and repeat.  $<$hr$>$  @subsection autotoc\+\_\+md51 $<$strong$>$\+Order of Execution$<$/strong$>$ \+Note\+: you don\textquotesingle{}t have to use all the steps!   You can stick to a local evaluator(ollama) and run through multiple models!!   1. Uncomment $<$tt$>$"{}ollama\+\_\+to\+\_\+ollama\+\_\+evaluate"{}$<$/tt$>$ and run. 2. Uncomment $<$tt$>$"{}ollama\+\_\+to\+\_\+groq\+\_\+evaluate"{}$<$/tt$>$ and run. 3. Uncomment $<$tt$>$"{}ollama\+\_\+to\+\_\+openrouter\+\_\+evaluate"{}$<$/tt$>$ and run. 4. Uncomment $<$tt$>$"{}groq\+\_\+to\+\_\+ollama\+\_\+evaluate"{}$<$/tt$>$ and run. 5. Uncomment $<$tt$>$"{}groq\+\_\+to\+\_\+openrouter\+\_\+evaluate"{}$<$/tt$>$ and run. 6. Finally, ensure only $<$tt$>$"{}generate\+\_\+statistics"{}$<$/tt$>$ is uncommented and run to compile results.  $<$hr$>$  @subsection autotoc\+\_\+md53 $<$strong$>$\+Tips for Success$<$/strong$>$ -\/ $<$strong$>$\+One line at a time\+:$<$/strong$>$ Never leave multiple steps uncommented. -\/ $<$strong$>$\+Save progress\+:$<$/strong$>$ If something goes wrong, re-\/check the list and verify only one line is uncommented. -\/ $<$strong$>$\+Final step\+:$<$/strong$>$ Always finish with $<$tt$>$"{}generate\+\_\+statistics"{}$<$/tt$>$ to summarize your results.  $<$hr$>$  \+This format highlights the importance of running one step at a time and makes the process easy to follow.  -\/ $<$strong$>$\+Models$<$/strong$>$\+: Specify the models to benchmark in the respective lists.     @icode\{python\}      student\+\_\+openrouter\+\_\+models = \mbox{[}       "{}nousresearch/hermes-\/3-\/llama-\/3.\+1-\/405b"{},     \mbox{]}          student\+\_\+groq\+\_\+models = \mbox{[}       "{}llama3-\/70b-\/8192"{},     \mbox{]}      student\+\_\+ollama\+\_\+models = \mbox{[}       "{}llama3.\+2"{},     \mbox{]}     @endicode   -\/ $<$strong$>$\+Benchmark Settings$<$/strong$>$\+: Adjust benchmarking parameters such as evaluator models, benchmark name, and answer rounds.     @icode\{python\}      GROQ\+\_\+\+EVALUATOR\+\_\+\+MODEL = "{}llama3-\/70b-\/8192"{}     OLLAMA\+\_\+\+EVALUATOR\+\_\+\+MODEL = "{}llama3.\+2"{}     benchmark\+\_\+name = "{}Bernard"{} answer\+\_\+rounds = 2 \hypertarget{README.md_autotoc_md55}{}\doxysubsubsection{\texorpdfstring{Logging}{Logging}}\label{README.md_autotoc_md55}
+Logs are saved to {\ttfamily vectordb.\+log} with INFO level by default.\hypertarget{README.md_autotoc_md56}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{README.md_autotoc_md56}
+\hypertarget{README.md_autotoc_md57}{}\doxysubsubsection{\texorpdfstring{Running the Program}{Running the Program}}\label{README.md_autotoc_md57}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{In your Python Environment}}
+\item 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{py\ -\/m\ main\ \ \ }
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md58}{}\doxysubsubsection{\texorpdfstring{Viewing Results}{Viewing Results}}\label{README.md_autotoc_md58}
+We create a directory named after the corresponding date to organize the benchmarks. Within this directory, you will find a collection of charts and CSV files containing statistics and token analytics.
+
+Results, including scores and explanations, are saved in the specified output directory as JSON files. Each entry includes\+:
+\begin{DoxyItemize}
+\item Question
+\item Model-\/generated answer
+\item Evaluator response for the score
+\item Score
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{README.md_autotoc_md60}{}\doxysubsection{\texorpdfstring{Example Dataset}{Example Dataset}}\label{README.md_autotoc_md60}
+The repository includes two datasets to test the reasoning capabilities of LLMs\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Default Dataset}}\+:
+\begin{DoxyItemize}
+\item The file {\ttfamily linguistic\+\_\+benchmark.\+json} contains open-\/ended questions across various categories, such as puzzles, spatial reasoning, and logic. This smaller dataset is ideal for quick tests or debugging. You are welcome to add more questions to the dataset or customize them for your domain.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{README.md_autotoc_md61}{}\doxysubsection{\texorpdfstring{We do have a QA \`{}linguistic\+\_\+benchmark.json with over 1000+ . However, we will create a website which will pusblish our resutls using this dataset.}{We do have a QA \`{}linguistic\+\_\+benchmark.json with over 1000+ . However, we will create a website which will pusblish our resutls using this dataset.}}\label{README.md_autotoc_md61}
+{\bfseries{Why We Keep Our Dataset Private}}
+
+Our research examines the performance of large language models (LLMs) across state-\/of-\/the-\/art (SOTA) benchmarks, and we aim to maintain statistically significant evaluation results. If we were to release our full dataset publicly, there is a risk that future models could be trained or fine-\/tuned on our test items, which would compromise the fairness and meaningfulness of our benchmark. By keeping these data private, we ensure that our comparisons remain valid and our results accurately reflect model performance under unbiased test conditions.
+
+Although our primary focus is maintaining a statistically significant and unbiased dataset for testing AI performance in QA reasoning and logic, we understand that different industries—such as law, medicine, or finance—have unique needs. Our linguistic\+\_\+benchmark.\+json file can be extended to include domain-\/specific prompts and example responses. This approach allows you to evaluate how well AI models perform in your specialized context without compromising the integrity of our core benchmarking methodology. By adding your own questions, you can preserve our standardized evaluation framework while tailoring the tests to your field’s specific challenges. We aim to maintain a current benchmark results for our EQUATOR at equator.\+github.\+io\hypertarget{README.md_autotoc_md62}{}\doxysubsection{\texorpdfstring{Contributions}{Contributions}}\label{README.md_autotoc_md62}
+\hypertarget{README.md_autotoc_md63}{}\doxysubsubsection{\texorpdfstring{Authors}{Authors}}\label{README.md_autotoc_md63}
+
+\begin{DoxyItemize}
+\item Raymond Bernard (Independent Researcher)
+\item Shaina Raza, Ph.\+D. (Vector Institute)
+\item Subhabrata Das, PhD (JP Morgan Chase)
+\item Raul Murugan (Columbia University)
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{README.md_autotoc_md65}{}\doxysubsection{\texorpdfstring{Future Work}{Future Work}}\label{README.md_autotoc_md65}
+
+\begin{DoxyItemize}
+\item Expand the vector database to include more diverse datasets.
+\item Optimize the embedding and retrieval process for larger-\/scale deployments.
+\item Investigate additional scoring criteria for complex reasoning tasks.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+\begin{DoxyItemize}
+\item {\itshape Acknowledgment}\+: We extend our gratitude to James Huckle for inspiring our work. ~\newline
+
+\item We have incorporated elements from \href{https://github.com/autogenai/easy-problems-that-llms-get-wrong}{\texttt{ https\+://github.\+com/autogenai/easy-\/problems-\/that-\/llms-\/get-\/wrong}}. ~\newline
+
+\item Our approach advances the field by simplifying the benchmarking process through our capability to score open-\/ended questions effectively. ~\newline
+
+\item Rather than benchmarking multiple models across disparate APIs, we leverage Open\+Router.\+ai\textquotesingle{}s unified API, using the Open\+AI SDK, which provides access to over 270 models for comprehensive benchmarking. ~\newline
+
+\item \#\# Citation If you use this framework in your research, please cite\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@article\ \{bernard2024equator,}
+\DoxyCodeLine{\ \ title\ \ \ \ \ \ \ \ =\ \{\{EQUATOR:\ A\ Deterministic\ Framework\ for\ Evaluating\ LLM\ Reasoning\ with\ Open-\/Ended\ Questions.\ \(\backslash\)\#\ v1.0.0-\/beta\}\},}
+\DoxyCodeLine{\ \ author\ \ \ \ \ \ \ =\ \{Bernard,\ Raymond\ and\ Raza,\ Shaina\ and\ Das,\ Subhabrata\ and\ Murugan,\ Rahul\},}
+\DoxyCodeLine{\ \ year\ \ \ \ \ \ \ \ \ =\ \{2024\},}
+\DoxyCodeLine{\ \ eprint\ \ \ \ \ \ \ =\ \{2501.00257\},}
+\DoxyCodeLine{\ \ archivePrefix=\ \{arXiv\},}
+\DoxyCodeLine{\ \ primaryClass\ =\ \{cs.CL\},}
+\DoxyCodeLine{\ \ note\ \ \ \ \ \ \ \ \ =\ \{MSC\ classes:\ 68T20;\ ACM\ classes:\ I.2.7;\ I.2.6;\ H.3.3\},}
+\DoxyCodeLine{\ \ howpublished\ =\ \{arXiv\ preprint\ arXiv:2501.00257\ [cs.CL]\},}
+\DoxyCodeLine{\ \ doi\ \ \ \ \ \ \ \ \ \ =\ \{10.48550/arXiv.2501.00257\},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{README.md_autotoc_md67}{}\doxysubsection{\texorpdfstring{Contributing}{Contributing}}\label{README.md_autotoc_md67}
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.\hypertarget{README.md_autotoc_md68}{}\doxysubsection{\texorpdfstring{License}{License}}\label{README.md_autotoc_md68}
+This project is licensed under the MIT License.
+
+\DoxyHorRuler{0}
+
+
+{\itshape Generated with ❤️ by Equator QA Team} 

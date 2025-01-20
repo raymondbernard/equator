@@ -1,0 +1,9 @@
+<map id="equator_qa.vectordb.VectorDB_Controller.generate_embeddings" name="equator_qa.vectordb.VectorDB_Controller.generate_embeddings">
+<area shape="rect" id="Node000001" title=" " alt="" coords="511,35,690,93"/>
+<area shape="rect" id="Node000002" href="$classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#aa3ddbbca85c7664bb56567221fe5805f" title=" " alt="" coords="257,5,463,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="495,50,463,45,464,40,496,45"/>
+<area shape="rect" id="Node000004" href="$classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#a5e99eb967400dffb2292f302e2ee9d10" title=" " alt="" coords="270,72,450,131"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="496,83,450,90,450,85,495,78"/>
+<area shape="rect" id="Node000003" href="$classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#a9ecebea5cbed0c54a33acb42a1999d27" title=" " alt="" coords="5,5,209,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="241,29,209,29,209,24,241,24"/>
+</map>

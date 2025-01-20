@@ -1,0 +1,160 @@
+\doxysection{equator\+\_\+qa.\+charting Namespace Reference}
+\hypertarget{namespaceequator__qa_1_1charting}{}\label{namespaceequator__qa_1_1charting}\index{equator\_qa.charting@{equator\_qa.charting}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{namespaceequator__qa_1_1charting_af54b654438466587f41c72939d1719eb}{define\+\_\+data}} (pd.\+Data\+Frame final\+\_\+stats)
+\item 
+tuple\mbox{[}sns.\+axisgrid.\+Facet\+Grid, plt.\+Figure\mbox{]} \mbox{\hyperlink{namespaceequator__qa_1_1charting_a96f3ea1443c60f72ab80b694dcd13aa1}{create\+\_\+performance\+\_\+chart}} (pd.\+Data\+Frame final\+\_\+stats, str title="{}LLM Linguistic Benchmark Performance"{}, list highlight\+\_\+models=None)
+\item 
+None \mbox{\hyperlink{namespaceequator__qa_1_1charting_a372cff8312605dd0e054e888f909c5ba}{create\+\_\+basic\+\_\+charts}} (list execution\+\_\+steps, int answer\+\_\+rounds, str benchmark\+\_\+name, str date\+\_\+now)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dict \mbox{\hyperlink{namespaceequator__qa_1_1charting_a376b681eb259b02cc37bc352affa0c07}{mapper}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceequator__qa_1_1charting_a372cff8312605dd0e054e888f909c5ba}\index{equator\_qa.charting@{equator\_qa.charting}!create\_basic\_charts@{create\_basic\_charts}}
+\index{create\_basic\_charts@{create\_basic\_charts}!equator\_qa.charting@{equator\_qa.charting}}
+\doxysubsubsection{\texorpdfstring{create\_basic\_charts()}{create\_basic\_charts()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1charting_a372cff8312605dd0e054e888f909c5ba} 
+ None equator\+\_\+qa.\+charting.\+create\+\_\+basic\+\_\+charts (\begin{DoxyParamCaption}\item[{list}]{execution\+\_\+steps}{, }\item[{int}]{answer\+\_\+rounds}{, }\item[{str}]{benchmark\+\_\+name}{, }\item[{str }]{date\+\_\+now}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate and save various performance and token usage charts based on LLM statistics.
+
+This function orchestrates the creation of statistical analyses and visualizations
+for language models. It handles loading data, computing statistics, generating
+performance charts, and creating token usage comparisons.
+
+Parameters
+----------
+execution_steps : list of str
+    A list of steps to execute. If "generate_statistics" is included, the function proceeds to generate statistics and charts.
+answer_rounds : int
+    The number of answer rounds to process.
+benchmark_name : str
+    The name of the benchmark being evaluated.
+date_now : str
+    The current date, used for naming folders and files.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceequator__qa_1_1charting_a372cff8312605dd0e054e888f909c5ba_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceequator__qa_1_1charting_a96f3ea1443c60f72ab80b694dcd13aa1}\index{equator\_qa.charting@{equator\_qa.charting}!create\_performance\_chart@{create\_performance\_chart}}
+\index{create\_performance\_chart@{create\_performance\_chart}!equator\_qa.charting@{equator\_qa.charting}}
+\doxysubsubsection{\texorpdfstring{create\_performance\_chart()}{create\_performance\_chart()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1charting_a96f3ea1443c60f72ab80b694dcd13aa1} 
+ tuple\mbox{[}sns.\+axisgrid.\+Facet\+Grid, plt.\+Figure\mbox{]} equator\+\_\+qa.\+charting.\+create\+\_\+performance\+\_\+chart (\begin{DoxyParamCaption}\item[{pd.\+Data\+Frame}]{final\+\_\+stats}{, }\item[{str }]{title}{ = {\ttfamily "{}LLM~Linguistic~Benchmark~Performance"{}}, }\item[{list }]{highlight\+\_\+models}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Create a performance bar chart for LLMs with confidence intervals.
+
+This function generates a seaborn barplot displaying the average scores
+of various language models along with their confidence intervals. Specific
+models can be highlighted with different colors.
+
+Parameters
+----------
+final_stats : pd.DataFrame
+    A DataFrame containing the structured statistics for each model, 
+    including "Model", "Average", "Confidence Interval Low", and 
+    "Confidence Interval High".
+title : str, optional
+    The title of the performance chart, by default "LLM Linguistic Benchmark Performance".
+highlight_models : list of str, optional
+    A list of model names to highlight in the chart, by default None.
+
+Returns
+-------
+tuple[sns.axisgrid.FacetGrid, plt.Figure]
+    A tuple containing the seaborn barplot object and the matplotlib figure.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceequator__qa_1_1charting_a96f3ea1443c60f72ab80b694dcd13aa1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceequator__qa_1_1charting_a96f3ea1443c60f72ab80b694dcd13aa1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespaceequator__qa_1_1charting_af54b654438466587f41c72939d1719eb}\index{equator\_qa.charting@{equator\_qa.charting}!define\_data@{define\_data}}
+\index{define\_data@{define\_data}!equator\_qa.charting@{equator\_qa.charting}}
+\doxysubsubsection{\texorpdfstring{define\_data()}{define\_data()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1charting_af54b654438466587f41c72939d1719eb} 
+ pd.\+Data\+Frame equator\+\_\+qa.\+charting.\+define\+\_\+data (\begin{DoxyParamCaption}\item[{pd.\+Data\+Frame}]{final\+\_\+stats}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Process and structure the final statistics DataFrame for visualization.
+
+This function maps model identifiers to readable names, adds a 
+"Human level*" entry, sorts the DataFrame based on mean scores, and 
+organizes the data into a format suitable for plotting.
+
+Parameters
+----------
+final_stats : pd.DataFrame
+    A DataFrame containing statistical metrics for each model, including
+    columns like 'model', 'mean_score', 'ci_lower', and 'ci_upper'.
+
+Returns
+-------
+pd.DataFrame
+    A structured DataFrame with columns:
+        - "Model": Readable model names.
+        - "Average": Mean scores of the models.
+        - "Confidence Interval Low": Lower bound of the 95% confidence interval.
+        - "Confidence Interval High": Upper bound of the 95% confidence interval.
+\end{DoxyVerb}
+ Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceequator__qa_1_1charting_af54b654438466587f41c72939d1719eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceequator__qa_1_1charting_a376b681eb259b02cc37bc352affa0c07}\index{equator\_qa.charting@{equator\_qa.charting}!mapper@{mapper}}
+\index{mapper@{mapper}!equator\_qa.charting@{equator\_qa.charting}}
+\doxysubsubsection{\texorpdfstring{mapper}{mapper}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1charting_a376b681eb259b02cc37bc352affa0c07} 
+dict equator\+\_\+qa.\+charting.\+mapper}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{'gpt-\/4-\/turbo-\/preview'}:\ \textcolor{stringliteral}{'GPT-\/4\ Turbo'},}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{'gpt-\/4o'}:\ \textcolor{stringliteral}{'GPT-\/4o'},}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{'gpt-\/4o-\/mini-\/2024-\/07-\/18'}:\ \textcolor{stringliteral}{'GPT-\/4o\ Mini'},}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{'claude-\/3-\/opus-\/20240229'}:\ \textcolor{stringliteral}{'Claude\ 3\ Opus'},}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{'claude-\/3-\/5-\/sonnet-\/20240620'}:\ \textcolor{stringliteral}{'Claude\ 3.5\ Sonnet'},}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{'gemini-\/1\_5-\/pro'}:\ \textcolor{stringliteral}{'Gemini\ 1.5\ Pro'},}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{stringliteral}{'gemini-\/1\_0-\/pro'}:\ \textcolor{stringliteral}{'Gemini\ 1.0\ Pro'},}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{stringliteral}{'gemini-\/1\_5-\/pro-\/exp-\/0801'}:\ \textcolor{stringliteral}{'Gemini\ 1.5\ Pro\ Ex'},}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{stringliteral}{'mistral-\/large-\/latest'}:\ \textcolor{stringliteral}{'Mistral\ Large\ 2'},}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{stringliteral}{'open-\/mixtral-\/8x22b'}:\ \textcolor{stringliteral}{'Mistral\ 8x22B'},}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{stringliteral}{'meta\_llama3-\/70b-\/instruct-\/v1\_0'}:\ \textcolor{stringliteral}{'Llama\ 3\ 70B'},}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{stringliteral}{'meta\_llama3-\/1-\/70b-\/instruct-\/v1\_0'}:\ \textcolor{stringliteral}{'Llama\ 3.1\ 70B'},}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{stringliteral}{'command-\/r'}:\ \textcolor{stringliteral}{'Command\ R'},}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{stringliteral}{'command-\/r-\/plus'}:\ \textcolor{stringliteral}{'Command\ R\ Pro'},}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{stringliteral}{'Meta-\/Llama-\/3-\/1-\/405B-\/Instruct-\/jjo\_eastus\_models\_ai\_azure\_com'}:\ \textcolor{stringliteral}{'Llama\ 3.1\ 405B'},}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{stringliteral}{'Meta-\/Llama-\/3-\/1-\/70B-\/Instruct-\/ostu\_eastus\_models\_ai\_azure\_com'}:\ \textcolor{stringliteral}{'Llama\ 3.1\ 70B'},}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
