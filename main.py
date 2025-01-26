@@ -23,6 +23,7 @@ def main(execution_steps=None):
     # Define the evaluator models used for benchmarking
     GROQ_EVALUATOR_MODEL = "llama3-70b-8192"  # Model name for GROQ evaluator
     OLLAMA_EVALUATOR_MODEL = "llama3.2"  # Model name for Ollama evaluator
+    VISION = True 
 
     # Configuration parameters for the benchmarking process
     answer_rounds = 2  # Number of times each question will be posed to the models
@@ -34,11 +35,11 @@ def main(execution_steps=None):
     # If no specific execution steps are provided, use the default set of steps
     if execution_steps is None:
         execution_steps = [
-            # "ollama_to_ollama_evaluate",  # Step to evaluate Ollama models against each other
+            "ollama_to_ollama_evaluate",  # Step to evaluate Ollama models against each other
             # "ollama_to_openrouter_evaluate",  # Uncomment to evaluate Ollama against OpenRouter models
             # "groq_to_ollama_evaluate",  # Uncomment to evaluate GROQ models against Ollama models
             # "groq_to_openrouter_evaluate",  # Uncomment to evaluate GROQ models against OpenRouter models
-            "generate_statistics",  # Uncomment to generate and visualize statistical analysis
+            # "generate_statistics",  # Uncomment to generate and visualize statistical analysis
         ]
 
     # List of OpenRouter models to be used as participants in the benchmark
@@ -60,8 +61,9 @@ def main(execution_steps=None):
     # List of Ollama models to be used as participants in the benchmark
     # Note: Avoid using semicolons in model names (e.g., "llama3.2:latest")
     student_ollama_models = [
+        "llava",
         # "llama3.2",  # Example model (commented out)
-        "phi3",  # Active Ollama model
+        # "phi3",  # Active Ollama model
         # "llama3.2",  # Another example (commented out)
     ]
 
@@ -76,10 +78,11 @@ def main(execution_steps=None):
             logger.info("Program started successfully.")
 
             # Initialize the VectorDB_Controller with a parameter to determine if the vector DB should be kept
-            vectordb_instance = VectorDB_Controller(keepVectorDB=False)
+            vectordb_instance = VectorDB_Controller(keepVectorDB=False,VISION=True)
             
             # Begin the benchmarking process with the specified configurations and models
             begin_benchmark(
+                VISION,
                 execution_steps,  # List of execution steps
                 student_ollama_models,  # List of Ollama student models
                 student_groq_models,  # List of GROQ student models
@@ -120,6 +123,6 @@ def main(execution_steps=None):
         # Log a warning indicating that no valid execution steps were provided
         logger.warning("No execution steps were provided or recognized.")
 
-# Entry point of the script
+# Entry point of the scriptm,
 if __name__ == "__main__":
     main()  # Invoke the main function when the script is run directly
