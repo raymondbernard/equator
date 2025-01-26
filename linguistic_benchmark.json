@@ -57,15 +57,13 @@
         "index": 10,
         "category": "Relational",
         "question": "I get out on the top floor (third floor) at street level. How many stories is the building above the ground",
-        "human_answer": "One story above the ground",
-        "context": "You think very carefully about the question asked. You make zero assumptions about classic problems. You are not to be tricked! Warning: THIS IS NOT THE CLASSIC PROBLEM!"
+        "human_answer": "One story above the ground"
     },
     {
         "index": 11,
         "category": "Spatial",
         "question": "In a toy box, there's a red ball, a blue truck, and a green dinosaur. The red ball is not next to the blue truck, and the green dinosaur is next to the red ball. Which toy is in the middle?",
-        "human_answer": "The green dinosaur.",
-        "context": "You think very carefully about the question asked. You make zero assumptions about classic problems. You are not to be tricked! Warning: THIS IS NOT THE CLASSIC PROBLEM!"
+        "human_answer": "The green dinosaur."
     },
     {
         "index": 12,
@@ -83,14 +81,12 @@
         "index": 14,
         "category": "Puzzle",
         "question": "A group of four people needs to cross a bridge at night. The bridge is very old and rickety. They have only one torch and because it's night-time, the torch is necessary to cross the bridge. Each person walks at a different speed: - A takes 1 minute to cross, - B takes 2 minutes, - C takes 5 minutes, and - D takes 10 minutes. What is the fastest time they can all get across the bridge?",
-        "human_answer": "10 minutes, the speed of the slowest person as they cross the bridge together.",
-        "context": "You think very carefully about the question asked. You make zero assumptions about classic problems. You are not to be tricked! Warning: THIS IS NOT THE CLASSIC PROBLEM!"
+        "human_answer": "10 minutes, the speed of the slowest person as they cross the bridge together."
     },
     {
         "index": 15,
         "category": "Puzzle",
-        "question": "You're in a room with two doors that lead out. One door leads to certain death, and the other door leads to freedom. There are two guardians, one by each door. One taller guardian always tells the truth and guards the death door, the other always lies. What is the minimum number of questions needed to ask the guards to get to safety?",
-        "human_answer": "Zero questions. The door to freedom is behind the shorter guardian."
+        "question": "You're in a room with two doors that lead out. One door leads to certain death, and the other door leads to freedom. There are two guardians, one by each door. One taller guardian always tells the truth and guards the death door, the other always lies. What is the minimum number of questions needed to ask the guards to get to safety?"
     },
     {
         "index": 16,
@@ -101,14 +97,12 @@
     {
         "index": 17,
         "category": "Puzzle",
-        "question": "The Poisoned Wine - A king has 1000 sweet bottles of wine, and one contains a very bitter poison. The poison takes effect exactly 24 hours after consumption. The king needs to find the poisoned bottle in 24 hours for an event. He has 10 prisoners to test the wine. What is the easiest way for him to identify the poisoned bottle?",
-        "human_answer": "Divide the 1000 bottles of wine amongst the 10 prisoners - each receiving 100 bottles. Ask the prisoners to note which bottle tastes very bitter, this is the poisoned one."
+        "question": "The Poisoned Wine - A king has 1000 sweet bottles of wine, and one contains a very bitter poison. The poison takes effect exactly 24 hours after consumption. The king needs to find the poisoned bottle in 24 hours for an event. He has 10 prisoners to test the wine. What is the easiest way for him to identify the poisoned bottle?"
     },
     {
         "index": 18,
         "category": "Linguistic",
-        "question": "Write a grammatically correct sentence without reusing any letter more than once.",
-        "human_answer": "Dogs bark with me."
+        "question": "Write a grammatically correct sentence without reusing any letter more than once."
     },
     {
         "index": 19,
@@ -144,8 +138,7 @@
         "index": 24,
         "category": "Puzzle",
         "question": "How many pairs of twins do you need in a room for there to be at least a 50% chance that two people have the same birthday?",
-        "human_answer": "One",
-        "context": "You think very carefully about the question asked. You make zero assumptions about classic problems. You are not to be tricked! Warning: THIS IS NOT THE CLASSIC PROBLEM!"
+        "human_answer": "One"
     },
     {
         "index": 25,
