@@ -1,0 +1,121 @@
+\doxysection{equator\+\_\+qa.\+prompts Namespace Reference}
+\hypertarget{namespaceequator__qa_1_1prompts}{}\label{namespaceequator__qa_1_1prompts}\index{equator\_qa.prompts@{equator\_qa.prompts}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1prompts_ad1129af69eb413d9f119f8c77cc6ace9}{sanitize\+\_\+string}} (value)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1prompts_ad17d6fa63150fea8ab93c49fb616bca4}{get\+\_\+evaluator\+\_\+system\+\_\+prompt}} (context, student\+\_\+answer)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1prompts_a13cf5ddd91dcc61aa98b4e7c0b01746f}{get\+\_\+student\+\_\+prompt}} (full\+\_\+prompt\+\_\+student)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespaceequator__qa_1_1prompts_a4928aac4be4fac9472d76311d19d0289}{SCORING\+\_\+\+CRITERIA}}
+\item 
+tuple \mbox{\hyperlink{namespaceequator__qa_1_1prompts_a18322f4693c9b43f63c18e4f82e26dfd}{EVALUATOR\+\_\+\+SYSTEM\+\_\+\+PROMPT}}
+\item 
+tuple \mbox{\hyperlink{namespaceequator__qa_1_1prompts_acdb6042ec8b06d14b0e3a5f5274284a0}{STUDENT\+\_\+\+SYSTEM\+\_\+\+PROMPT}}
+\item 
+str \mbox{\hyperlink{namespaceequator__qa_1_1prompts_a00389097d11dc6c410964fa0d106844c}{WARNING\+\_\+\+PROMPT}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceequator__qa_1_1prompts_ad17d6fa63150fea8ab93c49fb616bca4}\index{equator\_qa.prompts@{equator\_qa.prompts}!get\_evaluator\_system\_prompt@{get\_evaluator\_system\_prompt}}
+\index{get\_evaluator\_system\_prompt@{get\_evaluator\_system\_prompt}!equator\_qa.prompts@{equator\_qa.prompts}}
+\doxysubsubsection{\texorpdfstring{get\_evaluator\_system\_prompt()}{get\_evaluator\_system\_prompt()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1prompts_ad17d6fa63150fea8ab93c49fb616bca4} 
+equator\+\_\+qa.\+prompts.\+get\+\_\+evaluator\+\_\+system\+\_\+prompt (\begin{DoxyParamCaption}\item[{}]{context}{, }\item[{}]{student\+\_\+answer}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the evaluator system prompt dynamically with the given context and student answer.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1prompts_a13cf5ddd91dcc61aa98b4e7c0b01746f}\index{equator\_qa.prompts@{equator\_qa.prompts}!get\_student\_prompt@{get\_student\_prompt}}
+\index{get\_student\_prompt@{get\_student\_prompt}!equator\_qa.prompts@{equator\_qa.prompts}}
+\doxysubsubsection{\texorpdfstring{get\_student\_prompt()}{get\_student\_prompt()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1prompts_a13cf5ddd91dcc61aa98b4e7c0b01746f} 
+equator\+\_\+qa.\+prompts.\+get\+\_\+student\+\_\+prompt (\begin{DoxyParamCaption}\item[{}]{full\+\_\+prompt\+\_\+student}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the student prompt dynamically with the given full prompt.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1prompts_ad1129af69eb413d9f119f8c77cc6ace9}\index{equator\_qa.prompts@{equator\_qa.prompts}!sanitize\_string@{sanitize\_string}}
+\index{sanitize\_string@{sanitize\_string}!equator\_qa.prompts@{equator\_qa.prompts}}
+\doxysubsubsection{\texorpdfstring{sanitize\_string()}{sanitize\_string()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1prompts_ad1129af69eb413d9f119f8c77cc6ace9} 
+equator\+\_\+qa.\+prompts.\+sanitize\+\_\+string (\begin{DoxyParamCaption}\item[{}]{value}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Escapes curly braces in strings to prevent issues with format specifiers in logging.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceequator__qa_1_1prompts_a18322f4693c9b43f63c18e4f82e26dfd}\index{equator\_qa.prompts@{equator\_qa.prompts}!EVALUATOR\_SYSTEM\_PROMPT@{EVALUATOR\_SYSTEM\_PROMPT}}
+\index{EVALUATOR\_SYSTEM\_PROMPT@{EVALUATOR\_SYSTEM\_PROMPT}!equator\_qa.prompts@{equator\_qa.prompts}}
+\doxysubsubsection{\texorpdfstring{EVALUATOR\_SYSTEM\_PROMPT}{EVALUATOR\_SYSTEM\_PROMPT}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1prompts_a18322f4693c9b43f63c18e4f82e26dfd} 
+tuple equator\+\_\+qa.\+prompts.\+EVALUATOR\+\_\+\+SYSTEM\+\_\+\+PROMPT}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}You\ are\ a\ strict\ high\ school\ teacher.\ "{}}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}Provide\ the\ score\ in\ the\ form\ of\ a\ JSON\ object:\ \{'score':\ <0\ or\ 100>\}.\ "{}}}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}Your\ role\ is\ to\ grade\ strictly\ based\ on\ the\ provided\ answer\ key.\ "{}}}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{"{}Only\ examine\ the\ final\ answer\ given\ by\ the\ student\ in\ a\ JSON\ object:\ \{'student\_answer':\ <My\ final\ Answer>\}.\ "{}}}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{"{}If\ the\ student's\ answer\ matches\ the\ answer\ key,\ assign\ a\ score\ of\ 100;\ otherwise,\ assign\ a\ score\ of\ 0.\ "{}}}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{"{}No\ partial\ credit\ allowed!\ Do\ not\ consider\ logical\ arguments\ or\ reasoning;\ they\ are\ irrelevant\ in\ this\ case.\ "{}}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{stringliteral}{"{}Provide\ the\ score\ in\ the\ form\ of\ a\ JSON\ object:\ \{'score':\ <0\ or\ 100>\}."{}}}
+\DoxyCodeLine{00009\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespaceequator__qa_1_1prompts_a4928aac4be4fac9472d76311d19d0289}\index{equator\_qa.prompts@{equator\_qa.prompts}!SCORING\_CRITERIA@{SCORING\_CRITERIA}}
+\index{SCORING\_CRITERIA@{SCORING\_CRITERIA}!equator\_qa.prompts@{equator\_qa.prompts}}
+\doxysubsubsection{\texorpdfstring{SCORING\_CRITERIA}{SCORING\_CRITERIA}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1prompts_a4928aac4be4fac9472d76311d19d0289} 
+str equator\+\_\+qa.\+prompts.\+SCORING\+\_\+\+CRITERIA}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \textcolor{stringliteral}{r"{}"{}"{}SCORING\ CRITERIA}}
+\DoxyCodeLine{00002\ \textcolor{stringliteral}{100\%:\ The\ response\ must\ match\ the\ answer\ key\ given,\ even\ if\ the\ student\ used\ bad\ reasoning,\ logic\ to\ arrive\ at\ the\ final\ answer.\ }}
+\DoxyCodeLine{00003\ \textcolor{stringliteral}{0\%:\ The\ response\ does\ NOT\ match\ the\ answer\ key\ given.\ No\ partial\ credit\ allowed!}}
+\DoxyCodeLine{00004\ \textcolor{stringliteral}{You\ must\ only\ return\ a\ JSON\ object\ with\ the\ score\ \{'score':\ <0\ or\ 100>\}}}
+\DoxyCodeLine{00005\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00006\ \textcolor{stringliteral}{TASK}}
+\DoxyCodeLine{00007\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00008\ \textcolor{stringliteral}{Evaluate\ whether\ the\ STUDENT\ Answer\ matches\ the\ answer\ key\ given.\ If\ it\ does,\ assign\ a\ score\ of\ 100\%\ Otherwise\ you\ must\ assign\ a\ score\ of\ 0\%.\ Provide\ a\ very\ short\ explanation\ on\ why.\ \ }}
+\DoxyCodeLine{00009\ \textcolor{stringliteral}{Just\ focus\ on\ the\ student's\ final\ answer!\ Give\ full\ credit\ to\ the\ student\ if\ final\ answer\ matches\ answer\ key.\ Don't\ overthink\ this.\ Also,\ do\ not\ evaluate\ based\ on\ quality\ or\ logical\ reasoning,\ even\ if\ it\ is\ very\ persuasive!}}
+\DoxyCodeLine{00010\ \textcolor{stringliteral}{Only\ consider\ the\ answer\ key\ as\ the\ source\ of\ truth.\ Your\ job\ is\ at\ risk\ if\ you\ do\ not\ follow\ our\ instructions.\ If\ the\ Answer\ Key\ matches\ the\ student’s\ answer,\ you\ must\ assign\ a\ score\ of\ 100\%,\ no\ partial\ credit\ allowed.\ \ \ \ }}
+\DoxyCodeLine{00011\ \textcolor{stringliteral}{Return\ a\ JSON\ object\ with\ the\ explanation\ of\ why\ the\ student\ got\ his/her\ score\ ==\ \{"{}score"{}:\ <0\ or\ 100>\}.\ Keep\ it\ to\ less\ than\ two\ sentences\ \{"{}evaluation"{}:\ "{}<explanation>"{}\}}}
+\DoxyCodeLine{00012\ \textcolor{stringliteral}{You\ must\ only\ return\ a\ JSON\ object\ with\ the\ score\ \{'score':\ <0\ or\ 100>\}}}
+\DoxyCodeLine{00013\ \textcolor{stringliteral}{No\ partial\ credit\ allowed!"{}"{}"{}}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceequator__qa_1_1prompts_acdb6042ec8b06d14b0e3a5f5274284a0}\index{equator\_qa.prompts@{equator\_qa.prompts}!STUDENT\_SYSTEM\_PROMPT@{STUDENT\_SYSTEM\_PROMPT}}
+\index{STUDENT\_SYSTEM\_PROMPT@{STUDENT\_SYSTEM\_PROMPT}!equator\_qa.prompts@{equator\_qa.prompts}}
+\doxysubsubsection{\texorpdfstring{STUDENT\_SYSTEM\_PROMPT}{STUDENT\_SYSTEM\_PROMPT}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1prompts_acdb6042ec8b06d14b0e3a5f5274284a0} 
+tuple equator\+\_\+qa.\+prompts.\+STUDENT\+\_\+\+SYSTEM\+\_\+\+PROMPT}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ (}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}You\ are\ a\ student\ who\ is\ being\ tested,\ please\ follow\ the\ directions\ given\ exactly.\ "{}}}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}You\ are\ welcomed\ to\ reason\ through\ the\ question.\ "{}}}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}You\ must\ return\ only\ your\ final\ answer\ in\ a\ JSON\ Object\ example\ \{'student\_answer':'<My\ final\ Answer\ here>'\}"{}}}
+\DoxyCodeLine{00005\ )}
+
+\end{DoxyCode}
+\Hypertarget{namespaceequator__qa_1_1prompts_a00389097d11dc6c410964fa0d106844c}\index{equator\_qa.prompts@{equator\_qa.prompts}!WARNING\_PROMPT@{WARNING\_PROMPT}}
+\index{WARNING\_PROMPT@{WARNING\_PROMPT}!equator\_qa.prompts@{equator\_qa.prompts}}
+\doxysubsubsection{\texorpdfstring{WARNING\_PROMPT}{WARNING\_PROMPT}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1prompts_a00389097d11dc6c410964fa0d106844c} 
+str equator\+\_\+qa.\+prompts.\+WARNING\+\_\+\+PROMPT}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \textcolor{stringliteral}{r"{}"{}"{}You\ think\ very\ carefully\ about\ the\ question\ asked.\ You\ make\ zero\ assumptions\ about\ classic\ problems.\ You\ are\ not\ to\ be\ tricked!\ }}
+\DoxyCodeLine{00002\ \textcolor{stringliteral}{Warning:\ THIS\ IS\ NOT\ THE\ CLASSIC\ PROBLEM!\ \(\backslash\)n"{}"{}"{}}}
+
+\end{DoxyCode}

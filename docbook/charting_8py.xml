@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_charting_8py" xml:lang="en-US">
+<title>charting.py File Reference</title>
+<indexterm><primary>charting.py</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceequator__qa">equator_qa</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespaceequator__qa_1_1charting">equator_qa.charting</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>pd.DataFrame <link linkend="_namespaceequator__qa_1_1charting_1af54b654438466587f41c72939d1719eb">equator_qa.charting.define_data</link> (pd.DataFrame final_stats)</para>
+</listitem>
+            <listitem><para>tuple[sns.axisgrid.FacetGrid, plt.Figure] <link linkend="_namespaceequator__qa_1_1charting_1a96f3ea1443c60f72ab80b694dcd13aa1">equator_qa.charting.create_performance_chart</link> (pd.DataFrame final_stats, str title=&quot;LLM Linguistic Benchmark Performance&quot;, list highlight_models=None)</para>
+</listitem>
+            <listitem><para>None <link linkend="_namespaceequator__qa_1_1charting_1a372cff8312605dd0e054e888f909c5ba">equator_qa.charting.create_basic_charts</link> (list execution_steps, int answer_rounds, str benchmark_name, str date_now)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>dict <link linkend="_namespaceequator__qa_1_1charting_1a376b681eb259b02cc37bc352affa0c07">equator_qa.charting.mapper</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

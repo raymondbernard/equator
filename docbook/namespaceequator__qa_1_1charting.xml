@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceequator__qa_1_1charting" xml:lang="en-US">
+<title>equator_qa.charting Namespace Reference</title>
+<indexterm><primary>equator_qa.charting</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>pd.DataFrame <link linkend="_namespaceequator__qa_1_1charting_1af54b654438466587f41c72939d1719eb">define_data</link> (pd.DataFrame final_stats)</para>
+</listitem>
+            <listitem><para>tuple[sns.axisgrid.FacetGrid, plt.Figure] <link linkend="_namespaceequator__qa_1_1charting_1a96f3ea1443c60f72ab80b694dcd13aa1">create_performance_chart</link> (pd.DataFrame final_stats, str title=&quot;LLM Linguistic Benchmark Performance&quot;, list highlight_models=None)</para>
+</listitem>
+            <listitem><para>None <link linkend="_namespaceequator__qa_1_1charting_1a372cff8312605dd0e054e888f909c5ba">create_basic_charts</link> (list execution_steps, int answer_rounds, str benchmark_name, str date_now)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>dict <link linkend="_namespaceequator__qa_1_1charting_1a376b681eb259b02cc37bc352affa0c07">mapper</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1charting_1a372cff8312605dd0e054e888f909c5ba"/><section>
+    <title>create_basic_charts()</title>
+<indexterm><primary>create_basic_charts</primary><secondary>equator_qa.charting</secondary></indexterm>
+<indexterm><primary>equator_qa.charting</primary><secondary>create_basic_charts</secondary></indexterm>
+<para><computeroutput> None equator_qa.charting.create_basic_charts (list execution_steps, int answer_rounds, str benchmark_name, str
+ date_now)</computeroutput></para>
+<para><literallayout><computeroutput>Generate and save various performance and token usage charts based on LLM statistics.
+
+This function orchestrates the creation of statistical analyses and visualizations
+for language models. It handles loading data, computing statistics, generating
+performance charts, and creating token usage comparisons.
+
+Parameters
+----------
+execution_steps : list of str
+    A list of steps to execute. If &quot;generate_statistics&quot; is included, the function proceeds to generate statistics and charts.
+answer_rounds : int
+    The number of answer rounds to process.
+benchmark_name : str
+    The name of the benchmark being evaluated.
+date_now : str
+    The current date, used for naming folders and files.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1charting_1a96f3ea1443c60f72ab80b694dcd13aa1"/><section>
+    <title>create_performance_chart()</title>
+<indexterm><primary>create_performance_chart</primary><secondary>equator_qa.charting</secondary></indexterm>
+<indexterm><primary>equator_qa.charting</primary><secondary>create_performance_chart</secondary></indexterm>
+<para><computeroutput> tuple[sns.axisgrid.FacetGrid, plt.Figure] equator_qa.charting.create_performance_chart (pd.DataFrame final_stats, str  title = <computeroutput>&quot;LLM&#160;Linguistic&#160;Benchmark&#160;Performance&quot;</computeroutput>
+, list  highlight_models = <computeroutput>None</computeroutput>
+)</computeroutput></para>
+<para><literallayout><computeroutput>Create a performance bar chart for LLMs with confidence intervals.
+
+This function generates a seaborn barplot displaying the average scores
+of various language models along with their confidence intervals. Specific
+models can be highlighted with different colors.
+
+Parameters
+----------
+final_stats : pd.DataFrame
+    A DataFrame containing the structured statistics for each model, 
+    including &quot;Model&quot;, &quot;Average&quot;, &quot;Confidence Interval Low&quot;, and 
+    &quot;Confidence Interval High&quot;.
+title : str, optional
+    The title of the performance chart, by default &quot;LLM Linguistic Benchmark Performance&quot;.
+highlight_models : list of str, optional
+    A list of model names to highlight in the chart, by default None.
+
+Returns
+-------
+tuple[sns.axisgrid.FacetGrid, plt.Figure]
+    A tuple containing the seaborn barplot object and the matplotlib figure.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1charting_1af54b654438466587f41c72939d1719eb"/><section>
+    <title>define_data()</title>
+<indexterm><primary>define_data</primary><secondary>equator_qa.charting</secondary></indexterm>
+<indexterm><primary>equator_qa.charting</primary><secondary>define_data</secondary></indexterm>
+<para><computeroutput> pd.DataFrame equator_qa.charting.define_data (pd.DataFrame final_stats)</computeroutput></para>
+<para><literallayout><computeroutput>Process and structure the final statistics DataFrame for visualization.
+
+This function maps model identifiers to readable names, adds a 
+&quot;Human level*&quot; entry, sorts the DataFrame based on mean scores, and 
+organizes the data into a format suitable for plotting.
+
+Parameters
+----------
+final_stats : pd.DataFrame
+    A DataFrame containing statistical metrics for each model, including
+    columns like &apos;model&apos;, &apos;mean_score&apos;, &apos;ci_lower&apos;, and &apos;ci_upper&apos;.
+
+Returns
+-------
+pd.DataFrame
+    A structured DataFrame with columns:
+        - &quot;Model&quot;: Readable model names.
+        - &quot;Average&quot;: Mean scores of the models.
+        - &quot;Confidence Interval Low&quot;: Lower bound of the 95% confidence interval.
+        - &quot;Confidence Interval High&quot;: Upper bound of the 95% confidence interval.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1charting_1a376b681eb259b02cc37bc352affa0c07"/><section>
+    <title>mapper</title>
+<indexterm><primary>mapper</primary><secondary>equator_qa.charting</secondary></indexterm>
+<indexterm><primary>equator_qa.charting</primary><secondary>mapper</secondary></indexterm>
+<para><computeroutput>dict equator_qa.charting.mapper</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;{
+2 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;gpt-4-turbo-preview&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;GPT-4&#32;Turbo&apos;</emphasis>,
+3 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;gpt-4o&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;GPT-4o&apos;</emphasis>,
+4 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;gpt-4o-mini-2024-07-18&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;GPT-4o&#32;Mini&apos;</emphasis>,
+5 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;claude-3-opus-20240229&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Claude&#32;3&#32;Opus&apos;</emphasis>,
+6 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;claude-3-5-sonnet-20240620&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Claude&#32;3.5&#32;Sonnet&apos;</emphasis>,
+7 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;gemini-1_5-pro&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Gemini&#32;1.5&#32;Pro&apos;</emphasis>,
+8 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;gemini-1_0-pro&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Gemini&#32;1.0&#32;Pro&apos;</emphasis>,
+9 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;gemini-1_5-pro-exp-0801&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Gemini&#32;1.5&#32;Pro&#32;Ex&apos;</emphasis>,
+10 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;mistral-large-latest&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Mistral&#32;Large&#32;2&apos;</emphasis>,
+11 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;open-mixtral-8x22b&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Mistral&#32;8x22B&apos;</emphasis>,
+12 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;meta_llama3-70b-instruct-v1_0&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Llama&#32;3&#32;70B&apos;</emphasis>,
+13 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;meta_llama3-1-70b-instruct-v1_0&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Llama&#32;3.1&#32;70B&apos;</emphasis>,
+14 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;command-r&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Command&#32;R&apos;</emphasis>,
+15 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;command-r-plus&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Command&#32;R&#32;Pro&apos;</emphasis>,
+16 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;Meta-Llama-3-1-405B-Instruct-jjo_eastus_models_ai_azure_com&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Llama&#32;3.1&#32;405B&apos;</emphasis>,
+17 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&apos;Meta-Llama-3-1-70B-Instruct-ostu_eastus_models_ai_azure_com&apos;</emphasis>:&#32;<emphasis role="stringliteral">&apos;Llama&#32;3.1&#32;70B&apos;</emphasis>,
+18 }
+</programlisting></section>
+</section>
+</section>

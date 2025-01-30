@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['calculate_5fllm_5fstats_0',['calculate_llm_stats',['../namespaceequator__qa_1_1stats.html#a1c8eee6ab8c51dc5caff3dfbf8b75052',1,'equator_qa::stats']]],
+  ['call_5fevaluator_1',['call_evaluator',['../classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client.html#a00f7df202c494457a15b0da3eb11a3bd',1,'equator_qa::equator_classes::EQUATOR_Client']]],
+  ['call_5fevaluator_5fvision_2',['call_evaluator_vision',['../classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client.html#ab1d8f1d7a63a47ad2b80e00fac779727',1,'equator_qa::equator_classes::EQUATOR_Client']]],
+  ['call_5fgroq_5fevaluator_5fapi_3',['call_groq_evaluator_api',['../namespaceequator__qa_1_1llmscalls.html#afe37453eb1a7f204e26222f95fd4f8d5',1,'equator_qa::llmscalls']]],
+  ['call_5fgroq_5fstudent_5fapi_4',['call_groq_student_api',['../namespaceequator__qa_1_1llmscalls.html#a5f89f6cf3fcb635f789568a638e8301a',1,'equator_qa::llmscalls']]],
+  ['call_5fgroq_5fstudent_5fapi_5fvision_5',['call_groq_student_api_vision',['../namespaceequator__qa_1_1llmscalls.html#a3b157aff38fc9de8f081b70d14b2ad21',1,'equator_qa::llmscalls']]],
+  ['call_5flava_5fstudent_5fapi_5fvision_6',['call_lava_student_api_vision',['../namespaceequator__qa_1_1llmscalls.html#a5fd3895c47e8d6ac1ffd162ca457e7c3',1,'equator_qa::llmscalls']]],
+  ['call_5follama_5fevaluator_5fapi_7',['call_ollama_evaluator_api',['../namespaceequator__qa_1_1llmscalls.html#a15b91f9944b5e9dba4b866644c5d9fb0',1,'equator_qa::llmscalls']]],
+  ['call_5follama_5fevaluator_5fapi_5fvision_8',['call_ollama_evaluator_api_vision',['../namespaceequator__qa_1_1llmscalls.html#a88f12d2326106e99d52da888faf4de58',1,'equator_qa::llmscalls']]],
+  ['call_5follama_5fstudent_5fdocker_9',['call_ollama_student_docker',['../namespaceequator__qa_1_1llmscalls.html#aa14e9dd539da6d71a02a2c72dc114746',1,'equator_qa::llmscalls']]],
+  ['call_5fopenrouter_5fstudent_5fapi_10',['call_openrouter_student_api',['../namespaceequator__qa_1_1llmscalls.html#a233ecbe3f9d159e3eb61fa75a12b7f72',1,'equator_qa::llmscalls']]],
+  ['cleanup_5fchromadb_11',['cleanup_chromadb',['../namespaceequator__qa_1_1utils.html#a328387a62374d99c963d55b1db6c036b',1,'equator_qa::utils']]],
+  ['convert_5fmetadata_5fvalue_12',['convert_metadata_value',['../classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#a862a0f5f808ef8718cbd4e067a263beb',1,'equator_qa::vectordb::VectorDB_Controller']]],
+  ['create_5fbasic_5fcharts_13',['create_basic_charts',['../namespaceequator__qa_1_1charting.html#a372cff8312605dd0e054e888f909c5ba',1,'equator_qa::charting']]],
+  ['create_5fperformance_5fchart_14',['create_performance_chart',['../namespaceequator__qa_1_1charting.html#a96f3ea1443c60f72ab80b694dcd13aa1',1,'equator_qa::charting']]],
+  ['create_5ftemplate_5fjson_15',['create_template_json',['../namespaceequator__qa_1_1equator__classes.html#a3258b2fae2e04be5de37822da3a8f998',1,'equator_qa::equator_classes']]],
+  ['create_5fvector_5fdb_16',['create_vector_db',['../classequator__qa_1_1vectordb_1_1_vector_d_b___controller.html#a9ecebea5cbed0c54a33acb42a1999d27',1,'equator_qa::vectordb::VectorDB_Controller']]]
+];

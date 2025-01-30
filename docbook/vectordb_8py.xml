@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_vectordb_8py" xml:lang="en-US">
+<title>vectordb.py File Reference</title>
+<indexterm><primary>vectordb.py</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classequator__qa_1_1vectordb_1_1_vector_d_b___controller">equator_qa.vectordb.VectorDB_Controller</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceequator__qa">equator_qa</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespaceequator__qa_1_1vectordb">equator_qa.vectordb</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

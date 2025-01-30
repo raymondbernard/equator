@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client">equator_qa.equator_classes.EQUATOR_Client</link><link linkend="_classequator__qa_1_1vectordb_1_1_vector_d_b___controller">equator_qa.vectordb.VectorDB_Controller</link></section>

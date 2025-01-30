@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceequator__qa_1_1utils" xml:lang="en-US">
+<title>equator_qa.utils Namespace Reference</title>
+<indexterm><primary>equator_qa.utils</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1aeaca5569804de3c237256d8f0dfeb19b">extract_model_parts</link> (model_string)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a20c16f6b7b66dff1e6328313f3cdf147">begin_benchmark</link> (VISION, execution_steps, student_ollama_models, student_groq_models, student_openrouter_models, OLLAMA_EVALUATOR_MODEL, GROQ_EVALUATOR_MODEL, vectordb_instance, benchmark_name, date_now, answer_rounds)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a3cf64b4d24c740841895e2c9b9675c82">is_valid_uuid4</link> (uuid_string)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a328387a62374d99c963d55b1db6c036b">cleanup_chromadb</link> (db_filename=&quot;chroma.sqlite3&quot;, root_dir=&quot;.&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a1bfb2c3ec0d8ba6b8d190c4fea758454">format</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a64007f7ba3cff56298335dce3641414b">level</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a0f454df2070553cba6bd5b6de201b4cb">rotation</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1aaef6e792a7f4dd1b8f4553c7067312b0">retention</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1utils_1a20c16f6b7b66dff1e6328313f3cdf147"/><section>
+    <title>begin_benchmark()</title>
+<indexterm><primary>begin_benchmark</primary><secondary>equator_qa.utils</secondary></indexterm>
+<indexterm><primary>equator_qa.utils</primary><secondary>begin_benchmark</secondary></indexterm>
+<para><computeroutput>equator_qa.utils.begin_benchmark ( VISION,  execution_steps,  student_ollama_models,  student_groq_models,  student_openrouter_models,  OLLAMA_EVALUATOR_MODEL,  GROQ_EVALUATOR_MODEL,  vectordb_instance,  benchmark_name,  date_now,  answer_rounds)</computeroutput></para>
+<para><literallayout><computeroutput>Initiates and manages the benchmarking process based on specified execution steps.
+
+Depending on the `execution_steps`, this function evaluates student models against evaluator models
+using the EQUATOR_Client. It supports various evaluation workflows, including:
+- Ollama to GROQ
+- GROQ to Ollama
+- Ollama to OpenRouter
+- Ollama to Ollama
+- GROQ to OpenRouter
+
+Args:
+    execution_steps (str):
+        Specifies the benchmarking workflow to execute (e.g., &quot;ollama_to_groq_evaluate&quot;).
+    
+    student_ollama_models (List[str]):
+        List of student models using the Ollama platform.
+    
+    student_groq_models (List[str]):
+        List of student models using the GROQ platform.
+    
+    student_openrouter_models (List[str]):
+        List of student models using the OpenRouter platform.
+    
+    OLLAMA_EVALUATOR_MODEL (str):
+        The evaluator model identifier for Ollama evaluations.
+    
+    GROQ_EVALUATOR_MODEL (str):
+        The evaluator model identifier for GROQ evaluations.
+    
+    vectordb_instance:
+        Instance of the vector database used for storing and retrieving embeddings.
+    
+    benchmark_name (str):
+        Name of the benchmark being executed.
+    
+    date_now (str):
+        Current date in a suitable string format for folder naming.
+    
+    answer_rounds (int):
+        Number of evaluation rounds to perform.
+
+Returns:
+    None
+
+Example:
+    ```python
+    begin_benchmark(
+        execution_steps=&quot;ollama_to_groq_evaluate&quot;,
+        student_ollama_models=[&quot;ollama-model-1&quot;, &quot;ollama-model-2&quot;],
+        student_groq_models=[&quot;groq-model-1&quot;],
+        student_openrouter_models=[&quot;openrouter-model-1&quot;],
+        OLLAMA_EVALUATOR_MODEL=&quot;ollama-eval-model&quot;,
+        GROQ_EVALUATOR_MODEL=&quot;groq-eval-model&quot;,
+        vectordb_instance=vector_db,
+        benchmark_name=&quot;midterm_benchmark&quot;,
+        date_now=&quot;2025-01-19&quot;,
+        answer_rounds=5,
+    )
+    ```
+
+Notes:
+    - Ensure that the `EQUATOR_Client` is correctly implemented and imported.
+    - The `extract_model_parts` function should be defined to parse model identifiers.
+    - Logging should be properly configured to capture informational and debug messages.
+    - Directory paths for saving outputs should have the necessary write permissions.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1utils_1a328387a62374d99c963d55b1db6c036b"/><section>
+    <title>cleanup_chromadb()</title>
+<indexterm><primary>cleanup_chromadb</primary><secondary>equator_qa.utils</secondary></indexterm>
+<indexterm><primary>equator_qa.utils</primary><secondary>cleanup_chromadb</secondary></indexterm>
+<para><computeroutput>equator_qa.utils.cleanup_chromadb ( db_filename = <computeroutput>&quot;chroma.sqlite3&quot;</computeroutput>
+,  root_dir = <computeroutput>&quot;.&quot;</computeroutput>
+)</computeroutput></para>
+<para><literallayout><computeroutput>Clean up the ChromaDB by removing the specified SQLite file and any directories
+in the root directory that have names matching UUIDv4.
+
+Args:
+    db_filename (str): The name of the SQLite database file to remove.
+    root_dir (str): The root directory to search for UUIDv4-named directories.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1utils_1aeaca5569804de3c237256d8f0dfeb19b"/><section>
+    <title>extract_model_parts()</title>
+<indexterm><primary>extract_model_parts</primary><secondary>equator_qa.utils</secondary></indexterm>
+<indexterm><primary>equator_qa.utils</primary><secondary>extract_model_parts</secondary></indexterm>
+<para><computeroutput>equator_qa.utils.extract_model_parts ( model_string)</computeroutput></para>
+<para><literallayout><computeroutput>Splits a model string into its constituent parts based on a predefined pattern.
+
+This function uses a regular expression to extract two parts from the `model_string`,
+separated by a forward slash (`/`). If the string matches the pattern, it returns a tuple
+containing both parts. Otherwise, it returns `(None, None)`.
+
+Args:
+    model_string (str):
+        The model identifier string to be split. Expected format is &quot;part1/part2&quot;,
+        where neither part contains a forward slash (`/`) or colon (`:`).
+
+Returns:
+    Tuple[Optional[str], Optional[str]]:
+        A tuple containing the two extracted parts of the model string. Returns `(None, None)`
+        if the input does not match the expected pattern.
+
+Example:
+    ```python
+    part1, part2 = extract_model_parts(&quot;category/model&quot;)
+    print(part1)  # Output: &quot;category&quot;
+    print(part2)  # Output: &quot;model&quot;
+    
+    part1, part2 = extract_model_parts(&quot;invalidmodelstring&quot;)
+    print(part1)  # Output: None
+    print(part2)  # Output: None
+    ```
+
+Notes:
+    - Ensure that the `model_string` follows the &quot;part1/part2&quot; format to successfully extract both parts.
+    - This function does not handle cases where there are multiple slashes or colons in the `model_string`.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1utils_1a3cf64b4d24c740841895e2c9b9675c82"/><section>
+    <title>is_valid_uuid4()</title>
+<indexterm><primary>is_valid_uuid4</primary><secondary>equator_qa.utils</secondary></indexterm>
+<indexterm><primary>equator_qa.utils</primary><secondary>is_valid_uuid4</secondary></indexterm>
+<para><computeroutput>equator_qa.utils.is_valid_uuid4 ( uuid_string)</computeroutput></para>
+<para><literallayout><computeroutput>Validate that a string is a valid UUID4.
+
+Args:
+    uuid_string (str): The string to validate.
+
+Returns:
+    bool: True if valid UUID4, False otherwise.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1utils_1a1bfb2c3ec0d8ba6b8d190c4fea758454"/><section>
+    <title>format</title>
+<indexterm><primary>format</primary><secondary>equator_qa.utils</secondary></indexterm>
+<indexterm><primary>equator_qa.utils</primary><secondary>format</secondary></indexterm>
+<para><computeroutput>equator_qa.utils.format</computeroutput></para></section>
+<anchor xml:id="_namespaceequator__qa_1_1utils_1a64007f7ba3cff56298335dce3641414b"/><section>
+    <title>level</title>
+<indexterm><primary>level</primary><secondary>equator_qa.utils</secondary></indexterm>
+<indexterm><primary>equator_qa.utils</primary><secondary>level</secondary></indexterm>
+<para><computeroutput>equator_qa.utils.level</computeroutput></para></section>
+<anchor xml:id="_namespaceequator__qa_1_1utils_1aaef6e792a7f4dd1b8f4553c7067312b0"/><section>
+    <title>retention</title>
+<indexterm><primary>retention</primary><secondary>equator_qa.utils</secondary></indexterm>
+<indexterm><primary>equator_qa.utils</primary><secondary>retention</secondary></indexterm>
+<para><computeroutput>equator_qa.utils.retention</computeroutput></para></section>
+<anchor xml:id="_namespaceequator__qa_1_1utils_1a0f454df2070553cba6bd5b6de201b4cb"/><section>
+    <title>rotation</title>
+<indexterm><primary>rotation</primary><secondary>equator_qa.utils</secondary></indexterm>
+<indexterm><primary>equator_qa.utils</primary><secondary>rotation</secondary></indexterm>
+<para><computeroutput>equator_qa.utils.rotation</computeroutput></para></section>
+</section>
+</section>

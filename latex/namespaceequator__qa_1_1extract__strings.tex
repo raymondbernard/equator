@@ -1,0 +1,52 @@
+\doxysection{equator\+\_\+qa.\+extract\+\_\+strings Namespace Reference}
+\hypertarget{namespaceequator__qa_1_1extract__strings}{}\label{namespaceequator__qa_1_1extract__strings}\index{equator\_qa.extract\_strings@{equator\_qa.extract\_strings}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1extract__strings_ad7263735c64831c2f1ebb8f772072940}{extract\+\_\+score\+\_\+from\+\_\+string}} (response\+\_\+string)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1extract__strings_a54fc7cfc9f8e792991429a5a5d9e585c}{sanitize\+\_\+string}} (value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceequator__qa_1_1extract__strings_ad7263735c64831c2f1ebb8f772072940}\index{equator\_qa.extract\_strings@{equator\_qa.extract\_strings}!extract\_score\_from\_string@{extract\_score\_from\_string}}
+\index{extract\_score\_from\_string@{extract\_score\_from\_string}!equator\_qa.extract\_strings@{equator\_qa.extract\_strings}}
+\doxysubsubsection{\texorpdfstring{extract\_score\_from\_string()}{extract\_score\_from\_string()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1extract__strings_ad7263735c64831c2f1ebb8f772072940} 
+equator\+\_\+qa.\+extract\+\_\+strings.\+extract\+\_\+score\+\_\+from\+\_\+string (\begin{DoxyParamCaption}\item[{}]{response\+\_\+string}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extracts a numerical score from a response string using predefined patterns.
+
+This function searches the input `response_string` for various patterns that indicate a score.
+It uses regular expressions to match different formats and returns the first found score as an integer.
+If no score pattern is matched, it returns `None`.
+
+Args:
+    response_string (str):
+        The string containing the evaluator's response from which to extract the score.
+
+Returns:
+    Optional[int]:
+        The extracted score as an integer if a pattern is matched; otherwise, `None`.
+
+Example:
+    ```python
+    response = "The score assigned is 85%."
+    score = extract_score_from_string(response)
+    print(score)  # Output: 85
+    ```
+
+Notes:
+    - The function is case-insensitive and handles multiple score formats.
+    - Ensure that the response strings follow one of the predefined patterns for accurate extraction.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1extract__strings_a54fc7cfc9f8e792991429a5a5d9e585c}\index{equator\_qa.extract\_strings@{equator\_qa.extract\_strings}!sanitize\_string@{sanitize\_string}}
+\index{sanitize\_string@{sanitize\_string}!equator\_qa.extract\_strings@{equator\_qa.extract\_strings}}
+\doxysubsubsection{\texorpdfstring{sanitize\_string()}{sanitize\_string()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1extract__strings_a54fc7cfc9f8e792991429a5a5d9e585c} 
+equator\+\_\+qa.\+extract\+\_\+strings.\+sanitize\+\_\+string (\begin{DoxyParamCaption}\item[{}]{value}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Escapes curly braces in strings to prevent issues with format specifiers in logging.
+\end{DoxyVerb}
+ 

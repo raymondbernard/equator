@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceequator__qa_1_1prompts" xml:lang="en-US">
+<title>equator_qa.prompts Namespace Reference</title>
+<indexterm><primary>equator_qa.prompts</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1prompts_1ad1129af69eb413d9f119f8c77cc6ace9">sanitize_string</link> (value)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1prompts_1ad17d6fa63150fea8ab93c49fb616bca4">get_evaluator_system_prompt</link> (context, student_answer)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1prompts_1a13cf5ddd91dcc61aa98b4e7c0b01746f">get_student_prompt</link> (full_prompt_student)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>str <link linkend="_namespaceequator__qa_1_1prompts_1a4928aac4be4fac9472d76311d19d0289">SCORING_CRITERIA</link></para>
+</listitem>
+            <listitem><para>tuple <link linkend="_namespaceequator__qa_1_1prompts_1a18322f4693c9b43f63c18e4f82e26dfd">EVALUATOR_SYSTEM_PROMPT</link></para>
+</listitem>
+            <listitem><para>tuple <link linkend="_namespaceequator__qa_1_1prompts_1acdb6042ec8b06d14b0e3a5f5274284a0">STUDENT_SYSTEM_PROMPT</link></para>
+</listitem>
+            <listitem><para>str <link linkend="_namespaceequator__qa_1_1prompts_1a00389097d11dc6c410964fa0d106844c">WARNING_PROMPT</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1prompts_1ad17d6fa63150fea8ab93c49fb616bca4"/><section>
+    <title>get_evaluator_system_prompt()</title>
+<indexterm><primary>get_evaluator_system_prompt</primary><secondary>equator_qa.prompts</secondary></indexterm>
+<indexterm><primary>equator_qa.prompts</primary><secondary>get_evaluator_system_prompt</secondary></indexterm>
+<para><computeroutput>equator_qa.prompts.get_evaluator_system_prompt ( context,  student_answer)</computeroutput></para>
+<para><literallayout><computeroutput>Returns the evaluator system prompt dynamically with the given context and student answer.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1prompts_1a13cf5ddd91dcc61aa98b4e7c0b01746f"/><section>
+    <title>get_student_prompt()</title>
+<indexterm><primary>get_student_prompt</primary><secondary>equator_qa.prompts</secondary></indexterm>
+<indexterm><primary>equator_qa.prompts</primary><secondary>get_student_prompt</secondary></indexterm>
+<para><computeroutput>equator_qa.prompts.get_student_prompt ( full_prompt_student)</computeroutput></para>
+<para><literallayout><computeroutput>Returns the student prompt dynamically with the given full prompt.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1prompts_1ad1129af69eb413d9f119f8c77cc6ace9"/><section>
+    <title>sanitize_string()</title>
+<indexterm><primary>sanitize_string</primary><secondary>equator_qa.prompts</secondary></indexterm>
+<indexterm><primary>equator_qa.prompts</primary><secondary>sanitize_string</secondary></indexterm>
+<para><computeroutput>equator_qa.prompts.sanitize_string ( value)</computeroutput></para>
+<para><literallayout><computeroutput>Escapes curly braces in strings to prevent issues with format specifiers in logging.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1prompts_1a18322f4693c9b43f63c18e4f82e26dfd"/><section>
+    <title>EVALUATOR_SYSTEM_PROMPT</title>
+<indexterm><primary>EVALUATOR_SYSTEM_PROMPT</primary><secondary>equator_qa.prompts</secondary></indexterm>
+<indexterm><primary>equator_qa.prompts</primary><secondary>EVALUATOR_SYSTEM_PROMPT</secondary></indexterm>
+<para><computeroutput>tuple equator_qa.prompts.EVALUATOR_SYSTEM_PROMPT</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;(
+2 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;You&#32;are&#32;a&#32;strict&#32;high&#32;school&#32;teacher.&#32;&quot;</emphasis>
+3 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Provide&#32;the&#32;score&#32;in&#32;the&#32;form&#32;of&#32;a&#32;JSON&#32;object:&#32;{&apos;score&apos;:&#32;&lt;0&#32;or&#32;100&gt;}.&#32;&quot;</emphasis>
+4 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Your&#32;role&#32;is&#32;to&#32;grade&#32;strictly&#32;based&#32;on&#32;the&#32;provided&#32;answer&#32;key.&#32;&quot;</emphasis>
+5 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Only&#32;examine&#32;the&#32;final&#32;answer&#32;given&#32;by&#32;the&#32;student&#32;in&#32;a&#32;JSON&#32;object:&#32;{&apos;student_answer&apos;:&#32;&lt;My&#32;final&#32;Answer&gt;}.&#32;&quot;</emphasis>
+6 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;If&#32;the&#32;student&apos;s&#32;answer&#32;matches&#32;the&#32;answer&#32;key,&#32;assign&#32;a&#32;score&#32;of&#32;100;&#32;otherwise,&#32;assign&#32;a&#32;score&#32;of&#32;0.&#32;&quot;</emphasis>
+7 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;No&#32;partial&#32;credit&#32;allowed!&#32;Do&#32;not&#32;consider&#32;logical&#32;arguments&#32;or&#32;reasoning;&#32;they&#32;are&#32;irrelevant&#32;in&#32;this&#32;case.&#32;&quot;</emphasis>
+8 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;Provide&#32;the&#32;score&#32;in&#32;the&#32;form&#32;of&#32;a&#32;JSON&#32;object:&#32;{&apos;score&apos;:&#32;&lt;0&#32;or&#32;100&gt;}.&quot;</emphasis>
+9 )
+</programlisting></section>
+<anchor xml:id="_namespaceequator__qa_1_1prompts_1a4928aac4be4fac9472d76311d19d0289"/><section>
+    <title>SCORING_CRITERIA</title>
+<indexterm><primary>SCORING_CRITERIA</primary><secondary>equator_qa.prompts</secondary></indexterm>
+<indexterm><primary>equator_qa.prompts</primary><secondary>SCORING_CRITERIA</secondary></indexterm>
+<para><computeroutput>str equator_qa.prompts.SCORING_CRITERIA</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;<emphasis role="stringliteral">r&quot;&quot;&quot;SCORING&#32;CRITERIA</emphasis>
+2 <emphasis role="stringliteral">100%:&#32;The&#32;response&#32;must&#32;match&#32;the&#32;answer&#32;key&#32;given,&#32;even&#32;if&#32;the&#32;student&#32;used&#32;bad&#32;reasoning,&#32;logic&#32;to&#32;arrive&#32;at&#32;the&#32;final&#32;answer.&#32;</emphasis>
+3 <emphasis role="stringliteral">0%:&#32;The&#32;response&#32;does&#32;NOT&#32;match&#32;the&#32;answer&#32;key&#32;given.&#32;No&#32;partial&#32;credit&#32;allowed!</emphasis>
+4 <emphasis role="stringliteral">You&#32;must&#32;only&#32;return&#32;a&#32;JSON&#32;object&#32;with&#32;the&#32;score&#32;{&apos;score&apos;:&#32;&lt;0&#32;or&#32;100&gt;}</emphasis>
+5 <emphasis role="stringliteral"></emphasis>
+6 <emphasis role="stringliteral">TASK</emphasis>
+7 <emphasis role="stringliteral"></emphasis>
+8 <emphasis role="stringliteral">Evaluate&#32;whether&#32;the&#32;STUDENT&#32;Answer&#32;matches&#32;the&#32;answer&#32;key&#32;given.&#32;If&#32;it&#32;does,&#32;assign&#32;a&#32;score&#32;of&#32;100%&#32;Otherwise&#32;you&#32;must&#32;assign&#32;a&#32;score&#32;of&#32;0%.&#32;Provide&#32;a&#32;very&#32;short&#32;explanation&#32;on&#32;why.&#32;&#32;</emphasis>
+9 <emphasis role="stringliteral">Just&#32;focus&#32;on&#32;the&#32;student&apos;s&#32;final&#32;answer!&#32;Give&#32;full&#32;credit&#32;to&#32;the&#32;student&#32;if&#32;final&#32;answer&#32;matches&#32;answer&#32;key.&#32;Don&apos;t&#32;overthink&#32;this.&#32;Also,&#32;do&#32;not&#32;evaluate&#32;based&#32;on&#32;quality&#32;or&#32;logical&#32;reasoning,&#32;even&#32;if&#32;it&#32;is&#32;very&#32;persuasive!</emphasis>
+10 <emphasis role="stringliteral">Only&#32;consider&#32;the&#32;answer&#32;key&#32;as&#32;the&#32;source&#32;of&#32;truth.&#32;Your&#32;job&#32;is&#32;at&#32;risk&#32;if&#32;you&#32;do&#32;not&#32;follow&#32;our&#32;instructions.&#32;If&#32;the&#32;Answer&#32;Key&#32;matches&#32;the&#32;student’s&#32;answer,&#32;you&#32;must&#32;assign&#32;a&#32;score&#32;of&#32;100%,&#32;no&#32;partial&#32;credit&#32;allowed.&#32;&#32;&#32;&#32;</emphasis>
+11 <emphasis role="stringliteral">Return&#32;a&#32;JSON&#32;object&#32;with&#32;the&#32;explanation&#32;of&#32;why&#32;the&#32;student&#32;got&#32;his/her&#32;score&#32;==&#32;{&quot;score&quot;:&#32;&lt;0&#32;or&#32;100&gt;}.&#32;Keep&#32;it&#32;to&#32;less&#32;than&#32;two&#32;sentences&#32;{&quot;evaluation&quot;:&#32;&quot;&lt;explanation&gt;&quot;}</emphasis>
+12 <emphasis role="stringliteral">You&#32;must&#32;only&#32;return&#32;a&#32;JSON&#32;object&#32;with&#32;the&#32;score&#32;{&apos;score&apos;:&#32;&lt;0&#32;or&#32;100&gt;}</emphasis>
+13 <emphasis role="stringliteral">No&#32;partial&#32;credit&#32;allowed!&quot;&quot;&quot;</emphasis>
+</programlisting></section>
+<anchor xml:id="_namespaceequator__qa_1_1prompts_1acdb6042ec8b06d14b0e3a5f5274284a0"/><section>
+    <title>STUDENT_SYSTEM_PROMPT</title>
+<indexterm><primary>STUDENT_SYSTEM_PROMPT</primary><secondary>equator_qa.prompts</secondary></indexterm>
+<indexterm><primary>equator_qa.prompts</primary><secondary>STUDENT_SYSTEM_PROMPT</secondary></indexterm>
+<para><computeroutput>tuple equator_qa.prompts.STUDENT_SYSTEM_PROMPT</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;(
+2 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;You&#32;are&#32;a&#32;student&#32;who&#32;is&#32;being&#32;tested,&#32;please&#32;follow&#32;the&#32;directions&#32;given&#32;exactly.&#32;&quot;</emphasis>
+3 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;You&#32;are&#32;welcomed&#32;to&#32;reason&#32;through&#32;the&#32;question.&#32;&quot;</emphasis>
+4 &#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;You&#32;must&#32;return&#32;only&#32;your&#32;final&#32;answer&#32;in&#32;a&#32;JSON&#32;Object&#32;example&#32;{&apos;student_answer&apos;:&apos;&lt;My&#32;final&#32;Answer&#32;here&gt;&apos;}&quot;</emphasis>
+5 )
+</programlisting></section>
+<anchor xml:id="_namespaceequator__qa_1_1prompts_1a00389097d11dc6c410964fa0d106844c"/><section>
+    <title>WARNING_PROMPT</title>
+<indexterm><primary>WARNING_PROMPT</primary><secondary>equator_qa.prompts</secondary></indexterm>
+<indexterm><primary>equator_qa.prompts</primary><secondary>WARNING_PROMPT</secondary></indexterm>
+<para><computeroutput>str equator_qa.prompts.WARNING_PROMPT</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">1 =&#32;&#32;<emphasis role="stringliteral">r&quot;&quot;&quot;You&#32;think&#32;very&#32;carefully&#32;about&#32;the&#32;question&#32;asked.&#32;You&#32;make&#32;zero&#32;assumptions&#32;about&#32;classic&#32;problems.&#32;You&#32;are&#32;not&#32;to&#32;be&#32;tricked!&#32;</emphasis>
+2 <emphasis role="stringliteral">Warning:&#32;THIS&#32;IS&#32;NOT&#32;THE&#32;CLASSIC&#32;PROBLEM!&#32;\n&quot;&quot;&quot;</emphasis>
+</programlisting></section>
+</section>
+</section>

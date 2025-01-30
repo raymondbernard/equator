@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceequator__qa_1_1llmscalls" xml:lang="en-US">
+<title>equator_qa.llmscalls Namespace Reference</title>
+<indexterm><primary>equator_qa.llmscalls</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1afe37453eb1a7f204e26222f95fd4f8d5">call_groq_evaluator_api</link> (evaluator_model, student_answer, evaluator_system_prompt)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1a88f12d2326106e99d52da888faf4de58">call_ollama_evaluator_api_vision</link> (evaluator_model, student_answer, evaluator_system_prompt)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1a15b91f9944b5e9dba4b866644c5d9fb0">call_ollama_evaluator_api</link> (evaluator_model, student_answer, evaluator_system_prompt)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1a233ecbe3f9d159e3eb61fa75a12b7f72">call_openrouter_student_api</link> (full_prompt_student, model_path)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1a4797d197935d6d6ec8a7c740eac9cac6">process_image</link> (file_name)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1a5fd3895c47e8d6ac1ffd162ca457e7c3">call_lava_student_api_vision</link> (full_prompt, image_filename, student_model)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1a3b157aff38fc9de8f081b70d14b2ad21">call_groq_student_api_vision</link> (full_prompt, image_filename, student_model)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1aa14e9dd539da6d71a02a2c72dc114746">call_ollama_student_docker</link> (full_prompt_student, student_model)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1a5f89f6cf3fcb635f789568a638e8301a">call_groq_student_api</link> (full_prompt_student, groq_student_model)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1llmscalls_1a20626689a10facae3c297ff6e134cbe0">config</link> = configparser.ConfigParser()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1afe37453eb1a7f204e26222f95fd4f8d5"/><section>
+    <title>call_groq_evaluator_api()</title>
+<indexterm><primary>call_groq_evaluator_api</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>call_groq_evaluator_api</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.call_groq_evaluator_api ( evaluator_model,  student_answer,  evaluator_system_prompt)</computeroutput></para>
+<para><literallayout><computeroutput>Evaluates a student&apos;s answer using the Groq Evaluator API.
+
+This function sends the student&apos;s answer along with a system prompt to the Groq Evaluator API
+and retrieves the evaluation response.
+
+Args:
+    evaluator_model (str):
+        The identifier of the evaluator model to use.
+    
+    student_answer (str):
+        The student&apos;s answer to be evaluated.
+    
+    evaluator_system_prompt (List[Dict[str, str]]):
+        A list of messages defining the system prompt for the evaluator.
+
+Returns:
+    Optional[Tuple[str, str]]:
+        A tuple containing the `student_answer` and the evaluator&apos;s feedback if successful.
+        Returns `None` if the evaluation fails.
+
+Example:
+    ```python
+    evaluator_model = &quot;groq-eval-model-v1&quot;
+    student_answer = &quot;The capital of France is Paris.&quot;
+    evaluator_system_prompt = [
+        {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are an evaluator for geography questions.&quot;},
+        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Evaluate the following student answer for correctness and completeness.&quot;}
+    ]
+
+    result = call_groq_evaluator_api(evaluator_model, student_answer, evaluator_system_prompt)
+    if result:
+        answer, feedback = result
+        print(f&quot;Answer: {answer}\nFeedback: {feedback}&quot;)
+    else:
+        print(&quot;Evaluation failed.&quot;)
+    ```
+
+Notes:
+    - Ensure that the `GROQ_API_KEY` environment variable is set.
+    - The `Groq` client library must be installed and imported.
+    - Handle sensitive data securely.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1a5f89f6cf3fcb635f789568a638e8301a"/><section>
+    <title>call_groq_student_api()</title>
+<indexterm><primary>call_groq_student_api</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>call_groq_student_api</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.call_groq_student_api ( full_prompt_student,  groq_student_model)</computeroutput></para>
+<para><literallayout><computeroutput>Sends a student&apos;s prompt to the Groq API and retrieves the response.
+
+Args:
+    full_prompt_student (str):
+        The student&apos;s prompt to be processed.
+    groq_student_model (str):
+        The model identifier to use for generating the response.
+
+Returns:
+    Optional[str]:
+        The response from the Groq API if successful, otherwise `None`.
+
+Example:
+    ```python
+    response = call_groq_student_api(&quot;Explain photosynthesis.&quot;, &quot;groq-model-v1&quot;)
+    if response:
+        print(response)
+    else:
+        print(&quot;Evaluation failed.&quot;)
+    ```
+
+Notes:
+    - Ensure the `GROQ_API_KEY` environment variable is set with a valid API key.
+    - The `Groq` client library must be installed and imported.
+    - The `get_student_prompt` function should be defined to format the messages correctly.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1a3b157aff38fc9de8f081b70d14b2ad21"/><section>
+    <title>call_groq_student_api_vision()</title>
+<indexterm><primary>call_groq_student_api_vision</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>call_groq_student_api_vision</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.call_groq_student_api_vision ( full_prompt,  image_filename,  student_model)</computeroutput></para>
+<para><literallayout><computeroutput>Calls the Groq Student API to perform vision-related tasks using the specified student model.
+
+This function processes an image file, encodes it, and sends it along with a prompt to the Groq Student API 
+for vision tasks. It handles the API response by generating a descriptive caption for the provided image 
+and logs relevant information throughout the process.
+
+Args:
+    full_prompt (str): 
+        A string representing the initial prompt or instruction to guide the API in generating the desired response.
+        In this function, the `full_prompt` is integrated into the message content to provide context for the API.
+
+    image_filename (str): 
+        The file path to the image that needs to be processed and analyzed by the API. 
+        The image will be read, encoded in base64 format, and included in the API request payload.
+
+    student_model (str): 
+        The identifier or name of the student model to be used for processing the vision task. 
+        This specifies which model variant the API should utilize to handle the request.
+
+Returns:
+    str:
+        - Returns the generated descriptive one-sentence caption for the provided image if the API call is successful.
+        - Returns an empty string `&quot;&quot;` if the API request fails due to image processing issues or other exceptions.
+
+Raises:
+    None. All exceptions related to the API request and image processing are handled internally. 
+    Errors are logged, and appropriate return values are provided to indicate failure states.
+
+Example:
+    ```python
+    caption = call_groq_student_api_vision(
+        full_prompt=&quot;Analyze the content of this image.&quot;,
+        image_filename=&quot;/path/to/image.jpg&quot;,
+        student_model=&quot;vision-model-v2&quot;
+    )
+    if caption:
+        print(f&quot;Generated Caption: {caption}&quot;)
+    else:
+        print(&quot;Failed to generate caption.&quot;)
+    ```
+
+Dependencies:
+    - `Groq`: A client library for interacting with the Groq Student API. Ensure it is properly installed and configured.
+    - `logger`: A logging instance used to log informational and error messages.
+    - `process_image`: A function that takes an image filename and returns a base64-encoded version 
+      suitable for API transmission.
+    - `requests`: Although not directly used in this function, it&apos;s commonly used for HTTP requests 
+      and may be required by the `Groq` client internally.
+
+Notes:
+    - Ensure that the `image_filename` points to a valid image file that `process_image` can handle.
+    - The function concatenates the `full_prompt` with the base64-encoded image in Markdown image syntax.
+      This allows the API to interpret and process the image correctly.
+    - The function currently expects the Groq client to return a response in the structure 
+      `chat_completion.choices[0].message.content`. Adjustments may be necessary if the API response format changes.
+    - Logging levels (`info`, `debug`, `error`) are used to provide detailed insights into the function&apos;s execution flow.
+    - The function does not support streaming responses; it waits for the complete response before returning.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1a5fd3895c47e8d6ac1ffd162ca457e7c3"/><section>
+    <title>call_lava_student_api_vision()</title>
+<indexterm><primary>call_lava_student_api_vision</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>call_lava_student_api_vision</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.call_lava_student_api_vision ( full_prompt,  image_filename,  student_model)</computeroutput></para>
+<para><literallayout><computeroutput>Calls the LAVA Student API to perform vision-related tasks using the specified student model.
+
+This function processes an image file, encodes it, and sends it along with a prompt to the LAVA Student API 
+for vision tasks. It handles the API response and logs relevant information throughout the process.
+
+Args:
+    full_prompt (str or list): 
+        - If a string, it represents the user prompt to be sent to the API.
+        - If a list, it should contain a sequence of messages formatted as dictionaries 
+          with roles and content, e.g., [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Your prompt here&quot;}].
+        This prompt guides the API in generating the desired vision-related response.
+    
+    image_filename (str): 
+        The file path to the image that needs to be processed and analyzed by the API. 
+        The image will be read, encoded, and included in the API request payload.
+    
+    student_model (str): 
+        The identifier or name of the student model to be used for processing the vision task. 
+        This specifies which model variant the API should utilize to handle the request.
+
+Returns:
+    str or tuple:
+        - Returns `&quot;Success&quot;` if the API call is successful and the response is received without errors.
+        - Returns `(&quot;Error&quot;, {&quot;error&quot;: &quot;Image processing failed&quot;})` if the image encoding fails.
+        - Returns an empty string `&quot;&quot;` if the API request fails due to network issues or invalid responses.
+
+Raises:
+    None. All exceptions related to the API request and image processing are handled internally. 
+    Errors are logged, and appropriate return values are provided to indicate failure states.
+
+Example:
+    ```python
+    status = call_lava_student_api_vision(
+        full_prompt=&quot;Analyze the content of this image.&quot;,
+        image_filename=&quot;/path/to/image.jpg&quot;,
+        student_model=&quot;vision-model-v1&quot;
+    )
+    if status == &quot;Success&quot;:
+        print(&quot;API call was successful.&quot;)
+    elif isinstance(status, tuple) and status[0] == &quot;Error&quot;:
+        print(f&quot;Error occurred: {status[1][&apos;error&apos;]}&quot;)
+    else:
+        print(&quot;API request failed.&quot;)
+    ```
+
+Dependencies:
+    - `config`: A dictionary containing configuration settings, specifically the API URL under 
+      `config[&quot;ollama_evalutor_vision_url&quot;][&quot;URL&quot;]`.
+    - `logger`: A logging instance used to log informational and error messages.
+    - `process_image`: A function that takes an image filename and returns an encoded version 
+      suitable for API transmission.
+    - `requests`: The `requests` library is used to send HTTP POST requests to the API endpoint.
+
+Notes:
+    - Ensure that the `image_filename` points to a valid image file that `process_image` can handle.
+    - The function currently does not support streaming responses (`&quot;stream&quot;: False` in payload).
+    - The commented-out code for formatting `full_prompt` suggests potential flexibility 
+      for handling different prompt formats, which may be re-enabled or modified in future iterations.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1a15b91f9944b5e9dba4b866644c5d9fb0"/><section>
+    <title>call_ollama_evaluator_api()</title>
+<indexterm><primary>call_ollama_evaluator_api</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>call_ollama_evaluator_api</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.call_ollama_evaluator_api ( evaluator_model,  student_answer,  evaluator_system_prompt)</computeroutput></para>
+<para><literallayout><computeroutput>Evaluates a student&apos;s answer using the Ollama Evaluator API.
+
+Sends the student&apos;s answer and a system prompt to the Ollama API and retrieves the evaluation response.
+
+Args:
+    evaluator_model (str):
+        The evaluator model to use.
+    
+    student_answer (str):
+        The student&apos;s answer to be evaluated.
+    
+    evaluator_system_prompt (List[Dict[str, str]]):
+        A list of messages defining the system prompt for the evaluator.
+
+Returns:
+    Tuple[str, str]:
+        A tuple containing the `student_answer` and the evaluator&apos;s feedback.
+
+Example:
+    ```python
+    evaluator_model = &quot;ollama-model-v1&quot;
+    student_answer = &quot;The capital of France is Paris.&quot;
+    evaluator_system_prompt = [
+        {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are an evaluator for geography questions.&quot;},
+        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Evaluate the following student answer for correctness and completeness.&quot;}
+    ]
+
+    result = call_ollama_evaluator_api(evaluator_model, student_answer, evaluator_system_prompt)
+    if result:
+        answer, feedback = result
+        print(f&quot;Answer: {answer}\nFeedback: {feedback}&quot;)
+    else:
+        print(&quot;Evaluation failed.&quot;)
+    ```
+
+Notes:
+    - Ensure the Ollama API is running and accessible at the specified URL.
+    - Handle sensitive data securely.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1a88f12d2326106e99d52da888faf4de58"/><section>
+    <title>call_ollama_evaluator_api_vision()</title>
+<indexterm><primary>call_ollama_evaluator_api_vision</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>call_ollama_evaluator_api_vision</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.call_ollama_evaluator_api_vision ( evaluator_model,  student_answer,  evaluator_system_prompt)</computeroutput></para></section>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1aa14e9dd539da6d71a02a2c72dc114746"/><section>
+    <title>call_ollama_student_docker()</title>
+<indexterm><primary>call_ollama_student_docker</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>call_ollama_student_docker</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.call_ollama_student_docker ( full_prompt_student,  student_model)</computeroutput></para>
+<para><literallayout><computeroutput>Sends a student&apos;s formatted conversation history to the Ollama Docker API for evaluation.
+
+Args:
+    full_prompt_student (list[dict]): A list of message dictionaries representing 
+        the conversation history. Each dictionary should have:
+        - &quot;role&quot; (str): The role in the conversation (e.g., &quot;system&quot;, &quot;user&quot;, &quot;assistant&quot;).
+        - &quot;content&quot; (str): The corresponding message content.
+    student_model (str): The name of the model to use for generating the response.
+
+Returns:
+    Optional[str]: 
+        The assistant&apos;s response extracted from the Ollama API response if successful, 
+        otherwise None.
+
+Example:
+    
+python
+    messages = [
+        {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a student being tested.&quot;},
+        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Explain photosynthesis.&quot;}
+    ]
+    response = call_ollama_student_docker(messages, &quot;ollama-model-v1&quot;)
+    if response:
+        print(response)
+    else:
+        print(&quot;Evaluation failed.&quot;)
+
+
+Notes:
+    - Ensure the Ollama API is running and accessible at http://localhost:11435/api/chat.
+    - The function assumes full_prompt_student is a properly formatted list of message 
+      dictionaries and does not require additional string manipulation.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1a233ecbe3f9d159e3eb61fa75a12b7f72"/><section>
+    <title>call_openrouter_student_api()</title>
+<indexterm><primary>call_openrouter_student_api</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>call_openrouter_student_api</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.call_openrouter_student_api ( full_prompt_student,  model_path)</computeroutput></para>
+<para><literallayout><computeroutput>Sends a student&apos;s prompt to the OpenRouter API and retrieves the response.
+
+Args:
+    full_prompt_student (str):
+        The complete prompt from the student that needs to be processed.
+    
+    model_path (str):
+        The path or identifier of the model to be used for generating the response.
+
+Returns:
+    str:
+        The response generated by the OpenRouter API based on the provided prompts.
+
+Example:
+    ```python
+    full_prompt_student = &quot;Explain the theory of relativity.&quot;
+    model_path = &quot;gpt-4&quot;
+
+    response = call_openrouter_student_api(full_prompt_student, model_path)
+    print(response)
+    ```
+
+Notes:
+    - Ensure the `OPENROUTER_KEY` environment variable is set with a valid API key.
+    - The `OpenAI` client should be properly installed and imported.
+    - The function assumes that `get_student_prompt` is defined and returns the appropriate message format.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1a4797d197935d6d6ec8a7c740eac9cac6"/><section>
+    <title>process_image()</title>
+<indexterm><primary>process_image</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>process_image</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.process_image ( file_name)</computeroutput></para>
+<para><literallayout><computeroutput>Reads an image file, encodes it in Base64, and returns the encoded string.
+Works on both Windows and Linux.
+
+Args:
+    file_name (str): The name of the image file.
+
+Returns:
+    str or None: Base64-encoded image string if successful, None if file not found.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1llmscalls_1a20626689a10facae3c297ff6e134cbe0"/><section>
+    <title>config</title>
+<indexterm><primary>config</primary><secondary>equator_qa.llmscalls</secondary></indexterm>
+<indexterm><primary>equator_qa.llmscalls</primary><secondary>config</secondary></indexterm>
+<para><computeroutput>equator_qa.llmscalls.config = configparser.ConfigParser()</computeroutput></para></section>
+</section>
+</section>

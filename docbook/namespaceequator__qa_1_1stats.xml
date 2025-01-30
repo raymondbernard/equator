@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceequator__qa_1_1stats" xml:lang="en-US">
+<title>equator_qa.stats Namespace Reference</title>
+<indexterm><primary>equator_qa.stats</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>dict[str, pd.DataFrame] <link linkend="_namespaceequator__qa_1_1stats_1a24b40be0072c89b823e53dc33a1475e1">load_all_llm_answers_from_json</link> (str answers_save_path, str prefix_replace=&quot;auto-eval&quot;, list[str] sub_folders=[&quot;&quot;])</para>
+</listitem>
+            <listitem><para>pd.DataFrame <link linkend="_namespaceequator__qa_1_1stats_1ac1006ebf78abd720cd983bdd0c451acb">get_llm_stats</link> (dict[str, pd.DataFrame] all_llm_answers, str stats_save_path, str file_suffix=&quot;&quot;, int bootstrap_n=10000)</para>
+</listitem>
+            <listitem><para>dict <link linkend="_namespaceequator__qa_1_1stats_1a1c8eee6ab8c51dc5caff3dfbf8b75052">calculate_llm_stats</link> (dict[str, pd.DataFrame] all_llm_answers, int bootstrap_n=10000)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1stats_1a1c8eee6ab8c51dc5caff3dfbf8b75052"/><section>
+    <title>calculate_llm_stats()</title>
+<indexterm><primary>calculate_llm_stats</primary><secondary>equator_qa.stats</secondary></indexterm>
+<indexterm><primary>equator_qa.stats</primary><secondary>calculate_llm_stats</secondary></indexterm>
+<para><computeroutput> dict equator_qa.stats.calculate_llm_stats (dict[str, pd.DataFrame] all_llm_answers, int  bootstrap_n = <computeroutput>10000</computeroutput>
+)</computeroutput></para>
+<para><literallayout><computeroutput>Calculate statistical metrics for each LLM.
+
+This function computes the mean score, standard deviation, z-interval
+error, and 95% confidence intervals for each model&apos;s scores using
+bootstrap sampling.
+
+Parameters
+----------
+all_llm_answers : dict[str, pd.DataFrame]
+    A dictionary where keys are model names and values are DataFrames
+    containing the answers for each model.
+bootstrap_n : int, optional
+    The number of bootstrap samples to use for confidence interval
+    calculation, by default 10000.
+
+Returns
+-------
+dict
+    A dictionary where each key is a model name and the value is another
+    dictionary containing the following statistical metrics:
+        - mean_score (float): The mean of the scores.
+        - std_dev_score (float): The standard deviation of the scores.
+        - z_interval_error (float): The z-interval error for 95% confidence.
+        - ci_lower (float): The lower bound of the 95% confidence interval.
+        - ci_upper (float): The upper bound of the 95% confidence interval.
+        - output_count (int): The number of outputs/scores.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1stats_1ac1006ebf78abd720cd983bdd0c451acb"/><section>
+    <title>get_llm_stats()</title>
+<indexterm><primary>get_llm_stats</primary><secondary>equator_qa.stats</secondary></indexterm>
+<indexterm><primary>equator_qa.stats</primary><secondary>get_llm_stats</secondary></indexterm>
+<para><computeroutput> pd.DataFrame equator_qa.stats.get_llm_stats (dict[str, pd.DataFrame] all_llm_answers, str stats_save_path, str  file_suffix = <computeroutput>&quot;&quot;</computeroutput>
+, int  bootstrap_n = <computeroutput>10000</computeroutput>
+)</computeroutput></para>
+<para><literallayout><computeroutput>Calculate and save LLM statistics.
+
+This function computes statistical metrics for each LLM based on the
+provided answers, saves the statistics to a CSV file, and returns
+a DataFrame containing the statistics.
+
+Parameters
+----------
+all_llm_answers : dict[str, pd.DataFrame]
+    A dictionary where keys are model names and values are DataFrames
+    containing the answers for each model.
+stats_save_path : str
+    The directory path where the statistics CSV file will be saved.
+file_suffix : str, optional
+    An optional suffix to append to the statistics file name,
+    by default &quot;&quot;.
+bootstrap_n : int, optional
+    The number of bootstrap samples to use for confidence interval
+    calculation, by default 10000.
+
+Returns
+-------
+pd.DataFrame
+    A DataFrame containing statistical metrics for each model,
+    sorted by mean score in descending order.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1stats_1a24b40be0072c89b823e53dc33a1475e1"/><section>
+    <title>load_all_llm_answers_from_json()</title>
+<indexterm><primary>load_all_llm_answers_from_json</primary><secondary>equator_qa.stats</secondary></indexterm>
+<indexterm><primary>equator_qa.stats</primary><secondary>load_all_llm_answers_from_json</secondary></indexterm>
+<para><computeroutput> dict[str, pd.DataFrame] equator_qa.stats.load_all_llm_answers_from_json (str answers_save_path, str  prefix_replace = <computeroutput>&quot;auto-eval&quot;</computeroutput>
+, list[str]  sub_folders = <computeroutput>[&quot;&quot;]</computeroutput>
+)</computeroutput></para>
+<para><literallayout><computeroutput>Load all LLM answers from JSON files.
+
+This function traverses the specified directory and its subfolders,
+loads JSON files containing LLM answers, and aggregates them into a
+dictionary mapping each model to its corresponding DataFrame of answers.
+
+Parameters
+----------
+answers_save_path : str
+    The base path where answer JSON files are stored.
+prefix_replace : str, optional
+    The prefix to remove from file names to extract model names,
+    by default &quot;auto-eval&quot;.
+sub_folders : list of str, optional
+    A list of subfolder names to search within the base path,
+    by default [&quot;&quot;].
+
+Returns
+-------
+dict[str, pd.DataFrame]
+    A dictionary where keys are model names and values are DataFrames
+    containing the answers for each model.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+</section>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceequator__qa_1_1extract__strings" xml:lang="en-US">
+<title>equator_qa.extract_strings Namespace Reference</title>
+<indexterm><primary>equator_qa.extract_strings</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1extract__strings_1ad7263735c64831c2f1ebb8f772072940">extract_score_from_string</link> (response_string)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1extract__strings_1a54fc7cfc9f8e792991429a5a5d9e585c">sanitize_string</link> (value)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceequator__qa_1_1extract__strings_1ad7263735c64831c2f1ebb8f772072940"/><section>
+    <title>extract_score_from_string()</title>
+<indexterm><primary>extract_score_from_string</primary><secondary>equator_qa.extract_strings</secondary></indexterm>
+<indexterm><primary>equator_qa.extract_strings</primary><secondary>extract_score_from_string</secondary></indexterm>
+<para><computeroutput>equator_qa.extract_strings.extract_score_from_string ( response_string)</computeroutput></para>
+<para><literallayout><computeroutput>Extracts a numerical score from a response string using predefined patterns.
+
+This function searches the input `response_string` for various patterns that indicate a score.
+It uses regular expressions to match different formats and returns the first found score as an integer.
+If no score pattern is matched, it returns `None`.
+
+Args:
+    response_string (str):
+        The string containing the evaluator&apos;s response from which to extract the score.
+
+Returns:
+    Optional[int]:
+        The extracted score as an integer if a pattern is matched; otherwise, `None`.
+
+Example:
+    ```python
+    response = &quot;The score assigned is 85%.&quot;
+    score = extract_score_from_string(response)
+    print(score)  # Output: 85
+    ```
+
+Notes:
+    - The function is case-insensitive and handles multiple score formats.
+    - Ensure that the response strings follow one of the predefined patterns for accurate extraction.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_namespaceequator__qa_1_1extract__strings_1a54fc7cfc9f8e792991429a5a5d9e585c"/><section>
+    <title>sanitize_string()</title>
+<indexterm><primary>sanitize_string</primary><secondary>equator_qa.extract_strings</secondary></indexterm>
+<indexterm><primary>equator_qa.extract_strings</primary><secondary>sanitize_string</secondary></indexterm>
+<para><computeroutput>equator_qa.extract_strings.sanitize_string ( value)</computeroutput></para>
+<para><literallayout><computeroutput>Escapes curly braces in strings to prevent issues with format specifiers in logging.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+</section>

@@ -1,0 +1,292 @@
+\doxysection{equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client Class Reference}
+\hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client}{}\label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+
+
+Inheritance diagram for equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a5ff6e39961c41be9959bea5e9d2aa283}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a7bf3e53ff2829d8e3684be3793bfcc86}{execution\+\_\+steps}}, \mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a817af601b71aedb755b533aa84231c2a}{student\+\_\+model}}, \mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ad8eb86c8f83e775d5cb8d17a510a33a2}{evaluator\+\_\+model}}, vectordb\+\_\+instance)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ae8af646c4489c322670ec9c7c6d76710}{EQUATOR\+\_\+\+Controller\+\_\+\+VISION}} (self, model\+\_\+path, lab, student\+\_\+models, answer\+\_\+save\+\_\+path\+\_\+round, count, prefix\+\_\+replace)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a9e5fcd4e32d41fa1b769e3429977f268}{EQUATOR\+\_\+\+Controller}} (self, model\+\_\+path, lab, student\+\_\+models, answer\+\_\+save\+\_\+path\+\_\+round, count, prefix\+\_\+replace)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_add1defa29af7df79bf62873381292604}{student\+\_\+vision}} (self, \mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a817af601b71aedb755b533aa84231c2a}{student\+\_\+model}}, full\+\_\+prompt, json\+\_\+path)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_afc1c85e2ddde31f7038943c7124d56aa}{student}} (self, model\+\_\+path, full\+\_\+prompt\+\_\+student)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ab1d8f1d7a63a47ad2b80e00fac779727}{call\+\_\+evaluator\+\_\+vision}} (self, question\+\_\+id, \mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a817af601b71aedb755b533aa84231c2a}{student\+\_\+model}}, prompt, images\+\_\+dir)
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a00f7df202c494457a15b0da3eb11a3bd}{call\+\_\+evaluator}} (self, model\+\_\+path, prompt)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a817af601b71aedb755b533aa84231c2a}{student\+\_\+model}} = student\+\_\+model
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ad8eb86c8f83e775d5cb8d17a510a33a2}{evaluator\+\_\+model}} = evaluator\+\_\+model
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a7bf3e53ff2829d8e3684be3793bfcc86}{execution\+\_\+steps}} = execution\+\_\+steps
+\item 
+\mbox{\hyperlink{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_aaeb45e383af16ec97048afc4838ef929}{vectordb2}} = vectordb\+\_\+instance
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}EQUATOR_Client handles the benchmarking process by evaluating student models against evaluator models
+using a vector database for storing and retrieving embeddings.
+
+Attributes:
+    student_model (str): The identifier of the student model.
+    evaluator_model (str): The identifier of the evaluator model.
+    execution_steps (str): The workflow steps to execute.
+    vectordb2: Instance of the vector database for embeddings management.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a5ff6e39961c41be9959bea5e9d2aa283}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a5ff6e39961c41be9959bea5e9d2aa283} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{execution\+\_\+steps}{, }\item[{}]{student\+\_\+model}{, }\item[{}]{evaluator\+\_\+model}{, }\item[{}]{vectordb\+\_\+instance}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the EQUATOR_Client with the necessary parameters.
+
+Args:
+    execution_steps (str):
+        Specifies the benchmarking workflow to execute (e.g., "ollama_to_groq_evaluate").
+    
+    student_model (str):
+        The identifier of the student model to be evaluated.
+    
+    evaluator_model (str):
+        The identifier of the evaluator model to assess the student model's performance.
+    
+    vectordb_instance:
+        Instance of the vector database used for storing and retrieving embeddings.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a00f7df202c494457a15b0da3eb11a3bd}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!call\_evaluator@{call\_evaluator}}
+\index{call\_evaluator@{call\_evaluator}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{call\_evaluator()}{call\_evaluator()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a00f7df202c494457a15b0da3eb11a3bd} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+call\+\_\+evaluator (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{model\+\_\+path}{, }\item[{}]{prompt}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calls the appropriate evaluator API based on the execution steps and retrieves the evaluation response.
+
+Args:
+    model_path (str):
+        The path or identifier of the evaluator model to be used.
+    prompt (str):
+        The prompt/question to be evaluated.
+
+Returns:
+    Optional[Tuple[str, str]]:
+        A tuple containing the student's answer and the evaluator's response if successful, otherwise `None`.
+\end{DoxyVerb}
+ \Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ab1d8f1d7a63a47ad2b80e00fac779727}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!call\_evaluator\_vision@{call\_evaluator\_vision}}
+\index{call\_evaluator\_vision@{call\_evaluator\_vision}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{call\_evaluator\_vision()}{call\_evaluator\_vision()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ab1d8f1d7a63a47ad2b80e00fac779727} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+call\+\_\+evaluator\+\_\+vision (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{question\+\_\+id}{, }\item[{}]{student\+\_\+model}{, }\item[{}]{prompt}{, }\item[{}]{images\+\_\+dir}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calls the appropriate evaluator vision API based on the execution steps and retrieves the evaluation response.
+
+Args:
+    model_path (str):
+        The path or identifier of the evaluator model to be used.
+    prompt (str):
+        The prompt/question to be evaluated.
+    images_dir (str, optional):
+        The directory where image files (and their corresponding JSON metadata) are stored.
+        Defaults to "images".
+
+Returns:
+    Union[None, List, Tuple[str, str]]:
+        - None: If retrieval of documents or the student's answer fails, or if no evaluation is performed.
+        - List: An empty list if the specified images directory does not exist.
+        - Tuple[str, str]: A tuple containing the student's answer and the evaluator's response, if successful.
+\end{DoxyVerb}
+ \Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a9e5fcd4e32d41fa1b769e3429977f268}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!EQUATOR\_Controller@{EQUATOR\_Controller}}
+\index{EQUATOR\_Controller@{EQUATOR\_Controller}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{EQUATOR\_Controller()}{EQUATOR\_Controller()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a9e5fcd4e32d41fa1b769e3429977f268} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+EQUATOR\+\_\+\+Controller (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{model\+\_\+path}{, }\item[{}]{lab}{, }\item[{}]{student\+\_\+models}{, }\item[{}]{answer\+\_\+save\+\_\+path\+\_\+round}{, }\item[{}]{count}{, }\item[{}]{prefix\+\_\+replace}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Controls the evaluation process by iterating through questions in the vector database,
+obtaining evaluator responses, and saving the results.
+
+Args:
+    model_path (str):
+        The path or identifier of the model to be used for generating responses.
+    
+    lab (str):
+        The label or identifier for the current evaluation context.
+    
+    student_models (List[str]):
+        A list of student model identifiers to be evaluated.
+    
+    answer_save_path_round (str):
+        The directory path where the evaluation results for the current round will be saved.
+    
+    count (int):
+        The current round count of the evaluation process.
+    
+    prefix_replace (str):
+        A prefix string to replace or append in the output filenames for organization.
+
+Returns:
+    None
+
+Example:
+    ```python
+    client = EQUATOR_Client(
+        execution_steps="ollama_to_groq_evaluate",
+        student_model="groq-model-1",
+        evaluator_model="ollama-eval-model",
+        vectordb_instance=vector_db,
+    )
+    client.EQUATOR_Controller(
+        model_path="",
+        lab="eval",
+        student_models=["groq-model-1"],
+        answer_save_path_round="./2025-01-19-midterm_benchmark/auto_eval_outputs",
+        count=0,
+        prefix_replace="equator-",
+    )
+    ```
+
+Notes:
+    - Ensure that the `get_student_prompt`, `extract_score_from_string`, and `create_template_json` functions are defined and imported.
+    - The `EQUATOR_Controller` method interacts with a SQLite database named `chroma.sqlite3`. Ensure that this database exists and is accessible.
+    - Logging is used extensively for tracking the evaluation process. Ensure that the logging configuration captures the desired log levels.
+    - The method currently stops processing if a question with ID "1" is encountered. Modify the stop condition as needed.
+\end{DoxyVerb}
+ \Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ae8af646c4489c322670ec9c7c6d76710}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!EQUATOR\_Controller\_VISION@{EQUATOR\_Controller\_VISION}}
+\index{EQUATOR\_Controller\_VISION@{EQUATOR\_Controller\_VISION}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{EQUATOR\_Controller\_VISION()}{EQUATOR\_Controller\_VISION()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ae8af646c4489c322670ec9c7c6d76710} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+EQUATOR\+\_\+\+Controller\+\_\+\+VISION (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{model\+\_\+path}{, }\item[{}]{lab}{, }\item[{}]{student\+\_\+models}{, }\item[{}]{answer\+\_\+save\+\_\+path\+\_\+round}{, }\item[{}]{count}{, }\item[{}]{prefix\+\_\+replace}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Controls the evaluation vision process by iterating through questions in the vector database,
+obtaining evaluator responses, and saving the results.
+
+Args:
+    model_path (str):
+        The path or identifier of the model to be used for generating responses.
+    
+    lab (str):
+        The label or identifier for the current evaluation context.
+    
+    student_models (List[str]):
+        A list of student model identifiers to be evaluated.
+    
+    answer_save_path_round (str):
+        The directory path where the evaluation results for the current round will be saved.
+    
+    count (int):
+        The current round count of the evaluation process.
+    
+    prefix_replace (str):
+        A prefix string to replace or append in the output filenames for organization.
+
+Returns:
+    None
+
+Notes:
+    - Ensure that the `get_student_prompt`, `extract_score_from_string`, and `create_template_json` functions are defined and imported.
+    - The `EQUATOR_Controller` method interacts with a SQLite database named `chroma.sqlite3`. Ensure that this database exists and is accessible.
+    - Logging is used extensively for tracking the evaluation process. Ensure that the logging configuration captures the desired log levels.
+    - The method currently stops processing if a question with ID "1" is encountered. Modify the stop condition as needed.
+\end{DoxyVerb}
+ \Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_afc1c85e2ddde31f7038943c7124d56aa}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!student@{student}}
+\index{student@{student}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{student()}{student()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_afc1c85e2ddde31f7038943c7124d56aa} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+student (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{model\+\_\+path}{, }\item[{}]{full\+\_\+prompt\+\_\+student}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves a student's answer by invoking the appropriate evaluator API based on execution steps.
+
+Args:
+    model_path (str):
+        The path or identifier of the student model to be used.
+    full_prompt_student (str):
+        The student's prompt that needs to be processed and evaluated.
+
+Returns:
+    Optional[str]:
+        The student's answer returned by the evaluator API if successful, otherwise `None`.
+
+Example:
+    ```python
+    response = client.student("ollama-model-v1", "Explain photosynthesis.")
+    if response:
+        print(f"Student Answer: {response}")
+    else:
+        print("Failed to retrieve student answer.")
+    ```
+
+Notes:
+    - Ensure that the `get_student_prompt` function is defined and properly formats the messages.
+    - The evaluator functions (`call_openrouter_student_api`, `call_ollama_student_api`, etc.) must be imported and accessible.
+    - Logging is used to track the execution flow and responses.
+\end{DoxyVerb}
+ \Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_add1defa29af7df79bf62873381292604}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!student\_vision@{student\_vision}}
+\index{student\_vision@{student\_vision}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{student\_vision()}{student\_vision()}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_add1defa29af7df79bf62873381292604} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+student\+\_\+vision (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{student\+\_\+model}{, }\item[{}]{full\+\_\+prompt}{, }\item[{}]{json\+\_\+path}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ad8eb86c8f83e775d5cb8d17a510a33a2}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!evaluator\_model@{evaluator\_model}}
+\index{evaluator\_model@{evaluator\_model}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{evaluator\_model}{evaluator\_model}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_ad8eb86c8f83e775d5cb8d17a510a33a2} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+evaluator\+\_\+model = evaluator\+\_\+model}
+
+\Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a7bf3e53ff2829d8e3684be3793bfcc86}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!execution\_steps@{execution\_steps}}
+\index{execution\_steps@{execution\_steps}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{execution\_steps}{execution\_steps}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a7bf3e53ff2829d8e3684be3793bfcc86} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+execution\+\_\+steps = execution\+\_\+steps}
+
+\Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a817af601b71aedb755b533aa84231c2a}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!student\_model@{student\_model}}
+\index{student\_model@{student\_model}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{student\_model}{student\_model}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_a817af601b71aedb755b533aa84231c2a} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+student\+\_\+model = student\+\_\+model}
+
+\Hypertarget{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_aaeb45e383af16ec97048afc4838ef929}\index{equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}!vectordb2@{vectordb2}}
+\index{vectordb2@{vectordb2}!equator\_qa.equator\_classes.EQUATOR\_Client@{equator\_qa.equator\_classes.EQUATOR\_Client}}
+\doxysubsubsection{\texorpdfstring{vectordb2}{vectordb2}}
+{\footnotesize\ttfamily \label{classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_aaeb45e383af16ec97048afc4838ef929} 
+equator\+\_\+qa.\+equator\+\_\+classes.\+EQUATOR\+\_\+\+Client.\+vectordb2 = vectordb\+\_\+instance}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{equator__classes_8py}{equator\+\_\+classes.\+py}}\end{DoxyCompactItemize}

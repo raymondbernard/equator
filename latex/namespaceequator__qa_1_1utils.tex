@@ -1,0 +1,190 @@
+\doxysection{equator\+\_\+qa.\+utils Namespace Reference}
+\hypertarget{namespaceequator__qa_1_1utils}{}\label{namespaceequator__qa_1_1utils}\index{equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_aeaca5569804de3c237256d8f0dfeb19b}{extract\+\_\+model\+\_\+parts}} (model\+\_\+string)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a20c16f6b7b66dff1e6328313f3cdf147}{begin\+\_\+benchmark}} (VISION, execution\+\_\+steps, student\+\_\+ollama\+\_\+models, student\+\_\+groq\+\_\+models, student\+\_\+openrouter\+\_\+models, OLLAMA\+\_\+\+EVALUATOR\+\_\+\+MODEL, GROQ\+\_\+\+EVALUATOR\+\_\+\+MODEL, vectordb\+\_\+instance, benchmark\+\_\+name, date\+\_\+now, answer\+\_\+rounds)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a3cf64b4d24c740841895e2c9b9675c82}{is\+\_\+valid\+\_\+uuid4}} (uuid\+\_\+string)
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a328387a62374d99c963d55b1db6c036b}{cleanup\+\_\+chromadb}} (db\+\_\+filename="{}chroma.\+sqlite3"{}, root\+\_\+dir="{}."{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a1bfb2c3ec0d8ba6b8d190c4fea758454}{format}}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a64007f7ba3cff56298335dce3641414b}{level}}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_a0f454df2070553cba6bd5b6de201b4cb}{rotation}}
+\item 
+\mbox{\hyperlink{namespaceequator__qa_1_1utils_aaef6e792a7f4dd1b8f4553c7067312b0}{retention}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceequator__qa_1_1utils_a20c16f6b7b66dff1e6328313f3cdf147}\index{equator\_qa.utils@{equator\_qa.utils}!begin\_benchmark@{begin\_benchmark}}
+\index{begin\_benchmark@{begin\_benchmark}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{begin\_benchmark()}{begin\_benchmark()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a20c16f6b7b66dff1e6328313f3cdf147} 
+equator\+\_\+qa.\+utils.\+begin\+\_\+benchmark (\begin{DoxyParamCaption}\item[{}]{VISION}{, }\item[{}]{execution\+\_\+steps}{, }\item[{}]{student\+\_\+ollama\+\_\+models}{, }\item[{}]{student\+\_\+groq\+\_\+models}{, }\item[{}]{student\+\_\+openrouter\+\_\+models}{, }\item[{}]{OLLAMA\+\_\+\+EVALUATOR\+\_\+\+MODEL}{, }\item[{}]{GROQ\+\_\+\+EVALUATOR\+\_\+\+MODEL}{, }\item[{}]{vectordb\+\_\+instance}{, }\item[{}]{benchmark\+\_\+name}{, }\item[{}]{date\+\_\+now}{, }\item[{}]{answer\+\_\+rounds}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initiates and manages the benchmarking process based on specified execution steps.
+
+Depending on the `execution_steps`, this function evaluates student models against evaluator models
+using the EQUATOR_Client. It supports various evaluation workflows, including:
+- Ollama to GROQ
+- GROQ to Ollama
+- Ollama to OpenRouter
+- Ollama to Ollama
+- GROQ to OpenRouter
+
+Args:
+    execution_steps (str):
+        Specifies the benchmarking workflow to execute (e.g., "ollama_to_groq_evaluate").
+    
+    student_ollama_models (List[str]):
+        List of student models using the Ollama platform.
+    
+    student_groq_models (List[str]):
+        List of student models using the GROQ platform.
+    
+    student_openrouter_models (List[str]):
+        List of student models using the OpenRouter platform.
+    
+    OLLAMA_EVALUATOR_MODEL (str):
+        The evaluator model identifier for Ollama evaluations.
+    
+    GROQ_EVALUATOR_MODEL (str):
+        The evaluator model identifier for GROQ evaluations.
+    
+    vectordb_instance:
+        Instance of the vector database used for storing and retrieving embeddings.
+    
+    benchmark_name (str):
+        Name of the benchmark being executed.
+    
+    date_now (str):
+        Current date in a suitable string format for folder naming.
+    
+    answer_rounds (int):
+        Number of evaluation rounds to perform.
+
+Returns:
+    None
+
+Example:
+    ```python
+    begin_benchmark(
+        execution_steps="ollama_to_groq_evaluate",
+        student_ollama_models=["ollama-model-1", "ollama-model-2"],
+        student_groq_models=["groq-model-1"],
+        student_openrouter_models=["openrouter-model-1"],
+        OLLAMA_EVALUATOR_MODEL="ollama-eval-model",
+        GROQ_EVALUATOR_MODEL="groq-eval-model",
+        vectordb_instance=vector_db,
+        benchmark_name="midterm_benchmark",
+        date_now="2025-01-19",
+        answer_rounds=5,
+    )
+    ```
+
+Notes:
+    - Ensure that the `EQUATOR_Client` is correctly implemented and imported.
+    - The `extract_model_parts` function should be defined to parse model identifiers.
+    - Logging should be properly configured to capture informational and debug messages.
+    - Directory paths for saving outputs should have the necessary write permissions.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1utils_a328387a62374d99c963d55b1db6c036b}\index{equator\_qa.utils@{equator\_qa.utils}!cleanup\_chromadb@{cleanup\_chromadb}}
+\index{cleanup\_chromadb@{cleanup\_chromadb}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{cleanup\_chromadb()}{cleanup\_chromadb()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a328387a62374d99c963d55b1db6c036b} 
+equator\+\_\+qa.\+utils.\+cleanup\+\_\+chromadb (\begin{DoxyParamCaption}\item[{}]{db\+\_\+filename}{ = {\ttfamily "{}chroma.sqlite3"{}}, }\item[{}]{root\+\_\+dir}{ = {\ttfamily "{}."{}}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Clean up the ChromaDB by removing the specified SQLite file and any directories
+in the root directory that have names matching UUIDv4.
+
+Args:
+    db_filename (str): The name of the SQLite database file to remove.
+    root_dir (str): The root directory to search for UUIDv4-named directories.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1utils_aeaca5569804de3c237256d8f0dfeb19b}\index{equator\_qa.utils@{equator\_qa.utils}!extract\_model\_parts@{extract\_model\_parts}}
+\index{extract\_model\_parts@{extract\_model\_parts}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{extract\_model\_parts()}{extract\_model\_parts()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_aeaca5569804de3c237256d8f0dfeb19b} 
+equator\+\_\+qa.\+utils.\+extract\+\_\+model\+\_\+parts (\begin{DoxyParamCaption}\item[{}]{model\+\_\+string}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Splits a model string into its constituent parts based on a predefined pattern.
+
+This function uses a regular expression to extract two parts from the `model_string`,
+separated by a forward slash (`/`). If the string matches the pattern, it returns a tuple
+containing both parts. Otherwise, it returns `(None, None)`.
+
+Args:
+    model_string (str):
+        The model identifier string to be split. Expected format is "part1/part2",
+        where neither part contains a forward slash (`/`) or colon (`:`).
+
+Returns:
+    Tuple[Optional[str], Optional[str]]:
+        A tuple containing the two extracted parts of the model string. Returns `(None, None)`
+        if the input does not match the expected pattern.
+
+Example:
+    ```python
+    part1, part2 = extract_model_parts("category/model")
+    print(part1)  # Output: "category"
+    print(part2)  # Output: "model"
+    
+    part1, part2 = extract_model_parts("invalidmodelstring")
+    print(part1)  # Output: None
+    print(part2)  # Output: None
+    ```
+
+Notes:
+    - Ensure that the `model_string` follows the "part1/part2" format to successfully extract both parts.
+    - This function does not handle cases where there are multiple slashes or colons in the `model_string`.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1utils_a3cf64b4d24c740841895e2c9b9675c82}\index{equator\_qa.utils@{equator\_qa.utils}!is\_valid\_uuid4@{is\_valid\_uuid4}}
+\index{is\_valid\_uuid4@{is\_valid\_uuid4}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_uuid4()}{is\_valid\_uuid4()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a3cf64b4d24c740841895e2c9b9675c82} 
+equator\+\_\+qa.\+utils.\+is\+\_\+valid\+\_\+uuid4 (\begin{DoxyParamCaption}\item[{}]{uuid\+\_\+string}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Validate that a string is a valid UUID4.
+
+Args:
+    uuid_string (str): The string to validate.
+
+Returns:
+    bool: True if valid UUID4, False otherwise.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceequator__qa_1_1utils_a1bfb2c3ec0d8ba6b8d190c4fea758454}\index{equator\_qa.utils@{equator\_qa.utils}!format@{format}}
+\index{format@{format}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a1bfb2c3ec0d8ba6b8d190c4fea758454} 
+equator\+\_\+qa.\+utils.\+format}
+
+\Hypertarget{namespaceequator__qa_1_1utils_a64007f7ba3cff56298335dce3641414b}\index{equator\_qa.utils@{equator\_qa.utils}!level@{level}}
+\index{level@{level}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a64007f7ba3cff56298335dce3641414b} 
+equator\+\_\+qa.\+utils.\+level}
+
+\Hypertarget{namespaceequator__qa_1_1utils_aaef6e792a7f4dd1b8f4553c7067312b0}\index{equator\_qa.utils@{equator\_qa.utils}!retention@{retention}}
+\index{retention@{retention}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{retention}{retention}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_aaef6e792a7f4dd1b8f4553c7067312b0} 
+equator\+\_\+qa.\+utils.\+retention}
+
+\Hypertarget{namespaceequator__qa_1_1utils_a0f454df2070553cba6bd5b6de201b4cb}\index{equator\_qa.utils@{equator\_qa.utils}!rotation@{rotation}}
+\index{rotation@{rotation}!equator\_qa.utils@{equator\_qa.utils}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1utils_a0f454df2070553cba6bd5b6de201b4cb} 
+equator\+\_\+qa.\+utils.\+rotation}
+

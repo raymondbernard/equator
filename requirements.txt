@@ -12,3 +12,4 @@ groq
 equator-qa
 pytest 
 pytest-mock
+datasets 

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>EQUATOR</title>
+    </info>
+<chapter>
+    <title>Namespace Documentation</title>
+<xi:include href="namespaceequator__qa.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceequator__qa_1_1charting.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceequator__qa_1_1equator__classes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceequator__qa_1_1extract__strings.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceequator__qa_1_1llmscalls.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceequator__qa_1_1prompts.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceequator__qa_1_1stats.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceequator__qa_1_1utils.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespaceequator__qa_1_1vectordb.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classequator__qa_1_1vectordb_1_1_vector_d_b___controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="____init_____8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="charting_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="equator__classes_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="extract__strings_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="llmscalls_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="prompts_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="stats_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="utils_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="vectordb_8py.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

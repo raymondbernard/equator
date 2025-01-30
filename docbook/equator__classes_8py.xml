@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_equator__classes_8py" xml:lang="en-US">
+<title>equator_classes.py File Reference</title>
+<indexterm><primary>equator_classes.py</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client">equator_qa.equator_classes.EQUATOR_Client</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceequator__qa">equator_qa</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespaceequator__qa_1_1equator__classes">equator_qa.equator_classes</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1equator__classes_1ad7493ab7dc4b65b50491f632961b2c42">equator_qa.equator_classes.sanitize_string</link> (value)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1equator__classes_1aa0f7d39147af0dd62b1170ce54f4fb7d">equator_qa.equator_classes.extract_score_from_string</link> (response_string)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1equator__classes_1a3258b2fae2e04be5de37822da3a8f998">equator_qa.equator_classes.create_template_json</link> (student_model, output_path, question_id, category, human_answer, question, student_answer, evaluator_response, score)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

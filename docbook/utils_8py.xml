@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_utils_8py" xml:lang="en-US">
+<title>utils.py File Reference</title>
+<indexterm><primary>utils.py</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceequator__qa">equator_qa</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespaceequator__qa_1_1utils">equator_qa.utils</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1aeaca5569804de3c237256d8f0dfeb19b">equator_qa.utils.extract_model_parts</link> (model_string)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a20c16f6b7b66dff1e6328313f3cdf147">equator_qa.utils.begin_benchmark</link> (VISION, execution_steps, student_ollama_models, student_groq_models, student_openrouter_models, OLLAMA_EVALUATOR_MODEL, GROQ_EVALUATOR_MODEL, vectordb_instance, benchmark_name, date_now, answer_rounds)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a3cf64b4d24c740841895e2c9b9675c82">equator_qa.utils.is_valid_uuid4</link> (uuid_string)</para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a328387a62374d99c963d55b1db6c036b">equator_qa.utils.cleanup_chromadb</link> (db_filename=&quot;chroma.sqlite3&quot;, root_dir=&quot;.&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a1bfb2c3ec0d8ba6b8d190c4fea758454">equator_qa.utils.format</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a64007f7ba3cff56298335dce3641414b">equator_qa.utils.level</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1a0f454df2070553cba6bd5b6de201b4cb">equator_qa.utils.rotation</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespaceequator__qa_1_1utils_1aaef6e792a7f4dd1b8f4553c7067312b0">equator_qa.utils.retention</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

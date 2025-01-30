@@ -1,0 +1,109 @@
+\doxysection{equator\+\_\+qa.\+stats Namespace Reference}
+\hypertarget{namespaceequator__qa_1_1stats}{}\label{namespaceequator__qa_1_1stats}\index{equator\_qa.stats@{equator\_qa.stats}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+dict\mbox{[}str, pd.\+Data\+Frame\mbox{]} \mbox{\hyperlink{namespaceequator__qa_1_1stats_a24b40be0072c89b823e53dc33a1475e1}{load\+\_\+all\+\_\+llm\+\_\+answers\+\_\+from\+\_\+json}} (str answers\+\_\+save\+\_\+path, str prefix\+\_\+replace="{}auto-\/eval"{}, list\mbox{[}str\mbox{]} sub\+\_\+folders=\mbox{[}"{}"{}\mbox{]})
+\item 
+pd.\+Data\+Frame \mbox{\hyperlink{namespaceequator__qa_1_1stats_ac1006ebf78abd720cd983bdd0c451acb}{get\+\_\+llm\+\_\+stats}} (dict\mbox{[}str, pd.\+Data\+Frame\mbox{]} all\+\_\+llm\+\_\+answers, str stats\+\_\+save\+\_\+path, str file\+\_\+suffix="{}"{}, int bootstrap\+\_\+n=10000)
+\item 
+dict \mbox{\hyperlink{namespaceequator__qa_1_1stats_a1c8eee6ab8c51dc5caff3dfbf8b75052}{calculate\+\_\+llm\+\_\+stats}} (dict\mbox{[}str, pd.\+Data\+Frame\mbox{]} all\+\_\+llm\+\_\+answers, int bootstrap\+\_\+n=10000)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceequator__qa_1_1stats_a1c8eee6ab8c51dc5caff3dfbf8b75052}\index{equator\_qa.stats@{equator\_qa.stats}!calculate\_llm\_stats@{calculate\_llm\_stats}}
+\index{calculate\_llm\_stats@{calculate\_llm\_stats}!equator\_qa.stats@{equator\_qa.stats}}
+\doxysubsubsection{\texorpdfstring{calculate\_llm\_stats()}{calculate\_llm\_stats()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1stats_a1c8eee6ab8c51dc5caff3dfbf8b75052} 
+ dict equator\+\_\+qa.\+stats.\+calculate\+\_\+llm\+\_\+stats (\begin{DoxyParamCaption}\item[{dict\mbox{[}str, pd.\+Data\+Frame\mbox{]}}]{all\+\_\+llm\+\_\+answers}{, }\item[{int }]{bootstrap\+\_\+n}{ = {\ttfamily 10000}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate statistical metrics for each LLM.
+
+This function computes the mean score, standard deviation, z-interval
+error, and 95% confidence intervals for each model's scores using
+bootstrap sampling.
+
+Parameters
+----------
+all_llm_answers : dict[str, pd.DataFrame]
+    A dictionary where keys are model names and values are DataFrames
+    containing the answers for each model.
+bootstrap_n : int, optional
+    The number of bootstrap samples to use for confidence interval
+    calculation, by default 10000.
+
+Returns
+-------
+dict
+    A dictionary where each key is a model name and the value is another
+    dictionary containing the following statistical metrics:
+        - mean_score (float): The mean of the scores.
+        - std_dev_score (float): The standard deviation of the scores.
+        - z_interval_error (float): The z-interval error for 95% confidence.
+        - ci_lower (float): The lower bound of the 95% confidence interval.
+        - ci_upper (float): The upper bound of the 95% confidence interval.
+        - output_count (int): The number of outputs/scores.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1stats_ac1006ebf78abd720cd983bdd0c451acb}\index{equator\_qa.stats@{equator\_qa.stats}!get\_llm\_stats@{get\_llm\_stats}}
+\index{get\_llm\_stats@{get\_llm\_stats}!equator\_qa.stats@{equator\_qa.stats}}
+\doxysubsubsection{\texorpdfstring{get\_llm\_stats()}{get\_llm\_stats()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1stats_ac1006ebf78abd720cd983bdd0c451acb} 
+ pd.\+Data\+Frame equator\+\_\+qa.\+stats.\+get\+\_\+llm\+\_\+stats (\begin{DoxyParamCaption}\item[{dict\mbox{[}str, pd.\+Data\+Frame\mbox{]}}]{all\+\_\+llm\+\_\+answers}{, }\item[{str}]{stats\+\_\+save\+\_\+path}{, }\item[{str }]{file\+\_\+suffix}{ = {\ttfamily "{}"{}}, }\item[{int }]{bootstrap\+\_\+n}{ = {\ttfamily 10000}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculate and save LLM statistics.
+
+This function computes statistical metrics for each LLM based on the
+provided answers, saves the statistics to a CSV file, and returns
+a DataFrame containing the statistics.
+
+Parameters
+----------
+all_llm_answers : dict[str, pd.DataFrame]
+    A dictionary where keys are model names and values are DataFrames
+    containing the answers for each model.
+stats_save_path : str
+    The directory path where the statistics CSV file will be saved.
+file_suffix : str, optional
+    An optional suffix to append to the statistics file name,
+    by default "".
+bootstrap_n : int, optional
+    The number of bootstrap samples to use for confidence interval
+    calculation, by default 10000.
+
+Returns
+-------
+pd.DataFrame
+    A DataFrame containing statistical metrics for each model,
+    sorted by mean score in descending order.
+\end{DoxyVerb}
+ \Hypertarget{namespaceequator__qa_1_1stats_a24b40be0072c89b823e53dc33a1475e1}\index{equator\_qa.stats@{equator\_qa.stats}!load\_all\_llm\_answers\_from\_json@{load\_all\_llm\_answers\_from\_json}}
+\index{load\_all\_llm\_answers\_from\_json@{load\_all\_llm\_answers\_from\_json}!equator\_qa.stats@{equator\_qa.stats}}
+\doxysubsubsection{\texorpdfstring{load\_all\_llm\_answers\_from\_json()}{load\_all\_llm\_answers\_from\_json()}}
+{\footnotesize\ttfamily \label{namespaceequator__qa_1_1stats_a24b40be0072c89b823e53dc33a1475e1} 
+ dict\mbox{[}str, pd.\+Data\+Frame\mbox{]} equator\+\_\+qa.\+stats.\+load\+\_\+all\+\_\+llm\+\_\+answers\+\_\+from\+\_\+json (\begin{DoxyParamCaption}\item[{str}]{answers\+\_\+save\+\_\+path}{, }\item[{str }]{prefix\+\_\+replace}{ = {\ttfamily "{}auto-\/eval"{}}, }\item[{list\mbox{[}str\mbox{]} }]{sub\+\_\+folders}{ = {\ttfamily \mbox{[}"{}"{}\mbox{]}}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load all LLM answers from JSON files.
+
+This function traverses the specified directory and its subfolders,
+loads JSON files containing LLM answers, and aggregates them into a
+dictionary mapping each model to its corresponding DataFrame of answers.
+
+Parameters
+----------
+answers_save_path : str
+    The base path where answer JSON files are stored.
+prefix_replace : str, optional
+    The prefix to remove from file names to extract model names,
+    by default "auto-eval".
+sub_folders : list of str, optional
+    A list of subfolder names to search within the base path,
+    by default [""].
+
+Returns
+-------
+dict[str, pd.DataFrame]
+    A dictionary where keys are model names and values are DataFrames
+    containing the answers for each model.
+\end{DoxyVerb}
+ 

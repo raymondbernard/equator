@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceequator__qa_1_1vectordb" xml:lang="en-US">
+<title>equator_qa.vectordb Namespace Reference</title>
+<indexterm><primary>equator_qa.vectordb</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classequator__qa_1_1vectordb_1_1_vector_d_b___controller">VectorDB_Controller</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

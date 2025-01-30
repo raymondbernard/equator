@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client" xml:lang="en-US">
+<title>equator_qa.equator_classes.EQUATOR_Client Class Reference</title>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary></indexterm>
+Inheritance diagram for equator_qa.equator_classes.EQUATOR_Client:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for equator_qa.equator_classes.EQUATOR_Client:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a5ff6e39961c41be9959bea5e9d2aa283">__init__</link> (self, <link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a7bf3e53ff2829d8e3684be3793bfcc86">execution_steps</link>, <link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a817af601b71aedb755b533aa84231c2a">student_model</link>, <link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1ad8eb86c8f83e775d5cb8d17a510a33a2">evaluator_model</link>, vectordb_instance)</para>
+</listitem>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1ae8af646c4489c322670ec9c7c6d76710">EQUATOR_Controller_VISION</link> (self, model_path, lab, student_models, answer_save_path_round, count, prefix_replace)</para>
+</listitem>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a9e5fcd4e32d41fa1b769e3429977f268">EQUATOR_Controller</link> (self, model_path, lab, student_models, answer_save_path_round, count, prefix_replace)</para>
+</listitem>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1add1defa29af7df79bf62873381292604">student_vision</link> (self, <link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a817af601b71aedb755b533aa84231c2a">student_model</link>, full_prompt, json_path)</para>
+</listitem>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1afc1c85e2ddde31f7038943c7124d56aa">student</link> (self, model_path, full_prompt_student)</para>
+</listitem>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1ab1d8f1d7a63a47ad2b80e00fac779727">call_evaluator_vision</link> (self, question_id, <link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a817af601b71aedb755b533aa84231c2a">student_model</link>, prompt, images_dir)</para>
+</listitem>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a00f7df202c494457a15b0da3eb11a3bd">call_evaluator</link> (self, model_path, prompt)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a817af601b71aedb755b533aa84231c2a">student_model</link> = student_model</para>
+</listitem>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1ad8eb86c8f83e775d5cb8d17a510a33a2">evaluator_model</link> = evaluator_model</para>
+</listitem>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a7bf3e53ff2829d8e3684be3793bfcc86">execution_steps</link> = execution_steps</para>
+</listitem>
+            <listitem><para><link linkend="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1aaeb45e383af16ec97048afc4838ef929">vectordb2</link> = vectordb_instance</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><literallayout><computeroutput>EQUATOR_Client handles the benchmarking process by evaluating student models against evaluator models
+using a vector database for storing and retrieving embeddings.
+
+Attributes:
+    student_model (str): The identifier of the student model.
+    evaluator_model (str): The identifier of the evaluator model.
+    execution_steps (str): The workflow steps to execute.
+    vectordb2: Instance of the vector database for embeddings management.
+</computeroutput></literallayout> </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a5ff6e39961c41be9959bea5e9d2aa283"/><section>
+    <title>__init__()</title>
+<indexterm><primary>__init__</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>__init__</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.__init__ ( self,  execution_steps,  student_model,  evaluator_model,  vectordb_instance)</computeroutput></para>
+<para><literallayout><computeroutput>Initializes the EQUATOR_Client with the necessary parameters.
+
+Args:
+    execution_steps (str):
+        Specifies the benchmarking workflow to execute (e.g., &quot;ollama_to_groq_evaluate&quot;).
+    
+    student_model (str):
+        The identifier of the student model to be evaluated.
+    
+    evaluator_model (str):
+        The identifier of the evaluator model to assess the student model&apos;s performance.
+    
+    vectordb_instance:
+        Instance of the vector database used for storing and retrieving embeddings.
+</computeroutput></literallayout> </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a00f7df202c494457a15b0da3eb11a3bd"/><section>
+    <title>call_evaluator()</title>
+<indexterm><primary>call_evaluator</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>call_evaluator</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.call_evaluator ( self,  model_path,  prompt)</computeroutput></para>
+<para><literallayout><computeroutput>Calls the appropriate evaluator API based on the execution steps and retrieves the evaluation response.
+
+Args:
+    model_path (str):
+        The path or identifier of the evaluator model to be used.
+    prompt (str):
+        The prompt/question to be evaluated.
+
+Returns:
+    Optional[Tuple[str, str]]:
+        A tuple containing the student&apos;s answer and the evaluator&apos;s response if successful, otherwise `None`.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1ab1d8f1d7a63a47ad2b80e00fac779727"/><section>
+    <title>call_evaluator_vision()</title>
+<indexterm><primary>call_evaluator_vision</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>call_evaluator_vision</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.call_evaluator_vision ( self,  question_id,  student_model,  prompt,  images_dir)</computeroutput></para>
+<para><literallayout><computeroutput>Calls the appropriate evaluator vision API based on the execution steps and retrieves the evaluation response.
+
+Args:
+    model_path (str):
+        The path or identifier of the evaluator model to be used.
+    prompt (str):
+        The prompt/question to be evaluated.
+    images_dir (str, optional):
+        The directory where image files (and their corresponding JSON metadata) are stored.
+        Defaults to &quot;images&quot;.
+
+Returns:
+    Union[None, List, Tuple[str, str]]:
+        - None: If retrieval of documents or the student&apos;s answer fails, or if no evaluation is performed.
+        - List: An empty list if the specified images directory does not exist.
+        - Tuple[str, str]: A tuple containing the student&apos;s answer and the evaluator&apos;s response, if successful.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a9e5fcd4e32d41fa1b769e3429977f268"/><section>
+    <title>EQUATOR_Controller()</title>
+<indexterm><primary>EQUATOR_Controller</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>EQUATOR_Controller</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.EQUATOR_Controller ( self,  model_path,  lab,  student_models,  answer_save_path_round,  count,  prefix_replace)</computeroutput></para>
+<para><literallayout><computeroutput>Controls the evaluation process by iterating through questions in the vector database,
+obtaining evaluator responses, and saving the results.
+
+Args:
+    model_path (str):
+        The path or identifier of the model to be used for generating responses.
+    
+    lab (str):
+        The label or identifier for the current evaluation context.
+    
+    student_models (List[str]):
+        A list of student model identifiers to be evaluated.
+    
+    answer_save_path_round (str):
+        The directory path where the evaluation results for the current round will be saved.
+    
+    count (int):
+        The current round count of the evaluation process.
+    
+    prefix_replace (str):
+        A prefix string to replace or append in the output filenames for organization.
+
+Returns:
+    None
+
+Example:
+    ```python
+    client = EQUATOR_Client(
+        execution_steps=&quot;ollama_to_groq_evaluate&quot;,
+        student_model=&quot;groq-model-1&quot;,
+        evaluator_model=&quot;ollama-eval-model&quot;,
+        vectordb_instance=vector_db,
+    )
+    client.EQUATOR_Controller(
+        model_path=&quot;&quot;,
+        lab=&quot;eval&quot;,
+        student_models=[&quot;groq-model-1&quot;],
+        answer_save_path_round=&quot;./2025-01-19-midterm_benchmark/auto_eval_outputs&quot;,
+        count=0,
+        prefix_replace=&quot;equator-&quot;,
+    )
+    ```
+
+Notes:
+    - Ensure that the `get_student_prompt`, `extract_score_from_string`, and `create_template_json` functions are defined and imported.
+    - The `EQUATOR_Controller` method interacts with a SQLite database named `chroma.sqlite3`. Ensure that this database exists and is accessible.
+    - Logging is used extensively for tracking the evaluation process. Ensure that the logging configuration captures the desired log levels.
+    - The method currently stops processing if a question with ID &quot;1&quot; is encountered. Modify the stop condition as needed.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1ae8af646c4489c322670ec9c7c6d76710"/><section>
+    <title>EQUATOR_Controller_VISION()</title>
+<indexterm><primary>EQUATOR_Controller_VISION</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>EQUATOR_Controller_VISION</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.EQUATOR_Controller_VISION ( self,  model_path,  lab,  student_models,  answer_save_path_round,  count,  prefix_replace)</computeroutput></para>
+<para><literallayout><computeroutput>Controls the evaluation vision process by iterating through questions in the vector database,
+obtaining evaluator responses, and saving the results.
+
+Args:
+    model_path (str):
+        The path or identifier of the model to be used for generating responses.
+    
+    lab (str):
+        The label or identifier for the current evaluation context.
+    
+    student_models (List[str]):
+        A list of student model identifiers to be evaluated.
+    
+    answer_save_path_round (str):
+        The directory path where the evaluation results for the current round will be saved.
+    
+    count (int):
+        The current round count of the evaluation process.
+    
+    prefix_replace (str):
+        A prefix string to replace or append in the output filenames for organization.
+
+Returns:
+    None
+
+Notes:
+    - Ensure that the `get_student_prompt`, `extract_score_from_string`, and `create_template_json` functions are defined and imported.
+    - The `EQUATOR_Controller` method interacts with a SQLite database named `chroma.sqlite3`. Ensure that this database exists and is accessible.
+    - Logging is used extensively for tracking the evaluation process. Ensure that the logging configuration captures the desired log levels.
+    - The method currently stops processing if a question with ID &quot;1&quot; is encountered. Modify the stop condition as needed.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1afc1c85e2ddde31f7038943c7124d56aa"/><section>
+    <title>student()</title>
+<indexterm><primary>student</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>student</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.student ( self,  model_path,  full_prompt_student)</computeroutput></para>
+<para><literallayout><computeroutput>Retrieves a student&apos;s answer by invoking the appropriate evaluator API based on execution steps.
+
+Args:
+    model_path (str):
+        The path or identifier of the student model to be used.
+    full_prompt_student (str):
+        The student&apos;s prompt that needs to be processed and evaluated.
+
+Returns:
+    Optional[str]:
+        The student&apos;s answer returned by the evaluator API if successful, otherwise `None`.
+
+Example:
+    ```python
+    response = client.student(&quot;ollama-model-v1&quot;, &quot;Explain photosynthesis.&quot;)
+    if response:
+        print(f&quot;Student Answer: {response}&quot;)
+    else:
+        print(&quot;Failed to retrieve student answer.&quot;)
+    ```
+
+Notes:
+    - Ensure that the `get_student_prompt` function is defined and properly formats the messages.
+    - The evaluator functions (`call_openrouter_student_api`, `call_ollama_student_api`, etc.) must be imported and accessible.
+    - Logging is used to track the execution flow and responses.
+</computeroutput></literallayout> </para>
+</section>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1add1defa29af7df79bf62873381292604"/><section>
+    <title>student_vision()</title>
+<indexterm><primary>student_vision</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>student_vision</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.student_vision ( self,  student_model,  full_prompt,  json_path)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1ad8eb86c8f83e775d5cb8d17a510a33a2"/><section>
+    <title>evaluator_model</title>
+<indexterm><primary>evaluator_model</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>evaluator_model</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.evaluator_model = evaluator_model</computeroutput></para></section>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a7bf3e53ff2829d8e3684be3793bfcc86"/><section>
+    <title>execution_steps</title>
+<indexterm><primary>execution_steps</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>execution_steps</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.execution_steps = execution_steps</computeroutput></para></section>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1a817af601b71aedb755b533aa84231c2a"/><section>
+    <title>student_model</title>
+<indexterm><primary>student_model</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>student_model</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.student_model = student_model</computeroutput></para></section>
+<anchor xml:id="_classequator__qa_1_1equator__classes_1_1_e_q_u_a_t_o_r___client_1aaeb45e383af16ec97048afc4838ef929"/><section>
+    <title>vectordb2</title>
+<indexterm><primary>vectordb2</primary><secondary>equator_qa.equator_classes.EQUATOR_Client</secondary></indexterm>
+<indexterm><primary>equator_qa.equator_classes.EQUATOR_Client</primary><secondary>vectordb2</secondary></indexterm>
+<para><computeroutput>equator_qa.equator_classes.EQUATOR_Client.vectordb2 = vectordb_instance</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="_equator__classes_8py">equator_classes.py</link></section>
+</section>

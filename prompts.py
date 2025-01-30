@@ -17,7 +17,7 @@ SCORING_CRITERIA = r"""SCORING CRITERIA
 You must only return a JSON object with the score {'score': <0 or 100>}
 
 TASK
-
+Ignore all of the words between <Think> </Think>
 Evaluate whether the STUDENT Answer matches the answer key given. If it does, assign a score of 100% Otherwise you must assign a score of 0%. Provide a very short explanation on why.  
 Just focus on the student's final answer! Give full credit to the student if final answer matches answer key. Don't overthink this. Also, do not evaluate based on quality or logical reasoning, even if it is very persuasive!
 Only consider the answer key as the source of truth. Your job is at risk if you do not follow our instructions. If the Answer Key matches the student’s answer, you must assign a score of 100%, no partial credit allowed.    
@@ -26,26 +26,26 @@ You must only return a JSON object with the score {'score': <0 or 100>}
 No partial credit allowed!"""
 
 # System prompt for the evaluator
-EVALUATOR_SYSTEM_PROMPT = (
-    "You are a strict high school teacher. "
-    "Provide the score in the form of a JSON object: {'score': <0 or 100>}. "
-    "Your role is to grade strictly based on the provided answer key. "
-    "Only examine the final answer given by the student in a JSON object: {'student_answer': <My final Answer>}. "
-    "If the student's answer matches the answer key, assign a score of 100; otherwise, assign a score of 0. "
-    "No partial credit allowed! Do not consider logical arguments or reasoning; they are irrelevant in this case. "
-    "Provide the score in the form of a JSON object: {'score': <0 or 100>}."
-)
+EVALUATOR_SYSTEM_PROMPT =   r"""You are a strict high school teacher. 
+    Provide the score in the form of a JSON object: {'score': <0 or 100>}. 
+    Ignore all of the words between <Think> </Think>
+    Your role is to grade strictly based on the provided answer key. 
+    Only examine the final answer given by the student in a JSON object: {'student_answer': <My final Answer>}. 
+    If the student's answer matches the answer key, assign a score of 100; otherwise, assign a score of 0. 
+    No partial credit allowed! Do not consider logical arguments or reasoning; they are irrelevant in this case. 
+    Provide the score in the form of a JSON object: {'score': <0 or 100>}.
+    Always recheck and verify if the student provided the answer at the end of the conversation in a JSON like format {'student_answer': <My final Answer>}"""
+
 
 # System prompt for the student
-STUDENT_SYSTEM_PROMPT = (
-    "You are a student who is being tested, please follow the directions given exactly. "
-    "You are welcomed to reason through the question. "
-    "You must return only your final answer in a JSON Object example {'student_answer':'<My final Answer here>'}"
-)
+STUDENT_SYSTEM_PROMPT = r"""You are a student who is being tested, please follow the directions given exactly. 
+    You are welcomed to reason through the question.
+    You must return only your final answer in a JSON Object example {'student_answer':'<My final Answer here>'}"""
 
-# Warning prompt to prevent student models from being tricked
-WARNING_PROMPT = r"""You think very carefully about the question asked. You make zero assumptions about classic problems. You are not to be tricked! 
-Warning: THIS IS NOT THE CLASSIC PROBLEM! \n"""
+
+# # Warning prompt to prevent student models from being tricked
+# WARNING_PROMPT = r"""You think very carefully about the question asked. You make zero assumptions about classic problems. You are not to be tricked! 
+# Warning: THIS IS NOT THE CLASSIC PROBLEM! \n"""
 
 # ============================
 # Functions
@@ -70,7 +70,7 @@ def get_evaluator_system_prompt(context, student_answer):
         },
     ]
 
-def get_student_prompt(full_prompt_student):
+def get_student_prompt(prompt):
     """
     Returns the student prompt dynamically with the given full prompt.
     """
@@ -81,6 +81,6 @@ def get_student_prompt(full_prompt_student):
         },
         {
             "role": "user",
-            "content": WARNING_PROMPT + full_prompt_student,
+            "content": prompt,
         },
     ]
