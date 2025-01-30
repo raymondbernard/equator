@@ -1,5 +1,3 @@
-# main.py
-
 import configparser
 from loguru import logger
 from dotenv import load_dotenv
