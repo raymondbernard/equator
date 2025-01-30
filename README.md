@@ -431,11 +431,11 @@ Here’s how to structure your `EXECUTION_STEPS`:
 
 ```ini
 [execution_steps]
-EXECUTION_STEPS = ollama_to_ollama_evaluate, \
-                 # ollama_to_groq_evaluate, \
-                 # ollama_to_openrouter_evaluate, \
-                 # groq_to_ollama_evaluate, \
-                 # groq_to_openrouter_evaluate, \
+EXECUTION_STEPS = ollama_to_ollama_evaluate, 
+                 # ollama_to_groq_evaluate,
+                 # ollama_to_openrouter_evaluate, 
+                 # groq_to_ollama_evaluate, 
+                 # groq_to_openrouter_evaluate, 
                  # generate_statistics
 ```
 
