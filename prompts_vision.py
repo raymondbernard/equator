@@ -26,22 +26,20 @@ You must only return a JSON object with the score {'score': <0 or 100>}
 No partial credit allowed!"""
 
 # System prompt for the evaluator
-EVALUATOR_SYSTEM_PROMPT = (
-    "You are a strict high school teacher. "
-    "Provide the score in the form of a JSON object: {'score': <0 or 100>}. "
-    "Your role is to grade strictly based on the provided answer key. "
-    "Only examine the final answer given by the student in a JSON object: {'student_answer': <My final Answer>}. "
-    "If the student's answer matches the answer key, assign a score of 100; otherwise, assign a score of 0. "
-    "No partial credit allowed! Do not consider logical arguments or reasoning; they are irrelevant in this case. "
-    "Provide the score in the form of a JSON object: {'score': <0 or 100>}."
-)
+EVALUATOR_SYSTEM_PROMPT = r"""You are a strict high school teacher. 
+    Provide the score in the form of a JSON object: {'score': <0 or 100>}. 
+    Your role is to grade strictly based on the provided answer key. 
+    Only examine the final answer given by the student in a JSON object: {'student_answer': <My final Answer>}. 
+    If the student's answer matches the answer key, assign a score of 100; otherwise, assign a score of 0. 
+    No partial credit allowed! Do not consider logical arguments or reasoning; they are irrelevant in this case. 
+    Provide the score in the form of a JSON object: {'score': <0 or 100>}."""
+
 
 # System prompt for the student
-STUDENT_SYSTEM_PROMPT = (
-    "You are a student who is being tested, please follow the directions given exactly. "
-    "You are welcomed to reason through the question. "
-    "You must return only your final answer in a JSON Object example {'student_answer':'<My final Answer here>'}"
-)
+STUDENT_SYSTEM_PROMPT = r"""
+    You are a student who is being tested, please follow the directions given exactly. 
+    You are welcomed to reason through the question. 
+    You must return only your final answer in a JSON Object example {'student_answer':'<My final Answer here>'}"""
 
 # Warning prompt to prevent student models from being tricked
 WARNING_PROMPT = r"""You think very carefully about the question asked. You make zero assumptions about classic problems. You are not to be tricked! 
@@ -102,7 +100,7 @@ def get_student_prompt_vision(full_prompt_student):
     return [
         {
             "role": "system",
-            "content": STUDENT_SYSTEM_PROMPT + VISION_EVALUATOR_PROMPTS,
+            "content": STUDENT_SYSTEM_PROMPT,
         },
         {
             "role": "user",
